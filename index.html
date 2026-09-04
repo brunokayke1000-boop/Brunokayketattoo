@@ -5,14 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bruno Kayke Tattoo | Realismo Preto e Cinza em Barueri</title>
+  <title>Bruno Kayke Tattoo | Tatuador em Barueri e Alphaville</title>
 
   <meta name="description"
-    content="Bruno Kayke Tattoo. Tatuador especializado em Realismo Preto e Cinza em Barueri e Alphaville - SP.">
+    content="Bruno Kayke Tattoo. Especialista em Realismo Preto e Cinza em Barueri e Alphaville - SP.">
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -20,171 +22,273 @@
     }
 
     body {
-      margin: 0;
       background: #050505;
       color: #fff;
       font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
     }
 
-    /* TOPO */
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    /* HEADER */
 
     header {
-      position: absolute;
-      width: 100%;
+      position: fixed;
       top: 0;
       left: 0;
-      z-index: 10;
-      padding: 18px 22px;
+      width: 100%;
+      z-index: 100;
+      padding: 18px 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.15),
+        transparent
+      );
+    }
+
+    .header-inner {
       display: flex;
+      align-items: center;
       justify-content: space-between;
+    }
+
+    .logo-top {
+      width: 62px;
+      height: 62px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .menu {
+      display: flex;
+      gap: 20px;
       align-items: center;
     }
 
-    .mini-logo {
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    header a {
-      color: white;
+    .menu a {
       text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 1px;
-      border-bottom: 1px solid #777;
-      padding-bottom: 4px;
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: #ddd;
     }
 
-    /* CAPA */
+    /* HERO */
 
     .hero {
       min-height: 100vh;
       position: relative;
       display: flex;
       align-items: flex-end;
-      padding: 130px 25px 65px;
+      padding: 150px 0 70px;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
+    .hero-bg {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom,
-          rgba(0, 0, 0, .25),
-          rgba(0, 0, 0, .55),
-          #050505),
-        url("IMG_4781_Original.jpeg") center/cover no-repeat;
-      filter: grayscale(100%);
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.18),
+          rgba(0,0,0,.25) 40%,
+          rgba(0,0,0,.82) 78%,
+          #050505 100%
+        ),
+        url("IMG_7780.jpeg") center 35% / cover no-repeat;
+      transform: scale(1.02);
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 650px;
+      max-width: 720px;
     }
 
     .hero-logo {
-      width: 130px;
-      margin-bottom: 28px;
+      width: 118px;
+      margin-bottom: 25px;
       border-radius: 50%;
     }
 
     .eyebrow {
-      font-size: 12px;
-      letter-spacing: 3px;
+      font-size: 11px;
       text-transform: uppercase;
+      letter-spacing: 3.5px;
       color: #bbb;
       margin-bottom: 14px;
     }
 
     h1 {
-      margin: 0;
-      font-size: clamp(44px, 12vw, 90px);
-      line-height: .9;
-      letter-spacing: -3px;
+      font-size: clamp(52px, 13vw, 105px);
+      line-height: .86;
+      letter-spacing: -4px;
+      margin-bottom: 26px;
     }
 
-    .hero p {
-      color: #c9c9c9;
+    .hero-text {
+      max-width: 570px;
       font-size: 17px;
-      line-height: 1.6;
-      max-width: 500px;
-      margin: 24px 0 30px;
+      line-height: 1.7;
+      color: #c9c9c9;
+      margin-bottom: 32px;
     }
 
-    .button {
-      display: inline-block;
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 24px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      border-radius: 3px;
+      transition: .25s;
+    }
+
+    .btn-primary {
       background: #fff;
       color: #000;
-      text-decoration: none;
-      padding: 16px 25px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      border-radius: 2px;
     }
 
-    /* SEÇÕES */
+    .btn-secondary {
+      border: 1px solid #555;
+      color: #fff;
+      background: rgba(0,0,0,.35);
+    }
+
+    /* GERAL */
 
     section {
-      padding: 85px 20px;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
+      padding: 95px 0;
     }
 
     .section-label {
       color: #777;
-      font-size: 11px;
+      font-size: 10px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
     h2 {
-      font-size: clamp(35px, 8vw, 60px);
-      margin: 0 0 20px;
+      font-size: clamp(36px, 9vw, 66px);
+      line-height: .95;
       letter-spacing: -2px;
+      margin-bottom: 22px;
     }
 
     .intro {
       color: #999;
       line-height: 1.8;
-      max-width: 650px;
+      max-width: 680px;
       font-size: 16px;
     }
 
-    /* PORTFÓLIO */
+    /* CARDS */
+
+    .services-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      min-height: 390px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.9),
+        rgba(0,0,0,.1)
+      );
+    }
+
+    .service-text {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      bottom: 22px;
+      right: 22px;
+    }
+
+    .service-text h3 {
+      font-size: 26px;
+      margin-bottom: 7px;
+    }
+
+    .service-text p {
+      color: #bbb;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* PORTFOLIO */
 
     .portfolio {
-      padding-top: 25px;
+      background: #080808;
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 7px;
+      gap: 8px;
       margin-top: 45px;
     }
 
-    .gallery img {
-      width: 100%;
-      height: 270px;
-      object-fit: cover;
-      display: block;
-      filter: saturate(.75);
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      background: #111;
     }
 
-    .gallery img:nth-child(3n) {
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: .4s;
+    }
+
+    .gallery-item:nth-child(3n) {
       grid-column: span 2;
-      height: 430px;
+      min-height: 430px;
     }
 
     /* SOBRE */
@@ -195,90 +299,208 @@
 
     .about-grid {
       display: grid;
-      gap: 40px;
+      gap: 45px;
     }
 
-    .about-number {
-      font-size: 70px;
-      font-weight: bold;
-      color: #fff;
-      line-height: 1;
+    .big-type {
+      font-size: clamp(50px, 14vw, 100px);
+      font-weight: 800;
+      line-height: .82;
+      letter-spacing: -5px;
+      color: #1d1d1d;
     }
 
-    .about-small {
-      color: #777;
-      font-size: 13px;
-      margin-top: 8px;
-      text-transform: uppercase;
+    /* DIFERENCIAIS */
+
+    .features {
+      display: grid;
+      gap: 12px;
+      margin-top: 45px;
+    }
+
+    .feature {
+      padding: 28px 0;
+      border-top: 1px solid #222;
+    }
+
+    .feature-number {
+      color: #555;
+      font-size: 12px;
       letter-spacing: 2px;
+      margin-bottom: 10px;
     }
 
-    /* LOCALIZAÇÃO */
+    .feature h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
 
-    .location {
-      border-top: 1px solid #1b1b1b;
-      border-bottom: 1px solid #1b1b1b;
+    .feature p {
+      color: #888;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* PROCESSO */
+
+    .process-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 45px;
+    }
+
+    .process-card {
+      background: #0d0d0d;
+      border: 1px solid #181818;
+      padding: 28px 24px;
+    }
+
+    .process-card span {
+      display: block;
+      color: #555;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .process-card p {
+      color: #888;
+      line-height: 1.7;
+      font-size: 14px;
     }
 
     /* CTA */
 
     .cta {
       text-align: center;
-      padding: 110px 22px;
+      background:
+        linear-gradient(rgba(0,0,0,.78), rgba(0,0,0,.92)),
+        url("IMG_4781_Original.jpeg") center/cover no-repeat;
+      padding: 120px 0;
     }
 
     .cta h2 {
-      max-width: 750px;
-      margin: 0 auto 20px;
+      max-width: 780px;
+      margin: 0 auto 22px;
     }
 
     .cta p {
-      color: #888;
-      margin-bottom: 35px;
+      color: #aaa;
+      max-width: 600px;
+      margin: 0 auto 34px;
+      line-height: 1.7;
     }
 
-    /* RODAPÉ */
+    /* FOOTER */
 
     footer {
-      text-align: center;
-      padding: 45px 20px;
-      color: #555;
-      font-size: 12px;
+      padding: 55px 0 100px;
+      border-top: 1px solid #1b1b1b;
     }
 
-    /* COMPUTADOR */
+    .footer-grid {
+      display: grid;
+      gap: 30px;
+    }
 
-    @media (min-width: 750px) {
+    .footer-title {
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-      header {
-        padding: 25px 55px;
-      }
+    .footer-text {
+      color: #777;
+      line-height: 1.7;
+      font-size: 14px;
+    }
 
-      .hero {
-        padding: 160px 8% 90px;
-      }
+    .copyright {
+      margin-top: 45px;
+      color: #444;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
 
-      section {
-        padding: 120px 8%;
+    /* WHATSAPP FLUTUANTE */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #fff;
+      color: #000;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: bold;
+      box-shadow: 0 10px 35px rgba(0,0,0,.45);
+    }
+
+    /* ANIMAÇÃO */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* DESKTOP */
+
+    @media (min-width: 760px) {
+
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .gallery {
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
       }
 
-      .gallery img {
-        height: 420px;
-      }
-
-      .gallery img:nth-child(3n) {
+      .gallery-item:nth-child(3n) {
         grid-column: auto;
-        height: 420px;
+        min-height: 420px;
+      }
+
+      .gallery-item {
+        min-height: 420px;
       }
 
       .about-grid {
         grid-template-columns: 1fr 1fr;
         align-items: center;
+      }
+
+      .features {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.04);
       }
     }
   </style>
@@ -287,26 +509,42 @@
 
 <body>
 
-  <!-- CABEÇALHO -->
+  <!-- HEADER -->
 
   <header>
-    <img class="mini-logo" src="IMG_9645.png" alt="Bruno Kayke Tattoo">
-    <a href="#portfolio">PORTFÓLIO</a>
+    <div class="container header-inner">
+
+      <img
+        class="logo-top"
+        src="IMG_9645.png"
+        alt="Bruno Kayke Tattoo"
+      >
+
+      <nav class="menu">
+        <a href="#portfolio">PORTFÓLIO</a>
+        <a href="#sobre">SOBRE</a>
+      </nav>
+
+    </div>
   </header>
 
 
-  <!-- CAPA -->
+  <!-- HERO -->
 
   <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-bg"></div>
 
-      <img class="hero-logo"
+    <div class="container hero-content">
+
+      <img
+        class="hero-logo"
         src="IMG_9645.png"
-        alt="Logo Bruno Kayke Tattoo">
+        alt="Logo Bruno Kayke Tattoo"
+      >
 
       <div class="eyebrow">
-        Realismo Preto e Cinza • SP
+        Realismo Preto e Cinza • Barueri • SP
       </div>
 
       <h1>
@@ -314,15 +552,109 @@
         KAYKE
       </h1>
 
-      <p>
-        Tatuagens autorais em Realismo Preto e Cinza,
-        desenvolvidas para transformar ideias em projetos
-        únicos e marcantes.
+      <p class="hero-text">
+        Projetos autorais em Realismo Preto e Cinza,
+        desenvolvidos para valorizar anatomia, profundidade
+        e impacto visual.
       </p>
 
-      <a class="button" href="#contato">
-        Solicitar orçamento
-      </a>
+      <div class="buttons">
+
+        <a
+          class="btn btn-primary"
+          href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke"
+        >
+          Solicitar orçamento
+        </a>
+
+        <a class="btn btn-secondary" href="#portfolio">
+          Ver trabalhos
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ESPECIALIDADES -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-label reveal">
+        Estilo & Especialidade
+      </div>
+
+      <h2 class="reveal">
+        Realismo com presença.
+      </h2>
+
+      <p class="intro reveal">
+        Cada projeto é construído individualmente,
+        buscando equilíbrio entre referência,
+        anatomia do corpo e leitura visual.
+      </p>
+
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+
+          <img
+            src="IMG_4781_Original.jpeg"
+            alt="Realismo preto e cinza"
+          >
+
+          <div class="service-text">
+            <h3>Realismo</h3>
+            <p>
+              Profundidade, contraste e leitura
+              tridimensional.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="IMG_6595.jpeg"
+            alt="Projeto autoral"
+          >
+
+          <div class="service-text">
+            <h3>Projetos autorais</h3>
+            <p>
+              Composições desenvolvidas para
+              cada cliente.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="service-card reveal">
+
+          <img
+            src="IMG_9714.jpeg"
+            alt="Black and Grey"
+          >
+
+          <div class="service-text">
+            <h3>Black & Grey</h3>
+            <p>
+              Controle de valores, sombras e
+              contrastes marcantes.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -335,41 +667,64 @@
 
     <div class="container">
 
-      <div class="section-label">
+      <div class="section-label reveal">
         Trabalhos selecionados
       </div>
 
-      <h2>Portfólio</h2>
+      <h2 class="reveal">
+        Portfólio
+      </h2>
 
-      <p class="intro">
-        Uma seleção de projetos desenvolvidos com foco
-        em contraste, profundidade, composição e realismo.
+      <p class="intro reveal">
+        Alguns dos projetos desenvolvidos no estúdio.
       </p>
 
 
       <div class="gallery">
 
-        <img src="IMG_4037.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_7780.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_4038.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_4037.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_4781_Original.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_4038.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_4787.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_4781_Original.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_4814.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_4787.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_5110.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_4814.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_5835.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_5110.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_6595.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_5835.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_7753.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_6595.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_7780.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_7753.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
-        <img src="IMG_9714.jpeg" alt="Tattoo Bruno Kayke">
+        <div class="gallery-item reveal">
+          <img src="IMG_9714.jpeg" alt="Tattoo Bruno Kayke">
+        </div>
 
       </div>
 
@@ -380,40 +735,32 @@
 
   <!-- SOBRE -->
 
-  <section class="about">
+  <section class="about" id="sobre">
 
     <div class="container about-grid">
 
       <div>
 
-        <div class="section-label">
+        <div class="section-label reveal">
           O artista
         </div>
 
-        <h2>
-          Realismo feito para a pele.
+        <h2 class="reveal">
+          Bruno Kayke Tattoo
         </h2>
 
-        <p class="intro">
-          Bruno Kayke é tatuador especializado em Realismo
-          Preto e Cinza. Cada projeto é pensado individualmente,
-          respeitando anatomia, composição e características
-          de cada cliente.
+        <p class="intro reveal">
+          Trabalho especializado em Realismo Preto e Cinza,
+          com projetos pensados individualmente para cada
+          cliente, buscando composição, profundidade e
+          acabamento.
         </p>
 
       </div>
 
-
-      <div>
-
-        <div class="about-number">
-          BLACK<br>& GREY
-        </div>
-
-        <div class="about-small">
-          Realismo • Projetos autorais
-        </div>
-
+      <div class="big-type reveal">
+        BLACK<br>
+        & GREY
       </div>
 
     </div>
@@ -421,51 +768,178 @@
   </section>
 
 
-  <!-- LOCALIZAÇÃO -->
+  <!-- DIFERENCIAIS -->
 
-  <section class="location">
+  <section>
 
     <div class="container">
 
-      <div class="section-label">
-        Atendimento
+      <div class="section-label reveal">
+        Experiência
       </div>
 
-      <h2>
-        Barueri & Alphaville
+      <h2 class="reveal">
+        Cada detalhe importa.
       </h2>
 
-      <p class="intro">
-        Atendimento com horário agendado em estúdio.
-        Entre em contato para apresentar sua ideia,
-        referências e região do corpo que deseja tatuar.
-      </p>
+
+      <div class="features">
+
+        <div class="feature reveal">
+
+          <div class="feature-number">
+            01
+          </div>
+
+          <h3>
+            Projeto personalizado
+          </h3>
+
+          <p>
+            A composição é desenvolvida de acordo
+            com sua ideia e região do corpo.
+          </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+          <div class="feature-number">
+            02
+          </div>
+
+          <h3>
+            Realismo Preto e Cinza
+          </h3>
+
+          <p>
+            Trabalho focado em profundidade,
+            contraste e acabamento.
+          </p>
+
+        </div>
+
+
+        <div class="feature reveal">
+
+          <div class="feature-number">
+            03
+          </div>
+
+          <h3>
+            Atendimento agendado
+          </h3>
+
+          <p>
+            Atendimento individual em estúdio,
+            com horário reservado.
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- CONTATO -->
+  <!-- PROCESSO -->
 
-  <section class="cta" id="contato">
+  <section class="about">
 
     <div class="container">
 
-      <div class="section-label">
+      <div class="section-label reveal">
+        Como funciona
+      </div>
+
+      <h2 class="reveal">
+        Do orçamento à tattoo.
+      </h2>
+
+
+      <div class="process-grid">
+
+        <div class="process-card reveal">
+
+          <span>01</span>
+
+          <h3>
+            Envie sua ideia
+          </h3>
+
+          <p>
+            Conte o que deseja tatuar,
+            região do corpo e referências.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <span>02</span>
+
+          <h3>
+            Projeto & orçamento
+          </h3>
+
+          <p>
+            Definimos proposta, tamanho,
+            composição e investimento.
+          </p>
+
+        </div>
+
+
+        <div class="process-card reveal">
+
+          <span>03</span>
+
+          <h3>
+            Sessão
+          </h3>
+
+          <p>
+            Com tudo definido, reservamos
+            sua data para execução do projeto.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <div class="section-label reveal">
         Seu próximo projeto
       </div>
 
-      <h2>
-        Vamos transformar sua ideia em uma tattoo?
+      <h2 class="reveal">
+        Sua ideia pode virar seu próximo grande projeto.
       </h2>
 
-      <p>
-        Entre em contato para solicitar seu orçamento.
+      <p class="reveal">
+        Entre em contato pelo WhatsApp e envie
+        sua ideia para solicitar um orçamento.
       </p>
 
-      <a class="button" href="#">
-        Solicitar orçamento
+      <a
+        class="btn btn-primary reveal"
+        href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke"
+      >
+        Falar com Bruno
       </a>
 
     </div>
@@ -473,9 +947,101 @@
   </section>
 
 
+  <!-- FOOTER -->
+
   <footer>
-    © Bruno Kayke Tattoo • Barueri / Alphaville • SP
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+
+          <div class="footer-title">
+            Bruno Kayke Tattoo
+          </div>
+
+          <p class="footer-text">
+            Realismo Preto e Cinza<br>
+            Barueri • Alphaville • SP
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Atendimento
+          </div>
+
+          <p class="footer-text">
+            Com horário agendado.
+          </p>
+
+        </div>
+
+
+        <div>
+
+          <div class="footer-title">
+            Orçamento
+          </div>
+
+          <p class="footer-text">
+            WhatsApp<br>
+            (11) 97482-4443
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+        © 2026 BRUNO KAYKE TATTOO
+      </div>
+
+    </div>
+
   </footer>
+
+
+  <!-- WHATSAPP -->
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke"
+    aria-label="Falar pelo WhatsApp"
+  >
+    ☎
+  </a>
+
+
+  <script>
+
+    const items = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    items.forEach(item => observer.observe(item));
+
+  </script>
 
 </body>
 </html>
