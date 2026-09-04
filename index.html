@@ -1,41 +1,481 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bruno Kayke Tattoo | Realismo Preto e Cinza</title>
+  <title>Bruno Kayke Tattoo | Realismo Preto e Cinza em Barueri</title>
+
+  <meta name="description"
+    content="Bruno Kayke Tattoo. Tatuador especializado em Realismo Preto e Cinza em Barueri e Alphaville - SP.">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      background: #080808;
-      color: white;
-      font-family: Arial, sans-serif;
-      height: 100vh;
+      background: #050505;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* TOPO */
+
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 18px 22px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+    }
+
+    .mini-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #777;
+      padding-bottom: 4px;
+    }
+
+    /* CAPA */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 130px 25px 65px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(0, 0, 0, .25),
+          rgba(0, 0, 0, .55),
+          #050505),
+        url("IMG_4781_Original.jpeg") center/cover no-repeat;
+      filter: grayscale(100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 650px;
+    }
+
+    .hero-logo {
+      width: 130px;
+      margin-bottom: 28px;
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 14px;
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: clamp(44px, 12vw, 90px);
+      line-height: .9;
+      letter-spacing: -3px;
     }
 
-    p {
-      color: #aaa;
-      font-size: 18px;
+    .hero p {
+      color: #c9c9c9;
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 24px 0 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      padding: 16px 25px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 85px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-label {
+      color: #777;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: clamp(35px, 8vw, 60px);
+      margin: 0 0 20px;
+      letter-spacing: -2px;
+    }
+
+    .intro {
+      color: #999;
+      line-height: 1.8;
+      max-width: 650px;
+      font-size: 16px;
+    }
+
+    /* PORTFÓLIO */
+
+    .portfolio {
+      padding-top: 25px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 7px;
+      margin-top: 45px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.75);
+    }
+
+    .gallery img:nth-child(3n) {
+      grid-column: span 2;
+      height: 430px;
+    }
+
+    /* SOBRE */
+
+    .about {
+      background: #0b0b0b;
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 40px;
+    }
+
+    .about-number {
+      font-size: 70px;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .about-small {
+      color: #777;
+      font-size: 13px;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* LOCALIZAÇÃO */
+
+    .location {
+      border-top: 1px solid #1b1b1b;
+      border-bottom: 1px solid #1b1b1b;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 110px 22px;
+    }
+
+    .cta h2 {
+      max-width: 750px;
+      margin: 0 auto 20px;
+    }
+
+    .cta p {
+      color: #888;
+      margin-bottom: 35px;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      color: #555;
+      font-size: 12px;
+    }
+
+    /* COMPUTADOR */
+
+    @media (min-width: 750px) {
+
+      header {
+        padding: 25px 55px;
+      }
+
+      .hero {
+        padding: 160px 8% 90px;
+      }
+
+      section {
+        padding: 120px 8%;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .gallery img {
+        height: 420px;
+      }
+
+      .gallery img:nth-child(3n) {
+        grid-column: auto;
+        height: 420px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
     }
   </style>
 </head>
 
+
 <body>
-  <main>
-    <h1>BRUNO KAYKE</h1>
-    <p>Tattoo • Realismo Preto e Cinza</p>
-    <p>Barueri • Alphaville • SP</p>
-  </main>
+
+  <!-- CABEÇALHO -->
+
+  <header>
+    <img class="mini-logo" src="IMG_9645.png" alt="Bruno Kayke Tattoo">
+    <a href="#portfolio">PORTFÓLIO</a>
+  </header>
+
+
+  <!-- CAPA -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <img class="hero-logo"
+        src="IMG_9645.png"
+        alt="Logo Bruno Kayke Tattoo">
+
+      <div class="eyebrow">
+        Realismo Preto e Cinza • SP
+      </div>
+
+      <h1>
+        BRUNO<br>
+        KAYKE
+      </h1>
+
+      <p>
+        Tatuagens autorais em Realismo Preto e Cinza,
+        desenvolvidas para transformar ideias em projetos
+        únicos e marcantes.
+      </p>
+
+      <a class="button" href="#contato">
+        Solicitar orçamento
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFÓLIO -->
+
+  <section class="portfolio" id="portfolio">
+
+    <div class="container">
+
+      <div class="section-label">
+        Trabalhos selecionados
+      </div>
+
+      <h2>Portfólio</h2>
+
+      <p class="intro">
+        Uma seleção de projetos desenvolvidos com foco
+        em contraste, profundidade, composição e realismo.
+      </p>
+
+
+      <div class="gallery">
+
+        <img src="IMG_4037.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_4038.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_4781_Original.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_4787.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_4814.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_5110.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_5835.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_6595.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_7753.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_7780.jpeg" alt="Tattoo Bruno Kayke">
+
+        <img src="IMG_9714.jpeg" alt="Tattoo Bruno Kayke">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOBRE -->
+
+  <section class="about">
+
+    <div class="container about-grid">
+
+      <div>
+
+        <div class="section-label">
+          O artista
+        </div>
+
+        <h2>
+          Realismo feito para a pele.
+        </h2>
+
+        <p class="intro">
+          Bruno Kayke é tatuador especializado em Realismo
+          Preto e Cinza. Cada projeto é pensado individualmente,
+          respeitando anatomia, composição e características
+          de cada cliente.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <div class="about-number">
+          BLACK<br>& GREY
+        </div>
+
+        <div class="about-small">
+          Realismo • Projetos autorais
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- LOCALIZAÇÃO -->
+
+  <section class="location">
+
+    <div class="container">
+
+      <div class="section-label">
+        Atendimento
+      </div>
+
+      <h2>
+        Barueri & Alphaville
+      </h2>
+
+      <p class="intro">
+        Atendimento com horário agendado em estúdio.
+        Entre em contato para apresentar sua ideia,
+        referências e região do corpo que deseja tatuar.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTATO -->
+
+  <section class="cta" id="contato">
+
+    <div class="container">
+
+      <div class="section-label">
+        Seu próximo projeto
+      </div>
+
+      <h2>
+        Vamos transformar sua ideia em uma tattoo?
+      </h2>
+
+      <p>
+        Entre em contato para solicitar seu orçamento.
+      </p>
+
+      <a class="button" href="#">
+        Solicitar orçamento
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+    © Bruno Kayke Tattoo • Barueri / Alphaville • SP
+  </footer>
+
 </body>
 </html>
