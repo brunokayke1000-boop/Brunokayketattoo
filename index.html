@@ -174,14 +174,11 @@ section{
   width:100%;
   height:96px;
 
-  background:
-  rgba(4,4,4,.80);
+  background:rgba(4,4,4,.76);
 
-  border-bottom:
-  1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
 
   backdrop-filter:blur(16px);
-
   -webkit-backdrop-filter:blur(16px);
 }
 
@@ -236,9 +233,7 @@ section{
 }
 
 .hamburger.active span:nth-child(1){
-  transform:
-  translateY(10px)
-  rotate(45deg);
+  transform:translateY(10px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2){
@@ -246,9 +241,7 @@ section{
 }
 
 .hamburger.active span:nth-child(3){
-  transform:
-  translateY(-10px)
-  rotate(-45deg);
+  transform:translateY(-10px) rotate(-45deg);
 }
 
 
@@ -265,15 +258,13 @@ section{
 
   padding:135px 30px 45px;
 
-  background:
-  rgba(4,4,4,.98);
+  background:rgba(4,4,4,.98);
 
   opacity:0;
 
   visibility:hidden;
 
-  transform:
-  translateY(-20px);
+  transform:translateY(-20px);
 
   transition:.35s ease;
 }
@@ -283,8 +274,7 @@ section{
 
   visibility:visible;
 
-  transform:
-  translateY(0);
+  transform:translateY(0);
 }
 
 .mobile-menu nav{
@@ -296,8 +286,7 @@ section{
 .mobile-menu a{
   padding:20px 0;
 
-  border-bottom:
-  1px solid #1a1a1a;
+  border-bottom:1px solid #1a1a1a;
 
   font-size:28px;
 
@@ -314,55 +303,64 @@ section{
 .hero{
   min-height:100svh;
 
-  padding:
-  145px 0 110px;
+  padding:145px 0 115px;
 
   display:flex;
 
   align-items:center;
 
   overflow:hidden;
+
+  background:#050505;
 }
 
 
-/* FOTO */
+/*
+FOTO PRINCIPAL
+
+Aqui não usamos uma imagem diferente.
+Continuamos usando sua foto original.
+*/
 
 .hero-photo{
   position:absolute;
 
   z-index:0;
 
-  inset:-16%;
+  inset:0;
 
   background-image:
   url("72F2EE76-9084-4E09-9D00-7A5B1444BE8C.jpeg");
 
-  background-size:cover;
+  background-repeat:no-repeat;
 
   /*
-  O rosto fica grande e parcialmente
-  cortado, como na referência.
+  Aumenta bastante a foto.
   */
-  background-position:68% center;
+  background-size:auto 138%;
 
   /*
-  Preserva a iluminação quente
-  da foto original.
+  Joga o rosto para a lateral direita.
+  */
+  background-position:81% center;
+
+  /*
+  Preserva bastante da cor
+  e da luz quente original.
   */
   filter:
-  grayscale(5%)
-  brightness(.53)
-  contrast(1.10)
+  brightness(.56)
+  contrast(1.08)
   saturate(.92);
 
-  transform:
-  scale(1.48);
-
-  will-change:transform;
+  will-change:background-position;
 }
 
 
-/* ESCURECIMENTO CINEMATOGRÁFICO */
+/*
+A lateral esquerda fica mais escura,
+mas o rosto continua visível na direita.
+*/
 
 .hero-overlay{
   position:absolute;
@@ -373,23 +371,18 @@ section{
 
   background:
 
-  radial-gradient(
-    circle at 22% 45%,
-    rgba(137,53,5,.13),
-    transparent 43%
-  ),
-
   linear-gradient(
     90deg,
-    rgba(0,0,0,.30) 0%,
-    rgba(0,0,0,.07) 46%,
-    rgba(0,0,0,.27) 100%
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.30) 35%,
+    rgba(0,0,0,.06) 65%,
+    rgba(0,0,0,.16) 100%
   ),
 
   linear-gradient(
     to bottom,
     rgba(0,0,0,.20) 0%,
-    rgba(0,0,0,.05) 45%,
+    rgba(0,0,0,.04) 48%,
     rgba(5,5,5,.92) 100%
   );
 }
@@ -417,10 +410,9 @@ section{
 .hero-content > .kicker{
   width:100%;
 
-  margin:
-  0 auto 24px;
+  margin:0 auto 20px;
 
-  color:#dedede;
+  color:#e0e0e0;
 
   text-align:center;
 
@@ -428,7 +420,7 @@ section{
 
   font-weight:700;
 
-  letter-spacing:3.5px;
+  letter-spacing:3.3px;
 
   line-height:1.6;
 
@@ -444,8 +436,7 @@ section{
 .hero-brand{
   width:100%;
 
-  margin:
-  0 auto 27px;
+  margin:0 auto 24px;
 
   text-align:center;
 }
@@ -466,7 +457,7 @@ section{
   text-transform:uppercase;
 
   text-shadow:
-  0 5px 27px rgba(0,0,0,.82),
+  0 5px 27px rgba(0,0,0,.85),
   0 0 24px rgba(255,255,255,.05);
 }
 
@@ -477,83 +468,69 @@ section{
 
   white-space:nowrap;
 
-  font-size:
-  clamp(43px,11vw,105px);
+  font-size:clamp(43px,11vw,105px);
 
   letter-spacing:-3px;
 
   line-height:.92;
 }
 
+
+/*
+Mais próximo do nome.
+*/
+
 .hero-name-tattoo{
   display:block;
 
-  /*
-  Tattoo agora fica mais colado
-  ao nome para os dois parecerem
-  uma única assinatura.
-  */
-  margin-top:4px;
+  margin-top:0;
 
-  font-size:
-  clamp(27px,6.4vw,46px);
+  font-size:clamp(26px,6vw,44px);
 
   font-weight:700;
 
-  letter-spacing:10px;
+  letter-spacing:9px;
 
   line-height:1;
 }
 
 
-/* TATUAGEM DE ALTO PADRÃO */
+/*
+TATUAGEM DE ALTO PADRÃO
+*/
 
 .hero-subtitle{
-  display:block;
-
   width:100%;
 
-  margin:
-  26px auto 0;
-
-  padding:0;
-
-  border:none;
-
-  background:transparent;
+  margin:23px auto 0;
 
   color:#fff;
 
-  text-align:center;
-
-  font-size:
-  clamp(20px,4.7vw,34px);
+  font-size:clamp(21px,4.8vw,35px);
 
   font-weight:900;
 
-  letter-spacing:4.2px;
+  letter-spacing:4px;
 
-  line-height:1.28;
+  line-height:1.3;
+
+  text-align:center;
 
   text-transform:uppercase;
 
   text-shadow:
-  0 3px 16px rgba(0,0,0,1),
-  0 0 13px rgba(255,255,255,.13);
+  0 4px 20px rgba(0,0,0,1),
+  0 0 14px rgba(255,255,255,.19);
 }
-
-
-/* DESCRIÇÃO */
 
 .hero-description{
   width:100%;
 
   max-width:680px;
 
-  margin:
-  31px auto 32px;
+  margin:29px auto 32px;
 
-  color:#d1d1d1;
+  color:#d4d4d4;
 
   font-size:16px;
 
@@ -564,9 +541,6 @@ section{
   text-shadow:
   0 2px 14px rgba(0,0,0,.95);
 }
-
-
-/* BOTÕES */
 
 .hero-actions{
   width:100%;
@@ -596,8 +570,7 @@ section{
 
   left:50%;
 
-  bottom:
-  max(18px,env(safe-area-inset-bottom));
+  bottom:max(16px,env(safe-area-inset-bottom));
 
   width:52px;
   height:52px;
@@ -607,11 +580,9 @@ section{
   align-items:center;
   justify-content:center;
 
-  color:
-  rgba(255,255,255,.68);
+  color:rgba(255,255,255,.72);
 
-  transform:
-  translateX(-50%);
+  transform:translateX(-50%);
 
   animation:
   scrollFloat 1.7s ease-in-out infinite,
@@ -619,8 +590,6 @@ section{
 }
 
 .scroll-indicator .arrow{
-  display:block;
-
   font-size:42px;
 
   font-weight:200;
@@ -666,8 +635,7 @@ section{
 .work-grid{
   display:grid;
 
-  grid-template-columns:
-  repeat(2,1fr);
+  grid-template-columns:repeat(2,1fr);
 
   gap:12px;
 
@@ -681,8 +649,7 @@ section{
 
   overflow:hidden;
 
-  border:
-  1px solid #252525;
+  border:1px solid #252525;
 
   border-radius:14px;
 
@@ -703,8 +670,7 @@ section{
   saturate(.78)
   brightness(.8);
 
-  transition:
-  transform .5s ease;
+  transition:transform .5s ease;
 }
 
 .work-card::after{
@@ -812,8 +778,7 @@ section{
   align-items:center;
   justify-content:center;
 
-  border:
-  1px solid #555;
+  border:1px solid #555;
 
   border-radius:50%;
 
@@ -830,8 +795,7 @@ section{
 .studio-video{
   overflow:hidden;
 
-  border:
-  1px solid #292929;
+  border:1px solid #292929;
 
   border-radius:17px;
 
@@ -843,11 +807,6 @@ section{
 
   object-fit:cover;
 }
-
-
-/* =========================================
-   VÍDEO AUTOMÁTICO
-========================================= */
 
 .studio-video{
   position:relative;
@@ -867,7 +826,6 @@ section{
   pointer-events:none;
 
   -webkit-user-select:none;
-
   user-select:none;
 }
 
@@ -907,11 +865,9 @@ section{
 
   margin:55px 0;
 
-  padding:
-  29px 30px 29px 45px;
+  padding:29px 30px 29px 45px;
 
-  border-left:
-  3px solid #ddd;
+  border-left:3px solid #ddd;
 
   background:
   linear-gradient(
@@ -938,8 +894,7 @@ section{
 .stat{
   padding:27px;
 
-  border:
-  1px solid #343434;
+  border:1px solid #343434;
 
   border-radius:11px;
 
@@ -1000,8 +955,7 @@ section{
 
   padding:29px;
 
-  border:
-  1px solid #1f1f1f;
+  border:1px solid #1f1f1f;
 
   border-radius:17px;
 
@@ -1049,42 +1003,131 @@ section{
 ========================================= */
 
 .reviews{
+  overflow:hidden;
+
+  background:#050505;
+}
+
+.reviews-heading{
   text-align:center;
 }
 
-.reviews .lead{
-  margin:auto;
+.reviews-heading .title{
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.review-waiting{
-  margin-top:50px;
-
-  padding:37px 26px;
-
-  border:
-  1px solid #2b2b2b;
-
-  border-radius:17px;
-
-  background:#0a0a0a;
-
-  text-align:center;
+.reviews-heading .lead{
+  margin-left:auto;
+  margin-right:auto;
 }
 
-.review-waiting h3{
-  margin-bottom:12px;
 
-  font-size:22px;
+/*
+Cards horizontais no celular.
+*/
+
+.reviews-track{
+  display:flex;
+
+  gap:16px;
+
+  width:100%;
+
+  margin-top:52px;
+
+  padding:
+  0 max(
+    22px,
+    calc((100vw - 1120px) / 2)
+  );
+
+  overflow-x:auto;
+
+  scroll-snap-type:x mandatory;
+
+  scrollbar-width:none;
+
+  -webkit-overflow-scrolling:touch;
 }
 
-.review-waiting p{
-  max-width:640px;
+.reviews-track::-webkit-scrollbar{
+  display:none;
+}
 
-  margin:auto;
+.review-card{
+  flex:0 0 min(390px,84vw);
 
-  color:#808080;
+  min-height:315px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  padding:28px;
+
+  border:1px solid #262626;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    145deg,
+    #111,
+    #080808
+  );
+
+  scroll-snap-align:center;
+}
+
+.review-stars{
+  margin-bottom:22px;
+
+  color:#f4c95d;
+
+  font-size:23px;
+
+  letter-spacing:4px;
+
+  line-height:1;
+}
+
+.review-text{
+  color:#d0d0d0;
+
+  font-size:16px;
 
   line-height:1.7;
+}
+
+.review-source{
+  margin-top:26px;
+
+  color:#6f6f6f;
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:2.5px;
+
+  text-transform:uppercase;
+}
+
+.review-hint{
+  margin-top:22px;
+
+  color:#555;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  text-align:center;
+
+  text-transform:uppercase;
 }
 
 
@@ -1099,8 +1142,7 @@ section{
 .more-grid{
   display:grid;
 
-  grid-template-columns:
-  repeat(3,1fr);
+  grid-template-columns:repeat(3,1fr);
 
   gap:8px;
 
@@ -1114,8 +1156,7 @@ section{
 
   overflow:hidden;
 
-  border:
-  1px solid #222;
+  border:1px solid #222;
 
   border-radius:7px;
 
@@ -1128,13 +1169,13 @@ section{
 
   object-fit:cover;
 
-  transition:
-  transform .4s ease;
+  transition:transform .4s ease;
 }
 
 .more-item:hover img{
   transform:scale(1.05);
 }
+
 
 /* =========================================
    CTA FINAL
@@ -1150,11 +1191,9 @@ section{
 
   overflow:hidden;
 
-  padding:
-  65px 28px;
+  padding:65px 28px;
 
-  border:
-  1px solid #252525;
+  border:1px solid #252525;
 
   border-radius:20px;
 
@@ -1171,11 +1210,9 @@ section{
 .cta-box h2{
   max-width:780px;
 
-  margin:
-  0 auto 20px;
+  margin:0 auto 20px;
 
-  font-size:
-  clamp(38px,9vw,70px);
+  font-size:clamp(38px,9vw,70px);
 
   line-height:.95;
 
@@ -1187,8 +1224,7 @@ section{
 .cta-box p{
   max-width:620px;
 
-  margin:
-  0 auto 30px;
+  margin:0 auto 30px;
 
   color:#8e8e8e;
 
@@ -1203,11 +1239,9 @@ section{
 ========================================= */
 
 .footer{
-  padding:
-  75px 0 40px;
+  padding:75px 0 40px;
 
-  border-top:
-  1px solid #181818;
+  border-top:1px solid #181818;
 
   background:#050505;
 }
@@ -1266,8 +1300,7 @@ section{
 
   padding-top:34px;
 
-  border-top:
-  1px solid #181818;
+  border-top:1px solid #181818;
 
   color:#555;
 
@@ -1377,8 +1410,7 @@ section{
 .reveal{
   opacity:0;
 
-  transform:
-  translateY(24px);
+  transform:translateY(24px);
 
   transition:
   opacity .8s ease,
@@ -1388,8 +1420,7 @@ section{
 .reveal.visible{
   opacity:1;
 
-  transform:
-  translateY(0);
+  transform:translateY(0);
 }
 
 
@@ -1450,8 +1481,7 @@ section{
 @media(max-width:500px){
 
   .container{
-    width:
-    calc(100% - 36px);
+    width:calc(100% - 36px);
   }
 
 
@@ -1460,56 +1490,41 @@ section{
   .hero{
     min-height:100svh;
 
-    padding-top:136px;
-    padding-bottom:108px;
+    padding-top:134px;
+
+    padding-bottom:106px;
 
     align-items:center;
   }
 
 
   /*
-  Aqui está o enquadramento principal
-  que você pediu:
-  foto grande e mostrando aproximadamente
-  metade do rosto.
+  MAIS ZOOM + SOMENTE METADE DO ROSTO
+  NA LATERAL DIREITA
   */
 
   .hero-photo{
-    inset:-18%;
+    background-size:auto 153%;
 
     background-position:
-    70% center;
+    86% center;
 
     filter:
-    grayscale(3%)
-    brightness(.51)
-    contrast(1.10)
+    brightness(.53)
+    contrast(1.08)
     saturate(.95);
-
-    transform:
-    scale(1.52);
   }
 
-
-  /*
-  Mantém a luz quente da própria foto,
-  sem jogar um preto pesado por cima.
-  */
 
   .hero-overlay{
     background:
 
-    radial-gradient(
-      circle at 12% 45%,
-      rgba(154,57,5,.11),
-      transparent 47%
-    ),
-
     linear-gradient(
       90deg,
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.02) 50%,
-      rgba(0,0,0,.28)
+      rgba(0,0,0,.68) 0%,
+      rgba(0,0,0,.42) 31%,
+      rgba(0,0,0,.12) 58%,
+      rgba(0,0,0,.09) 100%
     ),
 
     linear-gradient(
@@ -1533,24 +1548,18 @@ section{
 
 
   .hero-content > .kicker{
-    margin:
-    0 auto 20px;
+    margin:0 auto 18px;
 
     font-size:9px;
 
-    letter-spacing:2.45px;
+    letter-spacing:2.35px;
 
     line-height:1.55;
-
-    text-align:center;
   }
 
 
   .hero-brand{
-    width:100%;
-
-    margin:
-    0 auto 24px;
+    margin-bottom:22px;
   }
 
 
@@ -1564,80 +1573,46 @@ section{
   }
 
 
-  /*
-  TATTOO fica bem próximo
-  de BRUNO KAYKE.
-  */
-
   .hero-name-tattoo{
-    margin-top:3px;
+    margin-top:-1px;
 
-    font-size:27px;
+    font-size:26px;
 
     letter-spacing:7px;
-
-    line-height:1;
   }
 
 
-  /*
-  Destaque maior na frase,
-  sem faixa preta.
-  */
-
   .hero-subtitle{
-    width:100%;
+    margin-top:22px;
 
-    margin-top:23px;
-
-    padding:0;
-
-    border:none;
-
-    background:transparent;
-
-    font-size:18px;
+    font-size:19px;
 
     font-weight:900;
 
-    letter-spacing:2.6px;
+    letter-spacing:2.25px;
 
-    line-height:1.4;
-
-    text-align:center;
-
-    text-shadow:
-    0 3px 17px rgba(0,0,0,1),
-    0 0 12px rgba(255,255,255,.16);
+    line-height:1.35;
   }
 
 
   .hero-description{
-    width:100%;
-
     max-width:100%;
 
     margin:
-    28px auto 29px;
+    27px auto 28px;
 
-    padding:0 4px;
+    padding:0 3px;
 
     font-size:15px;
 
     line-height:1.68;
-
-    text-align:center;
   }
 
 
   .hero-actions{
-    width:100%;
-
     max-width:none;
 
     gap:12px;
-
-    margin:auto;
   }
 
 
@@ -1650,14 +1625,10 @@ section{
   }
 
 
-  /* PORTFÓLIO */
-
   .work-card{
     min-height:340px;
   }
 
-
-  /* ESTÚDIO */
 
   .studio-image img{
     height:610px;
@@ -1668,6 +1639,22 @@ section{
     height:auto;
 
     aspect-ratio:9 / 16;
+  }
+
+
+  .review-card{
+    flex-basis:86vw;
+
+    min-height:330px;
+
+    padding:25px;
+  }
+
+
+  .review-text{
+    font-size:15px;
+
+    line-height:1.68;
   }
 
 }
@@ -1856,7 +1843,7 @@ aria-label="Role para ver os trabalhos">
 
 
 <!-- =========================================
-     TRABALHOS EXCLUSIVOS
+     TRABALHOS
 ========================================= -->
 
 <section id="trabalhos">
@@ -1886,8 +1873,6 @@ a diferentes estilos e projetos.
 <div class="work-grid">
 
 
-<!-- RETRATO -->
-
 <article class="work-card reveal">
 
 <img
@@ -1914,8 +1899,7 @@ contraste e profundidade.
 </article>
 
 
-<!-- COMPOSIÇÃO RELIGIOSA
-     FOTO TROCADA -->
+<!-- FOTO TROCADA -->
 
 <article class="work-card reveal">
 
@@ -1943,8 +1927,6 @@ em projetos de impacto.
 </article>
 
 
-<!-- ESCULTURA -->
-
 <article class="work-card reveal">
 
 <img
@@ -1970,8 +1952,6 @@ textura e sombreamento anatômico.
 
 </article>
 
-
-<!-- AUTORAL -->
 
 <article class="work-card reveal">
 
@@ -1999,8 +1979,7 @@ para cada cliente.
 </article>
 
 
-<!-- CONTRASTE
-     FOTO TROCADA -->
+<!-- FOTO TROCADA -->
 
 <article class="work-card reveal">
 
@@ -2027,8 +2006,6 @@ e leitura tridimensional.
 
 </article>
 
-
-<!-- FECHAMENTO -->
 
 <article class="work-card reveal">
 
@@ -2106,9 +2083,7 @@ localizado no Bethaville, em Barueri.
 
 <div class="benefit reveal">
 
-<div class="check">
-✓
-</div>
+<div class="check">✓</div>
 
 <div>
 Atendimento individual
@@ -2120,9 +2095,7 @@ e com horário agendado.
 
 <div class="benefit reveal">
 
-<div class="check">
-✓
-</div>
+<div class="check">✓</div>
 
 <div>
 Ambiente organizado,
@@ -2134,9 +2107,7 @@ reservado e confortável.
 
 <div class="benefit reveal">
 
-<div class="check">
-✓
-</div>
+<div class="check">✓</div>
 
 <div>
 Materiais descartáveis
@@ -2148,9 +2119,7 @@ e rotina de biossegurança.
 
 <div class="benefit reveal">
 
-<div class="check">
-✓
-</div>
+<div class="check">✓</div>
 
 <div>
 Ambiente climatizado,
@@ -2162,9 +2131,7 @@ preparado para sessões longas.
 
 <div class="benefit reveal">
 
-<div class="check">
-✓
-</div>
+<div class="check">✓</div>
 
 <div>
 Localização no Bethaville,
@@ -2484,57 +2451,238 @@ e excelência no atendimento.
 </div>
 
 </section>
+
+
 <!-- =========================================
-     AVALIAÇÕES
+     FEEDBACKS REAIS
 ========================================= -->
 
 <section
 class="reviews divider"
 id="avaliacoes">
 
-<div class="container">
+
+<div class="reviews-heading container">
+
 
 <div class="kicker reveal">
-Experiência de quem já tatuou
+Experiência real
 </div>
 
-<h2
-class="title reveal"
-style="margin-left:auto;margin-right:auto;">
+
+<h2 class="title reveal">
 
 O que meus clientes dizem
 
 </h2>
 
+
 <p class="lead reveal">
 
-Avaliações reais serão adicionadas aqui
-assim que você me enviar os feedbacks
-dos seus clientes.
+Depoimentos enviados por clientes
+após suas experiências
+com o Bruno Kayke Tattoo.
 
 </p>
 
-<div class="review-waiting reveal">
 
-<h3>
-Avaliações reais em breve
-</h3>
+</div>
 
-<p>
 
-Assim que você me enviar
-os feedbacks reais ou prints
-das avaliações dos seus clientes,
-colocaremos aqui os cards com
-nome, estrelas e comentário
-mantendo o mesmo padrão profissional
-do restante do site.
+<div class="reviews-track">
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Cara, procurar você pra refazer minha primeira tatuagem foi a melhor decisão que eu já tomei! Quando fiz com outro profissional, não ficou nada como eu queria. Mas aí eu expliquei pra você o que eu tava pensando, e você me ouviu super atentamente, deu várias sugestões, e, olha, o resultado ficou demais! Até hoje, todo mundo que vê elogia muito o desenho, diz que a técnica ficou muito boa. Me salvou, haha! Valeu por ter cuidado tanto e ter feito com tanto carinho!”
 
 </p>
 
 </div>
 
+<div class="review-source">
+Feedback real de cliente
 </div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Depois que fechei o braço com você a vida mudou completamente kkkkkk, as mulheres começaram a me olhar diferente aí, tive que lançar mais uma né kkkkk, e irei fazer a próxima logo mais em, e sem contar que aumentou a autoestima lá no alto, você se sente até diferente. E obrigado por proporcionar isso com essas arte foda pra krlh!!!”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Helloooo! Fui por indicação e não me arrependo de ter ido fazer com você desde a minha primeira tatuagem. Traços impecáveis, trabalho incrível. Ansiosa para a próxima! ❤️”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Conheço você e o seu trabalho de anos, acompanhei toda a evolução. Sempre tive receio de fazer uma tatuagem grande e escolhi você, devido a sua dedicação. Apesar das minhas inseguranças, me acolheu e me atendeu extremamente bem. Foi perfeito! A tatuagem é linda e desde dia que fiz só recebo elogios. Você arrasou! ❤️”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Sem dúvida nenhuma a arte mais fodaaa, todo canto perguntam quem fez e eu mostro com a maior satisfação seu perfil irmão, você é fora da curva desde o começo !! Logo menos nois tá lançando outraaa 🔥”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Boa noite! Sempre tive a total admiração pelo seu trabalho sem antes mesmo de realizar. Você não só salvou o trampo que foi feito por outra pessoa como, salvo minha autoestima. Já se passou um ano e meio por aí, e a tatuagem continua impecável, a cor, os detalhes. Sempre foi um sonho tatuar com você e eu acha que era impossível. Até mesmo salva essa tatuagem que você reformou e me devolveu a autoestima e a alegria em poder mostra as pernas novamente. Parabéns por ser foda no que faz, e pelo amor que deposita no seu trampo. Total admiração.”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Boa noite Bruno! Passando para agradecer pela sua obra no meu braço haha! Cara minha mãe odeia tatuagem mas até ela gostou. Seu trabalho é impecável e o atendimento também. Ansiosa para as próximas.”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+<div class="review-card reveal">
+
+<div>
+
+<div class="review-stars">
+★★★★★
+</div>
+
+<p class="review-text">
+
+“Foi uma experiência maravilhosa, incrível... desde o início até o final. Você passou uma sensação de muita segurança e me deixou super confiante. No final ficou melhor do que eu imaginava! Eu e meu esposo ganhamos além de um tatuador um amigo. Parece que nos conhecemos a anos. Trabalho impecável.”
+
+</p>
+
+</div>
+
+<div class="review-source">
+Feedback real de cliente
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="review-hint">
+Deslize para ver mais avaliações →
+</div>
+
 
 </section>
 
@@ -2547,15 +2695,19 @@ do restante do site.
 
 <div class="container">
 
+
 <div class="kicker reveal">
 Portfólio
 </div>
+
 
 <h2 class="title reveal">
 Veja mais trabalhos
 </h2>
 
+
 <div class="more-grid">
+
 
 <div class="more-item reveal">
 <img
@@ -2564,12 +2716,14 @@ alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
 
+
 <div class="more-item reveal">
 <img
 src="IMG_4787.jpeg"
 alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
+
 
 <div class="more-item reveal">
 <img
@@ -2578,12 +2732,14 @@ alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
 
+
 <div class="more-item reveal">
 <img
 src="IMG_5835.jpeg"
 alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
+
 
 <div class="more-item reveal">
 <img
@@ -2592,12 +2748,14 @@ alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
 
+
 <div class="more-item reveal">
 <img
 src="IMG_9714.jpeg"
 alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
+
 
 <div class="more-item reveal">
 <img
@@ -2606,12 +2764,14 @@ alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
 
+
 <div class="more-item reveal">
 <img
 src="IMG_5110.jpeg"
 alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
+
 
 <div class="more-item reveal">
 <img
@@ -2620,11 +2780,14 @@ alt="Tattoo Bruno Kayke"
 loading="lazy">
 </div>
 
+
 </div>
+
 
 <div
 class="reveal"
 style="text-align:center;margin-top:35px;">
+
 
 <a
 class="btn"
@@ -2635,6 +2798,7 @@ rel="noopener noreferrer">
 Ver portfólio no Instagram →
 
 </a>
+
 
 </div>
 
@@ -2710,6 +2874,7 @@ em Barueri e Alphaville.
 
 <div class="footer-grid">
 
+
 <div>
 
 <h3>
@@ -2773,6 +2938,7 @@ Abrir no Google Maps →
 
 </div>
 
+
 </div>
 
 
@@ -2827,17 +2993,11 @@ if(hamburger && mobileMenu){
     "click",
     function(){
 
-      hamburger.classList.toggle(
-        "active"
-      );
+      hamburger.classList.toggle("active");
 
-      mobileMenu.classList.toggle(
-        "open"
-      );
+      mobileMenu.classList.toggle("open");
 
-      document.body.classList.toggle(
-        "menu-open"
-      );
+      document.body.classList.toggle("menu-open");
 
     }
   );
@@ -2851,17 +3011,11 @@ if(hamburger && mobileMenu){
       "click",
       function(){
 
-        hamburger.classList.remove(
-          "active"
-        );
+        hamburger.classList.remove("active");
 
-        mobileMenu.classList.remove(
-          "open"
-        );
+        mobileMenu.classList.remove("open");
 
-        document.body.classList.remove(
-          "menu-open"
-        );
+        document.body.classList.remove("menu-open");
 
       }
     );
@@ -2876,9 +3030,7 @@ if(hamburger && mobileMenu){
 ========================================= */
 
 const revealItems =
-document.querySelectorAll(
-  ".reveal"
-);
+document.querySelectorAll(".reveal");
 
 
 const revealObserver =
@@ -2895,9 +3047,7 @@ new IntersectionObserver(
           .add("visible");
 
           revealObserver
-          .unobserve(
-            entry.target
-          );
+          .unobserve(entry.target);
 
         }
 
@@ -2914,9 +3064,7 @@ new IntersectionObserver(
 revealItems.forEach(
   function(item){
 
-    revealObserver.observe(
-      item
-    );
+    revealObserver.observe(item);
 
   }
 );
@@ -2927,9 +3075,7 @@ revealItems.forEach(
 ========================================= */
 
 const heroPhoto =
-document.getElementById(
-  "heroPhoto"
-);
+document.getElementById("heroPhoto");
 
 
 function updateHeroParallax(){
@@ -2942,15 +3088,26 @@ function updateHeroParallax(){
   window.scrollY || 0;
 
   /*
-  Movimento bem leve para não
-  atrapalhar o enquadramento
-  do rosto no celular.
+  Agora o movimento é feito
+  no background-position para
+  não destruir o enquadramento lateral.
   */
 
-  heroPhoto.style.transform =
-  "scale(1.52) translateY(" +
-  (scrollY * .035) +
-  "px)";
+  if(window.innerWidth <= 500){
+
+    heroPhoto.style.backgroundPosition =
+    "86% calc(50% + " +
+    (scrollY * .025) +
+    "px)";
+
+  }else{
+
+    heroPhoto.style.backgroundPosition =
+    "81% calc(50% + " +
+    (scrollY * .025) +
+    "px)";
+
+  }
 
 }
 
@@ -2969,9 +3126,7 @@ window.addEventListener(
 ========================================= */
 
 const studioVideo =
-document.getElementById(
-  "studioVideo"
-);
+document.getElementById("studioVideo");
 
 
 if(studioVideo){
@@ -2988,9 +3143,7 @@ if(studioVideo){
 
   studioVideo.playsInline = true;
 
-  studioVideo.removeAttribute(
-    "controls"
-  );
+  studioVideo.removeAttribute("controls");
 
 
   function iniciarVideo(){
@@ -2998,9 +3151,7 @@ if(studioVideo){
     const playPromise =
     studioVideo.play();
 
-    if(
-      playPromise !== undefined
-    ){
+    if(playPromise !== undefined){
 
       playPromise.catch(
         function(){}
@@ -3044,9 +3195,7 @@ if(studioVideo){
   );
 
 
-  videoObserver.observe(
-    studioVideo
-  );
+  videoObserver.observe(studioVideo);
 
 
   [
