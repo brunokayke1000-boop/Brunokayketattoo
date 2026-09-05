@@ -9,9 +9,7 @@
 name="viewport"
 content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>
-Bruno Kayke Tattoo | Realismo Preto e Cinza em Barueri
-</title>
+<title>Bruno Kayke Tattoo | Realismo Preto e Cinza em Barueri</title>
 
 <meta
 name="description"
@@ -36,12 +34,7 @@ html{
 body{
   background:#050505;
   color:#f5f5f5;
-
-  font-family:
-  Arial,
-  Helvetica,
-  sans-serif;
-
+  font-family:Arial,Helvetica,sans-serif;
   overflow-x:hidden;
 }
 
@@ -76,39 +69,27 @@ section{
 
 .kicker{
   margin-bottom:15px;
-
   color:#8d8d8d;
-
   font-size:10px;
   font-weight:700;
-
   letter-spacing:4px;
   line-height:1.6;
-
   text-transform:uppercase;
 }
 
 .title{
   max-width:850px;
-
   margin-bottom:24px;
-
   font-size:clamp(42px,10vw,78px);
-
   line-height:.94;
-
   letter-spacing:-3px;
-
   text-transform:uppercase;
 }
 
 .lead{
   max-width:720px;
-
   color:#929292;
-
   font-size:17px;
-
   line-height:1.8;
 }
 
@@ -118,31 +99,21 @@ section{
 
 .btn{
   display:inline-flex;
-
   align-items:center;
   justify-content:center;
-
   gap:12px;
-
   min-height:58px;
-
   padding:0 26px;
-
   border:1px solid #333;
-
   border-radius:7px;
-
-  background:#0c0c0c;
-
+  background:rgba(10,10,10,.64);
   color:#fff;
-
   font-size:12px;
   font-weight:800;
-
-  letter-spacing:1.7px;
-
+  letter-spacing:1.8px;
   text-transform:uppercase;
-
+  backdrop-filter:blur(7px);
+  -webkit-backdrop-filter:blur(7px);
   transition:.25s ease;
 }
 
@@ -151,11 +122,9 @@ section{
 }
 
 .btn-white{
-  background:#f3f3f3;
-
+  background:rgba(244,244,244,.93);
   color:#050505;
-
-  border-color:#f3f3f3;
+  border-color:#eee;
 }
 
 
@@ -165,28 +134,20 @@ section{
 
 .site-header{
   position:fixed;
-
   z-index:1000;
-
   top:0;
   left:0;
-
   width:100%;
   height:96px;
-
-  background:rgba(4,4,4,.76);
-
-  border-bottom:1px solid rgba(255,255,255,.08);
-
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
+  background:rgba(4,4,4,.73);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
 }
 
 .header-inner{
   height:100%;
-
   display:flex;
-
   align-items:center;
   justify-content:space-between;
 }
@@ -194,41 +155,28 @@ section{
 .header-logo{
   width:68px;
   height:68px;
-
   object-fit:cover;
-
   border-radius:50%;
 }
 
 .hamburger{
   width:55px;
   height:55px;
-
   border:none;
-
   background:transparent;
-
   display:flex;
-
   flex-direction:column;
-
   justify-content:center;
-
   gap:7px;
-
   cursor:pointer;
 }
 
 .hamburger span{
   width:40px;
   height:3px;
-
   margin-left:auto;
-
   background:#fff;
-
   border-radius:10px;
-
   transition:.3s;
 }
 
@@ -251,47 +199,32 @@ section{
 
 .mobile-menu{
   position:fixed;
-
   z-index:990;
-
   inset:0;
-
   padding:135px 30px 45px;
-
   background:rgba(4,4,4,.98);
-
   opacity:0;
-
   visibility:hidden;
-
   transform:translateY(-20px);
-
   transition:.35s ease;
 }
 
 .mobile-menu.open{
   opacity:1;
-
   visibility:visible;
-
   transform:translateY(0);
 }
 
 .mobile-menu nav{
   display:flex;
-
   flex-direction:column;
 }
 
 .mobile-menu a{
   padding:20px 0;
-
   border-bottom:1px solid #1a1a1a;
-
   font-size:28px;
-
   font-weight:800;
-
   text-transform:uppercase;
 }
 
@@ -302,88 +235,72 @@ section{
 
 .hero{
   min-height:100svh;
-
-  padding:145px 0 115px;
-
+  padding:138px 0 112px;
   display:flex;
-
   align-items:center;
-
   overflow:hidden;
-
   background:#050505;
 }
 
 
 /*
-FOTO PRINCIPAL
-
-Aqui não usamos uma imagem diferente.
-Continuamos usando sua foto original.
+NOVA FOTO DA CAPA
+Já está cortada com metade do rosto.
 */
 
 .hero-photo{
   position:absolute;
-
   z-index:0;
-
   inset:0;
 
   background-image:
-  url("72F2EE76-9084-4E09-9D00-7A5B1444BE8C.jpeg");
+  url("64C14786-4F7D-4BF1-88EB-6AC0C2690B42.jpeg");
 
   background-repeat:no-repeat;
+  background-size:cover;
 
   /*
-  Aumenta bastante a foto.
+  Preserva o corte e joga o rosto
+  discretamente para a lateral direita.
   */
-  background-size:auto 138%;
+  background-position:58% center;
 
   /*
-  Joga o rosto para a lateral direita.
-  */
-  background-position:81% center;
-
-  /*
-  Preserva bastante da cor
-  e da luz quente original.
+  Só escurece um pouco.
+  A iluminação quente permanece.
   */
   filter:
-  brightness(.56)
-  contrast(1.08)
-  saturate(.92);
+  brightness(.66)
+  contrast(1.04)
+  saturate(.95);
 
-  will-change:background-position;
+  transform:scale(1.015);
+  will-change:transform;
 }
 
 
 /*
-A lateral esquerda fica mais escura,
-mas o rosto continua visível na direita.
+Escurecimento suave.
+Não apaga a luz original.
 */
 
 .hero-overlay{
   position:absolute;
-
   z-index:1;
-
   inset:0;
 
   background:
-
   linear-gradient(
     90deg,
-    rgba(0,0,0,.62) 0%,
-    rgba(0,0,0,.30) 35%,
-    rgba(0,0,0,.06) 65%,
-    rgba(0,0,0,.16) 100%
+    rgba(0,0,0,.28) 0%,
+    rgba(0,0,0,.10) 48%,
+    rgba(0,0,0,.19) 100%
   ),
-
   linear-gradient(
     to bottom,
-    rgba(0,0,0,.20) 0%,
-    rgba(0,0,0,.04) 48%,
-    rgba(5,5,5,.92) 100%
+    rgba(0,0,0,.23) 0%,
+    rgba(0,0,0,.03) 50%,
+    rgba(4,4,4,.83) 100%
   );
 }
 
@@ -392,42 +309,24 @@ mas o rosto continua visível na direita.
 
 .hero-content{
   position:relative;
-
   z-index:3;
-
   width:100%;
-
-  max-width:900px;
-
+  max-width:920px;
   margin:auto;
-
   text-align:center;
 }
 
-
-/* FRASE SUPERIOR */
-
 .hero-content > .kicker{
   width:100%;
-
-  margin:0 auto 20px;
-
-  color:#e0e0e0;
-
+  margin:0 auto 18px;
+  color:#e1e1e1;
   text-align:center;
-
   font-size:10px;
-
   font-weight:700;
-
   letter-spacing:3.3px;
-
   line-height:1.6;
-
   text-transform:uppercase;
-
-  text-shadow:
-  0 2px 14px rgba(0,0,0,.95);
+  text-shadow:0 2px 14px rgba(0,0,0,.98);
 }
 
 
@@ -435,124 +334,109 @@ mas o rosto continua visível na direita.
 
 .hero-brand{
   width:100%;
-
-  margin:0 auto 24px;
-
+  margin:0 auto 23px;
   text-align:center;
 }
 
 .hero-name{
   width:100%;
-
   margin:0;
-
   color:#fff;
-
   font-weight:900;
-
   line-height:.88;
-
   text-align:center;
-
   text-transform:uppercase;
-
   text-shadow:
-  0 5px 27px rgba(0,0,0,.85),
-  0 0 24px rgba(255,255,255,.05);
+  0 5px 28px rgba(0,0,0,.88),
+  0 0 20px rgba(255,255,255,.05);
 }
 
 .hero-name-main{
   display:block;
-
   width:100%;
-
   white-space:nowrap;
-
   font-size:clamp(43px,11vw,105px);
-
   letter-spacing:-3px;
-
   line-height:.92;
 }
-
-
-/*
-Mais próximo do nome.
-*/
 
 .hero-name-tattoo{
   display:block;
 
-  margin-top:0;
+  /*
+  Mais junto ao nome.
+  */
+  margin-top:-2px;
 
-  font-size:clamp(26px,6vw,44px);
-
-  font-weight:700;
-
-  letter-spacing:9px;
-
+  font-size:clamp(27px,6vw,44px);
+  font-weight:800;
+  letter-spacing:8px;
   line-height:1;
 }
 
 
-/*
-TATUAGEM DE ALTO PADRÃO
-*/
+/* DESTAQUE PRINCIPAL */
 
 .hero-subtitle{
-  width:100%;
-
+  position:relative;
+  display:inline-block;
   margin:23px auto 0;
+  padding:10px 3px 12px;
 
   color:#fff;
 
   font-size:clamp(21px,4.8vw,35px);
-
   font-weight:900;
-
   letter-spacing:4px;
-
-  line-height:1.3;
-
+  line-height:1.28;
   text-align:center;
-
   text-transform:uppercase;
 
   text-shadow:
   0 4px 20px rgba(0,0,0,1),
-  0 0 14px rgba(255,255,255,.19);
+  0 0 15px rgba(255,255,255,.18);
+}
+
+
+/*
+Pequeno brilho abaixo.
+Não é faixa preta.
+*/
+
+.hero-subtitle::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  width:54%;
+  height:1px;
+  transform:translateX(-50%);
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.55),
+    transparent
+  );
 }
 
 .hero-description{
   width:100%;
-
   max-width:680px;
-
-  margin:29px auto 32px;
-
-  color:#d4d4d4;
-
+  margin:28px auto 31px;
+  color:#d7d7d7;
   font-size:16px;
-
   line-height:1.75;
-
   text-align:center;
-
-  text-shadow:
-  0 2px 14px rgba(0,0,0,.95);
+  text-shadow:0 2px 14px rgba(0,0,0,.98);
 }
 
 .hero-actions{
   width:100%;
-
   max-width:620px;
-
   display:flex;
-
   flex-direction:column;
-
   gap:12px;
-
   margin:auto;
 }
 
@@ -565,22 +449,18 @@ TATUAGEM DE ALTO PADRÃO
 
 .scroll-indicator{
   position:absolute;
-
   z-index:5;
-
   left:50%;
-
-  bottom:max(16px,env(safe-area-inset-bottom));
+  bottom:max(14px,env(safe-area-inset-bottom));
 
   width:52px;
   height:52px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
-  color:rgba(255,255,255,.72);
+  color:rgba(255,255,255,.70);
 
   transform:translateX(-50%);
 
@@ -591,9 +471,7 @@ TATUAGEM DE ALTO PADRÃO
 
 .scroll-indicator .arrow{
   font-size:42px;
-
   font-weight:200;
-
   line-height:1;
 }
 
@@ -601,15 +479,11 @@ TATUAGEM DE ALTO PADRÃO
 
   0%,
   100%{
-    transform:
-    translateX(-50%)
-    translateY(0);
+    transform:translateX(-50%) translateY(0);
   }
 
   50%{
-    transform:
-    translateX(-50%)
-    translateY(8px);
+    transform:translateX(-50%) translateY(8px);
   }
 
 }
@@ -634,52 +508,34 @@ TATUAGEM DE ALTO PADRÃO
 
 .work-grid{
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:12px;
-
   margin-top:52px;
 }
 
 .work-card{
   position:relative;
-
   min-height:360px;
-
   overflow:hidden;
-
   border:1px solid #252525;
-
   border-radius:14px;
-
   background:#111;
 }
 
 .work-card img{
   position:absolute;
-
   inset:0;
-
   width:100%;
   height:100%;
-
   object-fit:cover;
-
-  filter:
-  saturate(.78)
-  brightness(.8);
-
+  filter:saturate(.78) brightness(.8);
   transition:transform .5s ease;
 }
 
 .work-card::after{
   content:"";
-
   position:absolute;
-
   inset:0;
-
   background:
   linear-gradient(
     to top,
@@ -690,9 +546,7 @@ TATUAGEM DE ALTO PADRÃO
 
 .work-info{
   position:absolute;
-
   z-index:2;
-
   left:16px;
   right:16px;
   bottom:18px;
@@ -700,29 +554,21 @@ TATUAGEM DE ALTO PADRÃO
 
 .work-type{
   margin-bottom:6px;
-
   color:#ccc;
-
   font-size:9px;
-
   letter-spacing:2px;
-
   text-transform:uppercase;
 }
 
 .work-info h3{
   margin-bottom:6px;
-
   font-size:18px;
-
   text-transform:uppercase;
 }
 
 .work-info p{
   color:#999;
-
   font-size:13px;
-
   line-height:1.5;
 }
 
@@ -741,72 +587,58 @@ TATUAGEM DE ALTO PADRÃO
 
 .studio-layout{
   display:grid;
-
   gap:40px;
-
   margin-top:46px;
 }
 
 .benefits{
   display:grid;
-
   gap:18px;
-
   margin:32px 0;
 }
 
 .benefit{
   display:flex;
-
   align-items:flex-start;
-
   gap:14px;
-
   color:#bcbcbc;
-
   line-height:1.6;
 }
 
 .check{
   flex:0 0 31px;
-
   width:31px;
   height:31px;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   border:1px solid #555;
-
   border-radius:50%;
-
   color:#ddd;
 }
 
 .studio-media{
   display:grid;
-
   gap:18px;
 }
 
 .studio-image,
 .studio-video{
   overflow:hidden;
-
   border:1px solid #292929;
-
   border-radius:17px;
-
   background:#090909;
 }
 
 .studio-image img{
   height:660px;
-
   object-fit:cover;
 }
+
+
+/* =========================================
+   VÍDEO
+========================================= */
 
 .studio-video{
   position:relative;
@@ -814,34 +646,25 @@ TATUAGEM DE ALTO PADRÃO
 
 .studio-video video{
   display:block;
-
   width:100%;
-
   aspect-ratio:9 / 16;
-
   object-fit:cover;
-
   background:#000;
-
   pointer-events:none;
-
   -webkit-user-select:none;
   user-select:none;
 }
 
 .media-caption{
   padding:17px;
-
   color:#777;
-
   font-size:13px;
-
   line-height:1.6;
 }
 
 
 /* =========================================
-   SOBRE
+   SOBRE BRUNO
 ========================================= */
 
 .about-title span{
@@ -850,23 +673,16 @@ TATUAGEM DE ALTO PADRÃO
 
 .about-text{
   max-width:780px;
-
   margin-top:33px;
-
   color:#a3a3a3;
-
   font-size:20px;
-
   line-height:1.75;
 }
 
 .quote{
   max-width:790px;
-
   margin:55px 0;
-
   padding:29px 30px 29px 45px;
-
   border-left:3px solid #ddd;
 
   background:
@@ -877,51 +693,38 @@ TATUAGEM DE ALTO PADRÃO
   );
 
   color:#d1d1d1;
-
   font-size:19px;
-
   font-style:italic;
-
   line-height:1.75;
 }
 
 .stats{
   display:grid;
-
   gap:15px;
 }
 
 .stat{
   padding:27px;
-
   border:1px solid #343434;
-
   border-radius:11px;
-
   background:#090909;
 }
 
 .stat strong{
   display:block;
-
   margin-bottom:8px;
-
   font-size:34px;
 }
 
 .stat h3{
   margin-bottom:8px;
-
   font-size:14px;
-
   letter-spacing:2px;
-
   text-transform:uppercase;
 }
 
 .stat p{
   color:#777;
-
   line-height:1.55;
 }
 
@@ -944,19 +747,14 @@ TATUAGEM DE ALTO PADRÃO
 
 .process-grid{
   display:grid;
-
   gap:18px;
-
   margin-top:60px;
 }
 
 .process-card{
   min-height:245px;
-
   padding:29px;
-
   border:1px solid #1f1f1f;
-
   border-radius:17px;
 
   background:
@@ -969,42 +767,32 @@ TATUAGEM DE ALTO PADRÃO
 
 .process-number{
   margin-bottom:30px;
-
   color:#373737;
-
   font-size:58px;
-
   font-weight:900;
-
   line-height:1;
 }
 
 .process-card h3{
   margin-bottom:14px;
-
   font-size:20px;
-
   letter-spacing:1.5px;
-
   text-transform:uppercase;
 }
 
 .process-card p{
   color:#878787;
-
   font-size:15px;
-
   line-height:1.7;
 }
 
 
 /* =========================================
-   AVALIAÇÕES
+   FEEDBACKS
 ========================================= */
 
 .reviews{
   overflow:hidden;
-
   background:#050505;
 }
 
@@ -1012,11 +800,7 @@ TATUAGEM DE ALTO PADRÃO
   text-align:center;
 }
 
-.reviews-heading .title{
-  margin-left:auto;
-  margin-right:auto;
-}
-
+.reviews-heading .title,
 .reviews-heading .lead{
   margin-left:auto;
   margin-right:auto;
@@ -1024,30 +808,26 @@ TATUAGEM DE ALTO PADRÃO
 
 
 /*
-Cards horizontais no celular.
+CARROSSEL HORIZONTAL
 */
 
 .reviews-track{
   display:flex;
+  gap:18px;
 
-  gap:16px;
-
-  width:100%;
-
-  margin-top:52px;
+  margin-top:50px;
 
   padding:
   0 max(
     22px,
     calc((100vw - 1120px) / 2)
-  );
+  )
+  15px;
 
   overflow-x:auto;
 
   scroll-snap-type:x mandatory;
-
   scrollbar-width:none;
-
   -webkit-overflow-scrolling:touch;
 }
 
@@ -1055,22 +835,18 @@ Cards horizontais no celular.
   display:none;
 }
 
+
+/*
+CARD
+*/
+
 .review-card{
-  flex:0 0 min(390px,84vw);
+  flex:0 0 min(390px,86vw);
 
-  min-height:315px;
+  overflow:hidden;
 
-  display:flex;
-
-  flex-direction:column;
-
-  justify-content:space-between;
-
-  padding:28px;
-
-  border:1px solid #262626;
-
-  border-radius:18px;
+  border:1px solid #292929;
+  border-radius:19px;
 
   background:
   linear-gradient(
@@ -1082,42 +858,99 @@ Cards horizontais no celular.
   scroll-snap-align:center;
 }
 
+
+/*
+PRINT ORIGINAL DO CLIENTE
+Mantém foto/avatar e depoimento.
+*/
+
+.review-image{
+  position:relative;
+
+  width:100%;
+  aspect-ratio:9 / 13;
+
+  overflow:hidden;
+
+  background:#080808;
+}
+
+.review-image img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+  object-position:center;
+
+  filter:
+  brightness(.78)
+  contrast(1.03);
+}
+
+.review-image::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    to bottom,
+    transparent 62%,
+    rgba(8,8,8,.95) 100%
+  );
+
+  pointer-events:none;
+}
+
+.review-content{
+  padding:0 24px 27px;
+}
+
+
+/*
+5 ESTRELAS
+*/
+
 .review-stars{
-  margin-bottom:22px;
+  position:relative;
+  z-index:2;
 
-  color:#f4c95d;
+  margin-top:-17px;
+  margin-bottom:18px;
 
-  font-size:23px;
+  color:#f1c55c;
+
+  font-size:22px;
 
   letter-spacing:4px;
 
-  line-height:1;
+  text-shadow:
+  0 2px 12px rgba(0,0,0,.9);
 }
 
 .review-text{
   color:#d0d0d0;
-
-  font-size:16px;
-
-  line-height:1.7;
+  font-size:15px;
+  line-height:1.65;
 }
 
 .review-source{
-  margin-top:26px;
+  margin-top:22px;
 
-  color:#6f6f6f;
+  color:#666;
 
-  font-size:10px;
-
+  font-size:9px;
   font-weight:800;
 
-  letter-spacing:2.5px;
+  letter-spacing:2.3px;
 
   text-transform:uppercase;
 }
 
 .review-hint{
-  margin-top:22px;
+  margin-top:18px;
 
   color:#555;
 
@@ -1141,34 +974,24 @@ Cards horizontais no celular.
 
 .more-grid{
   display:grid;
-
   grid-template-columns:repeat(3,1fr);
-
   gap:8px;
-
   margin-top:42px;
 }
 
 .more-item{
   position:relative;
-
   aspect-ratio:1 / 1.25;
-
   overflow:hidden;
-
   border:1px solid #222;
-
   border-radius:7px;
-
   background:#111;
 }
 
 .more-item img{
   width:100%;
   height:100%;
-
   object-fit:cover;
-
   transition:transform .4s ease;
 }
 
@@ -1178,7 +1001,7 @@ Cards horizontais no celular.
 
 
 /* =========================================
-   CTA FINAL
+   CTA
 ========================================= */
 
 .final-cta{
@@ -1188,13 +1011,9 @@ Cards horizontais no celular.
 
 .cta-box{
   position:relative;
-
   overflow:hidden;
-
   padding:65px 28px;
-
   border:1px solid #252525;
-
   border-radius:20px;
 
   background:
@@ -1209,27 +1028,20 @@ Cards horizontais no celular.
 
 .cta-box h2{
   max-width:780px;
-
   margin:0 auto 20px;
 
   font-size:clamp(38px,9vw,70px);
 
   line-height:.95;
-
   letter-spacing:-3px;
-
   text-transform:uppercase;
 }
 
 .cta-box p{
   max-width:620px;
-
   margin:0 auto 30px;
-
   color:#8e8e8e;
-
   font-size:16px;
-
   line-height:1.75;
 }
 
@@ -1240,54 +1052,40 @@ Cards horizontais no celular.
 
 .footer{
   padding:75px 0 40px;
-
   border-top:1px solid #181818;
-
   background:#050505;
 }
 
 .footer-logo{
   width:115px;
-
   margin-bottom:32px;
-
   border-radius:50%;
 }
 
 .footer-tagline{
   max-width:550px;
-
   margin-bottom:45px;
-
   color:#959595;
-
   font-size:18px;
-
   line-height:1.7;
 }
 
 .footer-grid{
   display:grid;
-
   gap:43px;
 }
 
 .footer h3{
   margin-bottom:19px;
-
   font-size:12px;
-
   letter-spacing:2.5px;
-
   text-transform:uppercase;
 }
 
 .footer p,
 .footer a{
   color:#8b8b8b;
-
   font-size:14px;
-
   line-height:1.8;
 }
 
@@ -1297,15 +1095,10 @@ Cards horizontais no celular.
 
 .footer-bottom{
   margin-top:55px;
-
   padding-top:34px;
-
   border-top:1px solid #181818;
-
   color:#555;
-
   font-size:12px;
-
   line-height:1.7;
 }
 
@@ -1316,7 +1109,6 @@ Cards horizontais no celular.
 
 .whatsapp-float{
   position:fixed;
-
   z-index:1500;
 
   right:21px;
@@ -1331,12 +1123,10 @@ Cards horizontais no celular.
   height:68px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   border-radius:50%;
-
   background:#25D366;
 
   box-shadow:
@@ -1344,22 +1134,18 @@ Cards horizontais no celular.
   rgba(37,211,102,.30);
 
   animation:
-  whatsappPulse 2s
-  ease-in-out infinite;
+  whatsappPulse 2s ease-in-out infinite;
 }
 
 .whatsapp-float svg{
   width:35px;
   height:35px;
-
   fill:#fff;
 }
 
 .whatsapp-float::before{
   content:"";
-
   position:absolute;
-
   inset:-12px;
 
   border:
@@ -1369,8 +1155,7 @@ Cards horizontais no celular.
   border-radius:50%;
 
   animation:
-  whatsappRing 2s
-  ease-out infinite;
+  whatsappRing 2s ease-out infinite;
 }
 
 @keyframes whatsappPulse{
@@ -1390,13 +1175,11 @@ Cards horizontais no celular.
 
   0%{
     transform:scale(.85);
-
     opacity:.7;
   }
 
   100%{
     transform:scale(1.18);
-
     opacity:0;
   }
 
@@ -1404,12 +1187,11 @@ Cards horizontais no celular.
 
 
 /* =========================================
-   ANIMAÇÃO
+   REVEAL
 ========================================= */
 
 .reveal{
   opacity:0;
-
   transform:translateY(24px);
 
   transition:
@@ -1419,7 +1201,6 @@ Cards horizontais no celular.
 
 .reveal.visible{
   opacity:1;
-
   transform:translateY(0);
 }
 
@@ -1431,8 +1212,7 @@ Cards horizontais no celular.
 @media(min-width:800px){
 
   .work-grid{
-    grid-template-columns:
-    repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
   }
 
   .work-card{
@@ -1440,9 +1220,7 @@ Cards horizontais no celular.
   }
 
   .studio-layout{
-    grid-template-columns:
-    1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     align-items:start;
   }
 
@@ -1452,23 +1230,19 @@ Cards horizontais no celular.
   }
 
   .stats{
-    grid-template-columns:
-    repeat(3,1fr);
+    grid-template-columns:repeat(3,1fr);
   }
 
   .process-grid{
-    grid-template-columns:
-    repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
   }
 
   .more-grid{
-    grid-template-columns:
-    repeat(6,1fr);
+    grid-template-columns:repeat(6,1fr);
   }
 
   .footer-grid{
-    grid-template-columns:
-    1.2fr 1fr 1fr;
+    grid-template-columns:1.2fr 1fr 1fr;
   }
 
 }
@@ -1489,109 +1263,104 @@ Cards horizontais no celular.
 
   .hero{
     min-height:100svh;
-
-    padding-top:134px;
-
-    padding-bottom:106px;
-
+    padding-top:132px;
+    padding-bottom:104px;
     align-items:center;
   }
 
 
   /*
-  MAIS ZOOM + SOMENTE METADE DO ROSTO
-  NA LATERAL DIREITA
+  Como a nova foto já veio cortada,
+  não usamos mais um zoom enorme.
   */
 
   .hero-photo{
-    background-size:auto 153%;
+    background-size:cover;
 
-    background-position:
-    86% center;
+    /*
+    Rosto lateral.
+    */
+    background-position:60% center;
 
     filter:
-    brightness(.53)
-    contrast(1.08)
-    saturate(.95);
+    brightness(.64)
+    contrast(1.04)
+    saturate(.96);
+
+    transform:scale(1.01);
   }
 
 
   .hero-overlay{
     background:
-
     linear-gradient(
       90deg,
-      rgba(0,0,0,.68) 0%,
-      rgba(0,0,0,.42) 31%,
-      rgba(0,0,0,.12) 58%,
-      rgba(0,0,0,.09) 100%
+      rgba(0,0,0,.24) 0%,
+      rgba(0,0,0,.06) 50%,
+      rgba(0,0,0,.16) 100%
     ),
-
     linear-gradient(
       to bottom,
-      rgba(0,0,0,.18),
+      rgba(0,0,0,.22),
       rgba(0,0,0,.02) 48%,
-      rgba(5,5,5,.91) 100%
+      rgba(4,4,4,.84) 100%
     );
   }
 
 
   .hero-content{
     width:100%;
-
     max-width:none;
-
     padding:0;
-
     text-align:center;
   }
 
 
   .hero-content > .kicker{
-    margin:0 auto 18px;
-
+    margin:0 auto 17px;
     font-size:9px;
-
-    letter-spacing:2.35px;
-
+    letter-spacing:2.3px;
     line-height:1.55;
   }
 
 
   .hero-brand{
-    margin-bottom:22px;
+    margin-bottom:20px;
   }
 
 
   .hero-name-main{
-    font-size:
-    clamp(38px,11vw,55px);
-
+    font-size:clamp(38px,11vw,55px);
     letter-spacing:-2px;
-
     white-space:nowrap;
   }
 
 
+  /*
+  Bem junto ao nome.
+  */
+
   .hero-name-tattoo{
-    margin-top:-1px;
-
+    margin-top:-3px;
     font-size:26px;
-
     letter-spacing:7px;
   }
 
 
+  /*
+  Maior destaque.
+  */
+
   .hero-subtitle{
-    margin-top:22px;
+    margin-top:19px;
+    padding-bottom:11px;
 
     font-size:19px;
-
     font-weight:900;
 
-    letter-spacing:2.25px;
+    letter-spacing:2.15px;
 
-    line-height:1.35;
+    line-height:1.34;
   }
 
 
@@ -1599,7 +1368,7 @@ Cards horizontais no celular.
     max-width:100%;
 
     margin:
-    27px auto 28px;
+    25px auto 27px;
 
     padding:0 3px;
 
@@ -1611,50 +1380,54 @@ Cards horizontais no celular.
 
   .hero-actions{
     max-width:none;
-
     gap:12px;
   }
 
 
   .hero-actions .btn{
     min-height:61px;
-
     font-size:13px;
-
     letter-spacing:2.2px;
   }
 
+
+  /* PORTFÓLIO */
 
   .work-card{
     min-height:340px;
   }
 
 
+  /* ESTÚDIO */
+
   .studio-image img{
     height:610px;
   }
 
-
   .studio-video video{
     height:auto;
-
     aspect-ratio:9 / 16;
   }
 
 
+  /* FEEDBACK */
+
   .review-card{
-    flex-basis:86vw;
-
-    min-height:330px;
-
-    padding:25px;
+    flex-basis:88vw;
   }
 
+  .review-image{
+    aspect-ratio:9 / 12;
+  }
+
+  .review-content{
+    padding:
+    0 22px 25px;
+  }
 
   .review-text{
     font-size:15px;
-
-    line-height:1.68;
+    line-height:1.65;
   }
 
 }
@@ -1770,6 +1543,7 @@ Especialista em Realismo Preto e Cinza
 
 <div class="hero-brand reveal">
 
+
 <h1 class="hero-name">
 
 <span class="hero-name-main">
@@ -1788,6 +1562,7 @@ TATTOO
 Tatuagem de alto padrão
 
 </div>
+
 
 </div>
 
@@ -1843,7 +1618,7 @@ aria-label="Role para ver os trabalhos">
 
 
 <!-- =========================================
-     TRABALHOS
+     TRABALHOS EXCLUSIVOS
 ========================================= -->
 
 <section id="trabalhos">
@@ -1899,7 +1674,8 @@ contraste e profundidade.
 </article>
 
 
-<!-- FOTO TROCADA -->
+
+<!-- COMPOSIÇÃO RELIGIOSA COM FOTO TROCADA -->
 
 <article class="work-card reveal">
 
@@ -1925,6 +1701,7 @@ em projetos de impacto.
 </div>
 
 </article>
+
 
 
 <article class="work-card reveal">
@@ -1953,6 +1730,7 @@ textura e sombreamento anatômico.
 </article>
 
 
+
 <article class="work-card reveal">
 
 <img
@@ -1979,7 +1757,8 @@ para cada cliente.
 </article>
 
 
-<!-- FOTO TROCADA -->
+
+<!-- CONTRASTE COM FOTO TROCADA -->
 
 <article class="work-card reveal">
 
@@ -2005,6 +1784,7 @@ e leitura tridimensional.
 </div>
 
 </article>
+
 
 
 <article class="work-card reveal">
@@ -2083,7 +1863,9 @@ localizado no Bethaville, em Barueri.
 
 <div class="benefit reveal">
 
-<div class="check">✓</div>
+<div class="check">
+✓
+</div>
 
 <div>
 Atendimento individual
@@ -2095,7 +1877,9 @@ e com horário agendado.
 
 <div class="benefit reveal">
 
-<div class="check">✓</div>
+<div class="check">
+✓
+</div>
 
 <div>
 Ambiente organizado,
@@ -2107,7 +1891,9 @@ reservado e confortável.
 
 <div class="benefit reveal">
 
-<div class="check">✓</div>
+<div class="check">
+✓
+</div>
 
 <div>
 Materiais descartáveis
@@ -2119,7 +1905,9 @@ e rotina de biossegurança.
 
 <div class="benefit reveal">
 
-<div class="check">✓</div>
+<div class="check">
+✓
+</div>
 
 <div>
 Ambiente climatizado,
@@ -2131,7 +1919,9 @@ preparado para sessões longas.
 
 <div class="benefit reveal">
 
-<div class="check">✓</div>
+<div class="check">
+✓
+</div>
 
 <div>
 Localização no Bethaville,
@@ -2147,7 +1937,8 @@ Barueri - SP.
 <a
 class="btn btn-white reveal"
 href="https://www.google.com/maps/search/?api=1&query=Avenida+An%C3%A1polis%2C+100%2C+Bethaville%2C+Barueri+-+SP"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer">
 
 Conhecer o estúdio no Maps →
 
@@ -2454,7 +2245,7 @@ e excelência no atendimento.
 
 
 <!-- =========================================
-     FEEDBACKS REAIS
+     FEEDBACKS
 ========================================= -->
 
 <section
@@ -2471,17 +2262,15 @@ Experiência real
 
 
 <h2 class="title reveal">
-
 O que meus clientes dizem
-
 </h2>
 
 
 <p class="lead reveal">
 
-Depoimentos enviados por clientes
-após suas experiências
-com o Bruno Kayke Tattoo.
+Depoimentos reais enviados
+por clientes após suas experiências
+no Bruno Kayke Tattoo.
 
 </p>
 
@@ -2492,9 +2281,20 @@ com o Bruno Kayke Tattoo.
 <div class="reviews-track">
 
 
-<div class="review-card reveal">
+<!-- FEEDBACK 1 -->
 
-<div>
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0475.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2502,22 +2302,34 @@ com o Bruno Kayke Tattoo.
 
 <p class="review-text">
 
-“Cara, procurar você pra refazer minha primeira tatuagem foi a melhor decisão que eu já tomei! Quando fiz com outro profissional, não ficou nada como eu queria. Mas aí eu expliquei pra você o que eu tava pensando, e você me ouviu super atentamente, deu várias sugestões, e, olha, o resultado ficou demais! Até hoje, todo mundo que vê elogia muito o desenho, diz que a técnica ficou muito boa. Me salvou, haha! Valeu por ter cuidado tanto e ter feito com tanto carinho!”
+“Procurar você pra refazer minha primeira tatuagem foi a melhor decisão que eu já tomei. Você me ouviu, deu várias sugestões e o resultado ficou demais. Até hoje todo mundo que vê elogia muito o desenho e a técnica.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 2 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0476.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2525,22 +2337,34 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Depois que fechei o braço com você a vida mudou completamente kkkkkk, as mulheres começaram a me olhar diferente aí, tive que lançar mais uma né kkkkk, e irei fazer a próxima logo mais em, e sem contar que aumentou a autoestima lá no alto, você se sente até diferente. E obrigado por proporcionar isso com essas arte foda pra krlh!!!”
+“Depois que fechei o braço com você a vida mudou completamente. Sem contar que aumentou a autoestima lá no alto. Obrigado por proporcionar isso com essas artes.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 3 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0477.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2548,22 +2372,34 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Helloooo! Fui por indicação e não me arrependo de ter ido fazer com você desde a minha primeira tatuagem. Traços impecáveis, trabalho incrível. Ansiosa para a próxima! ❤️”
+“Fui por indicação e não me arrependo de ter ido fazer com você desde a minha primeira tatuagem. Traços impecáveis, trabalho incrível. Ansiosa para a próxima!”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 4 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0478.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2571,22 +2407,34 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Conheço você e o seu trabalho de anos, acompanhei toda a evolução. Sempre tive receio de fazer uma tatuagem grande e escolhi você, devido a sua dedicação. Apesar das minhas inseguranças, me acolheu e me atendeu extremamente bem. Foi perfeito! A tatuagem é linda e desde dia que fiz só recebo elogios. Você arrasou! ❤️”
+“Conheço você e seu trabalho há anos e acompanhei toda a evolução. Apesar das minhas inseguranças, me acolheu e me atendeu extremamente bem. Foi perfeito. A tatuagem é linda e só recebo elogios.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 5 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0479.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2594,22 +2442,34 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Sem dúvida nenhuma a arte mais fodaaa, todo canto perguntam quem fez e eu mostro com a maior satisfação seu perfil irmão, você é fora da curva desde o começo !! Logo menos nois tá lançando outraaa 🔥”
+“Sem dúvida nenhuma a arte mais foda. Todo canto perguntam quem fez e eu mostro com a maior satisfação seu perfil. Você é fora da curva desde o começo.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 6 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0480.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2617,22 +2477,34 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Boa noite! Sempre tive a total admiração pelo seu trabalho sem antes mesmo de realizar. Você não só salvou o trampo que foi feito por outra pessoa como, salvo minha autoestima. Já se passou um ano e meio por aí, e a tatuagem continua impecável, a cor, os detalhes. Sempre foi um sonho tatuar com você e eu acha que era impossível. Até mesmo salva essa tatuagem que você reformou e me devolveu a autoestima e a alegria em poder mostra as pernas novamente. Parabéns por ser foda no que faz, e pelo amor que deposita no seu trampo. Total admiração.”
+“Você não só salvou o trabalho que foi feito por outra pessoa como salvou minha autoestima. A tatuagem continua impecável, a cor e os detalhes. Parabéns pelo amor que deposita no seu trabalho.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 7 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0482.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2640,22 +2512,34 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Boa noite Bruno! Passando para agradecer pela sua obra no meu braço haha! Cara minha mãe odeia tatuagem mas até ela gostou. Seu trabalho é impecável e o atendimento também. Ansiosa para as próximas.”
+“Passando para agradecer pela sua obra no meu braço. Minha mãe odeia tatuagem, mas até ela gostou. Seu trabalho é impecável e o atendimento também. Ansiosa para as próximas.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
 
+</article>
 
-<div class="review-card reveal">
 
-<div>
+
+<!-- FEEDBACK 8 -->
+
+<article class="review-card reveal">
+
+<div class="review-image">
+
+<img
+src="IMG_0483.jpeg"
+alt="Feedback real de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="review-content">
 
 <div class="review-stars">
 ★★★★★
@@ -2663,17 +2547,17 @@ Feedback real de cliente
 
 <p class="review-text">
 
-“Foi uma experiência maravilhosa, incrível... desde o início até o final. Você passou uma sensação de muita segurança e me deixou super confiante. No final ficou melhor do que eu imaginava! Eu e meu esposo ganhamos além de um tatuador um amigo. Parece que nos conhecemos a anos. Trabalho impecável.”
+“Foi uma experiência maravilhosa e incrível, desde o início até o final. Você passou uma sensação de muita segurança e me deixou super confiante. No final ficou melhor do que eu imaginava. Trabalho impecável.”
 
 </p>
 
-</div>
-
 <div class="review-source">
-Feedback real de cliente
+Feedback real
 </div>
 
 </div>
+
+</article>
 
 
 </div>
@@ -2688,7 +2572,7 @@ Deslize para ver mais avaliações →
 
 
 <!-- =========================================
-     VEJA MAIS TRABALHOS
+     MAIS TRABALHOS
 ========================================= -->
 
 <section class="more-work divider">
@@ -2710,74 +2594,47 @@ Veja mais trabalhos
 
 
 <div class="more-item reveal">
-<img
-src="IMG_4038.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_4038.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_4787.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_4787.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_4814.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_4814.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_5835.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_5835.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_7753.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_7753.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_9714.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_9714.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_4781_Original.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_4781_Original.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_5110.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_5110.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
 <div class="more-item reveal">
-<img
-src="IMG_6595.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
+<img src="IMG_6595.jpeg" alt="Tattoo Bruno Kayke" loading="lazy">
 </div>
 
 
@@ -2859,10 +2716,12 @@ id="contato">
 
 <div class="container">
 
+
 <img
 class="footer-logo"
 src="IMG_9645.png"
 alt="Bruno Kayke Tattoo">
+
 
 <p class="footer-tagline">
 
@@ -2871,6 +2730,7 @@ Especialista em Realismo Preto e Cinza
 em Barueri e Alphaville.
 
 </p>
+
 
 <div class="footer-grid">
 
@@ -2948,6 +2808,7 @@ Abrir no Google Maps →
 Todos os direitos reservados.
 
 </div>
+
 
 </div>
 
@@ -3071,7 +2932,7 @@ revealItems.forEach(
 
 
 /* =========================================
-   PARALLAX DA CAPA
+   PARALLAX SUAVE DA CAPA
 ========================================= */
 
 const heroPhoto =
@@ -3088,26 +2949,14 @@ function updateHeroParallax(){
   window.scrollY || 0;
 
   /*
-  Agora o movimento é feito
-  no background-position para
-  não destruir o enquadramento lateral.
+  Movimento mínimo porque a imagem
+  já está cortada exatamente como queremos.
   */
 
-  if(window.innerWidth <= 500){
-
-    heroPhoto.style.backgroundPosition =
-    "86% calc(50% + " +
-    (scrollY * .025) +
-    "px)";
-
-  }else{
-
-    heroPhoto.style.backgroundPosition =
-    "81% calc(50% + " +
-    (scrollY * .025) +
-    "px)";
-
-  }
+  heroPhoto.style.transform =
+  "scale(1.01) translateY(" +
+  (scrollY * .018) +
+  "px)";
 
 }
 
@@ -3122,7 +2971,7 @@ window.addEventListener(
 
 
 /* =========================================
-   VÍDEO AUTOMÁTICO
+   VÍDEO - COMEÇA EXATAMENTE NO 0:00
 ========================================= */
 
 const studioVideo =
@@ -3132,21 +2981,29 @@ document.getElementById("studioVideo");
 if(studioVideo){
 
   studioVideo.muted = true;
-
   studioVideo.defaultMuted = true;
-
   studioVideo.volume = 0;
-
   studioVideo.autoplay = true;
-
   studioVideo.loop = true;
-
   studioVideo.playsInline = true;
 
   studioVideo.removeAttribute("controls");
 
 
-  function iniciarVideo(){
+  let videoPreparado = false;
+
+
+  function iniciarVideoDoComeco(){
+
+    if(!videoPreparado){
+
+      try{
+        studioVideo.currentTime = 0;
+      }catch(e){}
+
+      videoPreparado = true;
+
+    }
 
     const playPromise =
     studioVideo.play();
@@ -3162,7 +3019,55 @@ if(studioVideo){
   }
 
 
-  iniciarVideo();
+  studioVideo.addEventListener(
+    "loadedmetadata",
+    function(){
+
+      /*
+      Primeiro frame do arquivo.
+      */
+      try{
+        studioVideo.currentTime = 0;
+      }catch(e){}
+
+      iniciarVideoDoComeco();
+
+    },
+    {
+      once:true
+    }
+  );
+
+
+  studioVideo.addEventListener(
+    "ended",
+    function(){
+
+      try{
+        studioVideo.currentTime = 0;
+      }catch(e){}
+
+      iniciarVideoDoComeco();
+
+    }
+  );
+
+
+  [
+    "loadeddata",
+    "canplay",
+    "canplaythrough"
+  ]
+  .forEach(
+    function(eventName){
+
+      studioVideo.addEventListener(
+        eventName,
+        iniciarVideoDoComeco
+      );
+
+    }
+  );
 
 
   const videoObserver =
@@ -3174,7 +3079,7 @@ if(studioVideo){
 
           if(entry.isIntersecting){
 
-            iniciarVideo();
+            iniciarVideoDoComeco();
 
           }else{
 
@@ -3188,9 +3093,7 @@ if(studioVideo){
     },
     {
       threshold:.01,
-
-      rootMargin:
-      "200px 0px 200px 0px"
+      rootMargin:"200px 0px 200px 0px"
     }
   );
 
@@ -3198,37 +3101,9 @@ if(studioVideo){
   videoObserver.observe(studioVideo);
 
 
-  [
-    "loadedmetadata",
-    "loadeddata",
-    "canplay",
-    "canplaythrough"
-  ]
-  .forEach(
-    function(eventName){
-
-      studioVideo
-      .addEventListener(
-        eventName,
-        iniciarVideo
-      );
-
-    }
-  );
-
-
-  window.addEventListener(
-    "scroll",
-    iniciarVideo,
-    {
-      passive:true
-    }
-  );
-
-
   window.addEventListener(
     "touchstart",
-    iniciarVideo,
+    iniciarVideoDoComeco,
     {
       passive:true
     }
@@ -3245,7 +3120,7 @@ if(studioVideo){
         "visible"
       ){
 
-        iniciarVideo();
+        iniciarVideoDoComeco();
 
       }
 
@@ -3255,7 +3130,7 @@ if(studioVideo){
 
   window.addEventListener(
     "pageshow",
-    iniciarVideo
+    iniciarVideoDoComeco
   );
 
 }
