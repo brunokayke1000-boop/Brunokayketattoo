@@ -230,7 +230,7 @@ section{
 
 
 /* =========================================
-   CAPA
+   HERO / CAPA
 ========================================= */
 
 .hero{
@@ -248,18 +248,18 @@ section{
   inset:0;
 
   background-image:
-  url("64C14786-4F7D-4BF1-88EB-6AC0C2690B42.jpeg");
+  url("078F9483-88CD-418A-B09B-2FE46A269665.jpeg");
 
   background-repeat:no-repeat;
   background-size:cover;
-  background-position:58% center;
+  background-position:60% center;
 
   filter:
-  brightness(.66)
-  contrast(1.04)
-  saturate(.95);
+  brightness(.78)
+  contrast(1.03)
+  saturate(1);
 
-  transform:scale(1.015);
+  transform:scale(1.08);
   will-change:transform;
 }
 
@@ -271,15 +271,15 @@ section{
   background:
   linear-gradient(
     90deg,
-    rgba(0,0,0,.28) 0%,
-    rgba(0,0,0,.10) 48%,
-    rgba(0,0,0,.19) 100%
+    rgba(0,0,0,.25) 0%,
+    rgba(0,0,0,.08) 48%,
+    rgba(0,0,0,.18) 100%
   ),
   linear-gradient(
     to bottom,
-    rgba(0,0,0,.23) 0%,
-    rgba(0,0,0,.03) 50%,
-    rgba(4,4,4,.83) 100%
+    rgba(0,0,0,.19) 0%,
+    rgba(0,0,0,.02) 52%,
+    rgba(4,4,4,.80) 100%
   );
 }
 
@@ -385,25 +385,19 @@ section{
   width:100%;
   max-width:680px;
   margin:28px auto 31px;
-
   color:#d7d7d7;
-
   font-size:16px;
   line-height:1.75;
   text-align:center;
-
-  text-shadow:
-  0 2px 14px rgba(0,0,0,.98);
+  text-shadow:0 2px 14px rgba(0,0,0,.98);
 }
 
 .hero-actions{
   width:100%;
   max-width:620px;
-
   display:flex;
   flex-direction:column;
   gap:12px;
-
   margin:auto;
 }
 
@@ -497,10 +491,8 @@ section{
 .work-card img{
   position:absolute;
   inset:0;
-
   width:100%;
   height:100%;
-
   object-fit:cover;
 
   filter:
@@ -514,7 +506,6 @@ section{
   content:"";
   position:absolute;
   inset:0;
-
   background:
   linear-gradient(
     to top,
@@ -526,7 +517,6 @@ section{
 .work-info{
   position:absolute;
   z-index:2;
-
   left:16px;
   right:16px;
   bottom:18px;
@@ -587,17 +577,13 @@ section{
 
 .check{
   flex:0 0 31px;
-
   width:31px;
   height:31px;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   border:1px solid #555;
   border-radius:50%;
-
   color:#ddd;
 }
 
@@ -666,10 +652,7 @@ section{
 .quote{
   max-width:790px;
   margin:55px 0;
-
-  padding:
-  29px 30px 29px 45px;
-
+  padding:29px 30px 29px 45px;
   border-left:3px solid #ddd;
 
   background:
@@ -741,7 +724,6 @@ section{
 .process-card{
   min-height:245px;
   padding:29px;
-
   border:1px solid #1f1f1f;
   border-radius:17px;
 
@@ -794,6 +776,9 @@ section{
   margin-right:auto;
 }
 
+
+/* CARROSSEL */
+
 .reviews-track{
   display:flex;
   gap:18px;
@@ -805,11 +790,11 @@ section{
     22px,
     calc((100vw - 1120px) / 2)
   )
-  15px;
+  16px;
 
   overflow-x:auto;
-  scroll-snap-type:x mandatory;
 
+  scroll-snap-type:x mandatory;
   scrollbar-width:none;
 
   -webkit-overflow-scrolling:touch;
@@ -820,113 +805,70 @@ section{
 }
 
 
-/* CARD CRIADO DO ZERO */
+/* CARD */
 
-.review-card{
-  flex:0 0 min(390px,86vw);
+.review-image-card{
+  flex:0 0 min(420px,86vw);
 
-  min-height:355px;
-
-  display:flex;
-  flex-direction:column;
-
-  padding:28px;
-
-  border:1px solid #282828;
-  border-radius:19px;
-
-  background:
-  linear-gradient(
-    145deg,
-    #111,
-    #080808
-  );
-
-  box-shadow:
-  0 20px 55px rgba(0,0,0,.28);
-
-  scroll-snap-align:center;
-}
-
-
-/* FOTO REAL DO CLIENTE */
-
-.review-avatar{
-  width:62px;
-  height:62px;
-
-  margin-bottom:20px;
+  border:1px solid #222;
+  border-radius:22px;
 
   overflow:hidden;
 
-  border:2px solid rgba(255,255,255,.15);
-  border-radius:50%;
+  background:#000;
 
-  background:#181818;
+  scroll-snap-align:center;
 
   box-shadow:
-  0 7px 22px rgba(0,0,0,.35);
+  0 20px 55px rgba(0,0,0,.38);
 }
 
-.review-avatar img{
+.review-image-card img{
   width:100%;
-  height:100%;
-  object-fit:cover;
+  height:auto;
+  display:block;
+  object-fit:contain;
+  background:#000;
 }
 
 
-/* ESTRELAS */
+/* DICA */
 
-.review-stars{
-  margin-bottom:20px;
-
-  color:#f1c55c;
-
-  font-size:23px;
-
-  letter-spacing:4px;
-
-  line-height:1;
-
-  text-shadow:
-  0 2px 10px rgba(241,197,92,.15);
-}
-
-.review-text{
-  flex:1;
-
-  color:#d3d3d3;
-
-  font-size:16px;
-
-  line-height:1.72;
-}
-
-.review-source{
-  margin-top:23px;
+.review-hint{
+  margin-top:20px;
 
   color:#626262;
 
-  font-size:9px;
-  font-weight:800;
+  font-size:10px;
+  font-weight:700;
 
   letter-spacing:2.4px;
 
+  text-align:center;
   text-transform:uppercase;
 }
 
-.review-hint{
-  margin-top:18px;
 
-  color:#555;
+/* PONTINHOS VISUAIS */
 
-  font-size:10px;
+.review-dots{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:17px;
+}
 
-  letter-spacing:2px;
+.review-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#333;
+}
 
-  text-align:center;
-
-  text-transform:uppercase;
+.review-dot.active{
+  width:20px;
+  border-radius:20px;
+  background:#aaa;
 }
 
 
@@ -979,7 +921,6 @@ section{
   position:relative;
   overflow:hidden;
   padding:65px 28px;
-
   border:1px solid #252525;
   border-radius:20px;
 
@@ -996,9 +937,7 @@ section{
 .cta-box h2{
   max-width:780px;
   margin:0 auto 20px;
-
   font-size:clamp(38px,9vw,70px);
-
   line-height:.95;
   letter-spacing:-3px;
   text-transform:uppercase;
@@ -1113,18 +1052,11 @@ section{
 
 .whatsapp-float::before{
   content:"";
-
   position:absolute;
   inset:-12px;
-
-  border:
-  2px solid
-  rgba(37,211,102,.18);
-
+  border:2px solid rgba(37,211,102,.18);
   border-radius:50%;
-
-  animation:
-  whatsappRing 2s ease-out infinite;
+  animation:whatsappRing 2s ease-out infinite;
 }
 
 @keyframes whatsappPulse{
@@ -1214,6 +1146,10 @@ section{
     grid-template-columns:1.2fr 1fr 1fr;
   }
 
+  .review-image-card{
+    flex-basis:420px;
+  }
+
 }
 
 
@@ -1235,15 +1171,14 @@ section{
   }
 
   .hero-photo{
-    background-size:cover;
-    background-position:60% center;
+    background-position:61% center;
 
     filter:
-    brightness(.64)
-    contrast(1.04)
-    saturate(.96);
+    brightness(.79)
+    contrast(1.03)
+    saturate(1);
 
-    transform:scale(1.01);
+    transform:scale(1.10);
   }
 
   .hero-overlay{
@@ -1251,16 +1186,16 @@ section{
 
     linear-gradient(
       90deg,
-      rgba(0,0,0,.24) 0%,
-      rgba(0,0,0,.06) 50%,
-      rgba(0,0,0,.16) 100%
+      rgba(0,0,0,.20) 0%,
+      rgba(0,0,0,.04) 50%,
+      rgba(0,0,0,.14) 100%
     ),
 
     linear-gradient(
       to bottom,
-      rgba(0,0,0,.22),
+      rgba(0,0,0,.18),
       rgba(0,0,0,.02) 48%,
-      rgba(4,4,4,.84) 100%
+      rgba(4,4,4,.80) 100%
     );
   }
 
@@ -1335,20 +1270,28 @@ section{
     aspect-ratio:9 / 16;
   }
 
-  .review-card{
-    flex-basis:88vw;
-    min-height:365px;
-    padding:26px;
+  .review-image-card{
+    flex-basis:87vw;
+    border-radius:18px;
   }
 
-  .review-avatar{
-    width:58px;
-    height:58px;
+  .reviews-track{
+    gap:14px;
   }
 
-  .review-text{
-    font-size:15px;
-    line-height:1.68;
+}
+
+
+/* =========================================
+   REDUÇÃO DE MOVIMENTO
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto !important;
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
   }
 
 }
@@ -2145,7 +2088,7 @@ e excelência no atendimento.
 
 
 <!-- =========================================
-     FEEDBACKS
+     FEEDBACKS NOVOS
 ========================================= -->
 
 <section
@@ -2168,9 +2111,9 @@ O que meus clientes dizem
 
 <p class="lead reveal">
 
-Depoimentos reais enviados
-por clientes após suas experiências
-no Bruno Kayke Tattoo.
+Feedbacks reais de clientes
+que confiaram seus projetos
+ao Bruno Kayke Tattoo.
 
 </p>
 
@@ -2178,230 +2121,128 @@ no Bruno Kayke Tattoo.
 </div>
 
 
-<div class="reviews-track">
+<div
+class="reviews-track"
+id="reviewsTrack">
 
 
-<!-- 01 -->
+<!-- CARD 01 -->
 
-<article class="review-card reveal">
+<div class="review-image-card reveal">
 
-<div class="review-avatar">
 <img
-src="cliente-01.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="5C1CF2A4-C264-44FE-B7DB-58E860DFEE63.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 02 -->
 
-“Cara, procurar você pra refazer minha primeira tatuagem foi a melhor decisão que eu já tomei! Quando fiz com outro profissional, não ficou nada como eu queria. Mas aí eu expliquei pra você o que eu tava pensando, e você me ouviu super atentamente, deu várias sugestões, e, olha, o resultado ficou demais! Até hoje, todo mundo que vê elogia muito o desenho, diz que a técnica ficou muito boa. Me salvou, haha! Valeu por ter cuidado tanto e ter feito com tanto carinho!”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 02 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-02.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="701D07C3-DD2C-4E96-99B3-673DB2E73A99.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 03 -->
 
-“Depois que fechei o braço com você a vida mudou completamente kkkkkk, as mulheres começaram a me olhar diferente aí, tive que lançar mais uma né kkkkk, e irei fazer a próxima logo mais em, e sem contar que aumentou a autoestima lá no alto, você se sente até diferente. E obrigado por proporcionar isso com essas arte foda pra krlh!!!”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 03 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-03.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="5608D8AF-578F-45AB-91B5-6E04611FA659.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 04 -->
 
-“Helloooo! Fui por indicação e não me arrependo de ter ido fazer com você desde a minha primeira tatuagem. Traços impecáveis, trabalho incrível. Ansiosa para a próxima! ❤️”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 04 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-04.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="483B6B47-EBC8-4439-A20B-BBDB7024F0C2.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 05 -->
 
-“Conheço você e o seu trabalho de anos, acompanhei toda a evolução. Sempre tive receio de fazer uma tatuagem grande e escolhi você, devido a sua dedicação. Apesar das minhas inseguranças, me acolheu e me atendeu extremamente bem. Foi perfeito! A tatuagem é linda e desde dia que fiz só recebo elogios. Você arrasou!”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 05 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-05.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="22EE133E-216A-422A-9A21-A553FB3C7DA0.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 06 -->
 
-“Sem dúvida nenhuma a arte mais fodaaa, todo canto perguntam quem fez e eu mostro com a maior satisfação seu perfil irmão, você é fora da curva desde o começo!! Logo menos nois tá lançando outraaa 🔥”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 06 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-06.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="699FF6EC-5A5F-44E1-88E4-26FCDC2E2FB7.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 07 -->
 
-“Boa noite! Sempre tive a total admiração pelo seu trabalho sem antes mesmo de realizar. Você não só salvou o trampo que foi feito por outra pessoa como, salvou minha autoestima. Já se passou um ano e meio por aí, e a tatuagem continua impecável a cor os detalhes... Sempre foi um sonho tatuar com você. Parabéns por ser foda no que faz, e pelo amor que deposita no seu trampo. Total admiração.”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 07 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-07.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="449E86E7-EF17-4728-B21A-0C841732A977.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
 
-<div class="review-stars">
-★★★★★
-</div>
 
-<p class="review-text">
+<!-- CARD 08 -->
 
-“Boa noite Bruno! Passando para agradecer pela sua obra no meu braço haha! Cara minha mãe odeia tatuagem mas até ela gostou. Seu trabalho é impecável e o atendimento também. Ansiosa para as próximas.”
+<div class="review-image-card reveal">
 
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
-
-
-<!-- 08 -->
-
-<article class="review-card reveal">
-
-<div class="review-avatar">
 <img
-src="cliente-08.jpg"
-alt="Cliente Bruno Kayke Tattoo">
+src="2B12F658-58B6-47B8-B25E-5BEF4865DD25.png"
+alt="Feedback de cliente Bruno Kayke Tattoo"
+loading="lazy">
+
 </div>
-
-<div class="review-stars">
-★★★★★
-</div>
-
-<p class="review-text">
-
-“Foi uma experiência maravilhosa, incrível... desde o início até o final. Você passou uma sensação de muita segurança e me deixou super confiante. No final ficou melhor do que eu imaginava! Eu e meu esposo ganhamos além de um tatuador um amigo. Parece que nos conhecemos a anos. Trabalho impecável.”
-
-</p>
-
-<div class="review-source">
-Feedback real de cliente
-</div>
-
-</article>
 
 
 </div>
 
 
 <div class="review-hint">
-Deslize para ver mais avaliações →
+
+← Deslize para ver mais avaliações →
+
+</div>
+
+
+<div class="review-dots">
+
+<span class="review-dot active"></span>
+<span class="review-dot"></span>
+<span class="review-dot"></span>
+<span class="review-dot"></span>
+<span class="review-dot"></span>
+<span class="review-dot"></span>
+<span class="review-dot"></span>
+<span class="review-dot"></span>
+
 </div>
 
 
@@ -2796,7 +2637,7 @@ revealItems.forEach(
 
 
 /* =========================================
-   PARALLAX CAPA
+   PARALLAX DA CAPA
 ========================================= */
 
 const heroPhoto =
@@ -2812,9 +2653,17 @@ function updateHeroParallax(){
   const scrollY =
   window.scrollY || 0;
 
+  const mobile =
+  window.innerWidth <= 500;
+
+  const scale =
+  mobile ? 1.10 : 1.08;
+
   heroPhoto.style.transform =
-  "scale(1.01) translateY(" +
-  (scrollY * .018) +
+  "scale(" +
+  scale +
+  ") translateY(" +
+  (scrollY * .015) +
   "px)";
 
 }
@@ -2831,7 +2680,7 @@ window.addEventListener(
 
 /* =========================================
    VÍDEO
-   AUTOPLAY + COMEÇA SEMPRE EM 0:00
+   AUTOPLAY + COMEÇA EM 0:00
 ========================================= */
 
 const studioVideo =
@@ -2843,6 +2692,7 @@ if(studioVideo){
   studioVideo.muted = true;
   studioVideo.defaultMuted = true;
   studioVideo.volume = 0;
+
   studioVideo.autoplay = true;
   studioVideo.loop = true;
   studioVideo.playsInline = true;
@@ -2850,11 +2700,11 @@ if(studioVideo){
   studioVideo.removeAttribute("controls");
 
 
-  let videoVisivel = false;
   let metadataCarregada = false;
+  let videoVisivel = false;
 
 
-  function voltarParaZero(){
+  function zerarVideo(){
 
     try{
 
@@ -2866,11 +2716,14 @@ if(studioVideo){
   }
 
 
-  function tocarDoZero(){
+  function tocarVideoDoZero(){
 
     if(!metadataCarregada){
+
       return;
+
     }
+
 
     try{
 
@@ -2880,28 +2733,38 @@ if(studioVideo){
     }catch(e){}
 
 
-    const playPromise =
-    studioVideo.play();
+    requestAnimationFrame(
+      function(){
 
+        const promessa =
+        studioVideo.play();
 
-    if(playPromise !== undefined){
+        if(promessa !== undefined){
 
-      playPromise.catch(
-        function(){}
-      );
+          promessa.catch(
+            function(){}
+          );
 
-    }
+        }
+
+      }
+    );
 
   }
 
 
   /*
-  Assim que o navegador conhece a duração
-  do vídeo, já deixamos o ponteiro em 0:00.
-
-  Isso evita o vídeo ficar avançando escondido
-  enquanto você ainda está no topo do site.
+  O autoplay continua no HTML,
+  mas impedimos que o vídeo fique
+  avançando escondido na página.
   */
+
+  try{
+
+    studioVideo.pause();
+
+  }catch(e){}
+
 
   studioVideo.addEventListener(
     "loadedmetadata",
@@ -2909,18 +2772,22 @@ if(studioVideo){
 
       metadataCarregada = true;
 
-      voltarParaZero();
+      zerarVideo();
+
+      if(videoVisivel){
+
+        tocarVideoDoZero();
+
+      }
 
     }
   );
 
 
   /*
-  Quando a seção entra na tela:
-  começa automaticamente DO ZERO.
-
-  Quando sai:
-  pausa e volta novamente para zero.
+  Só começa quando o vídeo chega
+  na área visível da tela.
+  Sempre começa no segundo zero.
   */
 
   const videoObserver =
@@ -2936,19 +2803,15 @@ if(studioVideo){
 
               videoVisivel = true;
 
-              tocarDoZero();
+              tocarVideoDoZero();
 
             }
 
           }else{
 
-            if(videoVisivel){
+            videoVisivel = false;
 
-              videoVisivel = false;
-
-              voltarParaZero();
-
-            }
+            zerarVideo();
 
           }
 
@@ -2957,8 +2820,7 @@ if(studioVideo){
 
     },
     {
-      threshold:.20,
-      rootMargin:"0px 0px 0px 0px"
+      threshold:.18
     }
   );
 
@@ -2967,24 +2829,23 @@ if(studioVideo){
 
 
   /*
-  Segurança para Safari/iPhone.
-  Se o metadata já tiver carregado
-  antes do listener ser registrado.
+  Caso o navegador já tenha
+  carregado os metadados.
   */
 
   if(studioVideo.readyState >= 1){
 
     metadataCarregada = true;
 
-    voltarParaZero();
+    zerarVideo();
 
   }
 
 
   /*
-  Se o usuário voltar para a página
-  e o vídeo estiver aparecendo,
-  ele reinicia automaticamente.
+  iPhone / Safari:
+  ao voltar para a página,
+  reinicia em 0 se estiver visível.
   */
 
   document.addEventListener(
@@ -2995,11 +2856,17 @@ if(studioVideo){
         document.visibilityState
         ===
         "visible"
-        &&
-        videoVisivel
       ){
 
-        tocarDoZero();
+        if(videoVisivel){
+
+          tocarVideoDoZero();
+
+        }else{
+
+          zerarVideo();
+
+        }
 
       }
 
@@ -3013,16 +2880,120 @@ if(studioVideo){
 
       if(videoVisivel){
 
-        tocarDoZero();
+        tocarVideoDoZero();
 
       }else{
 
-        voltarParaZero();
+        zerarVideo();
 
       }
 
     }
   );
+
+}
+
+
+/* =========================================
+   PONTINHOS DOS FEEDBACKS
+========================================= */
+
+const reviewsTrack =
+document.getElementById("reviewsTrack");
+
+const reviewCards =
+document.querySelectorAll(
+  ".review-image-card"
+);
+
+const reviewDots =
+document.querySelectorAll(
+  ".review-dot"
+);
+
+
+if(
+  reviewsTrack &&
+  reviewCards.length &&
+  reviewDots.length
+){
+
+  function atualizarPontos(){
+
+    const trackRect =
+    reviewsTrack.getBoundingClientRect();
+
+    const centroTrack =
+    trackRect.left +
+    trackRect.width / 2;
+
+    let indiceMaisProximo = 0;
+
+    let menorDistancia =
+    Infinity;
+
+
+    reviewCards.forEach(
+      function(card,index){
+
+        const rect =
+        card.getBoundingClientRect();
+
+        const centroCard =
+        rect.left +
+        rect.width / 2;
+
+        const distancia =
+        Math.abs(
+          centroCard -
+          centroTrack
+        );
+
+
+        if(distancia < menorDistancia){
+
+          menorDistancia =
+          distancia;
+
+          indiceMaisProximo =
+          index;
+
+        }
+
+      }
+    );
+
+
+    reviewDots.forEach(
+      function(dot,index){
+
+        dot.classList.toggle(
+          "active",
+          index === indiceMaisProximo
+        );
+
+      }
+    );
+
+  }
+
+
+  reviewsTrack.addEventListener(
+    "scroll",
+    atualizarPontos,
+    {
+      passive:true
+    }
+  );
+
+
+  window.addEventListener(
+    "resize",
+    atualizarPontos
+  );
+
+
+  atualizarPontos();
 
 }
 
