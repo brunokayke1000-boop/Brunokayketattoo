@@ -9,38 +9,93 @@
 name="viewport"
 content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<title>Bruno Kayke Tattoo | Realismo Preto e Cinza em Barueri</title>
+<title>
+Bruno Kayke Tattoo | Realismo Preto e Cinza
+</title>
 
 <meta
 name="description"
 content="Bruno Kayke Tattoo. Tatuagem de alto padrão especializada em Realismo Preto e Cinza em Barueri e Alphaville - SP.">
 
+<meta name="theme-color" content="#050505">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+rel="stylesheet">
+
+
 <style>
 
-/* =========================================
+/* =====================================================
    BASE
-========================================= */
+===================================================== */
+
+:root{
+
+  --black:#050505;
+  --black-soft:#0a0a0a;
+  --black-card:#0f0f0f;
+
+  --white:#f2f0eb;
+  --white-soft:#d7d4cd;
+
+  --gray:#8d8b87;
+  --gray-dark:#454441;
+
+  --line:rgba(255,255,255,.12);
+
+  --silver:#c8c5bd;
+  --silver-soft:#918e87);
+
+}
+
 
 *{
-  box-sizing:border-box;
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
+
 
 html{
   scroll-behavior:smooth;
+  background:var(--black);
 }
 
+
 body{
-  background:#050505;
-  color:#f5f5f5;
-  font-family:Arial,Helvetica,sans-serif;
+
+  background:
+  radial-gradient(
+    circle at 85% 14%,
+    rgba(255,255,255,.035),
+    transparent 30%
+  ),
+  #050505;
+
+  color:var(--white);
+
+  font-family:
+  "Manrope",
+  Arial,
+  sans-serif;
+
   overflow-x:hidden;
+
 }
+
 
 body.menu-open{
   overflow:hidden;
 }
+
 
 img,
 video{
@@ -48,1250 +103,2572 @@ video{
   width:100%;
 }
 
+
 a{
   color:inherit;
   text-decoration:none;
 }
 
+
 button{
   font:inherit;
 }
 
-.container{
-  width:min(1120px,calc(100% - 44px));
-  margin:auto;
-}
 
-section{
-  position:relative;
-  padding:100px 0;
-}
-
-.kicker{
-  margin-bottom:15px;
-  color:#8d8d8d;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:4px;
-  line-height:1.6;
-  text-transform:uppercase;
-}
-
-.title{
-  max-width:850px;
-  margin-bottom:24px;
-  font-size:clamp(42px,10vw,78px);
-  line-height:.94;
-  letter-spacing:-3px;
-  text-transform:uppercase;
-}
-
-.lead{
-  max-width:720px;
-  color:#929292;
-  font-size:17px;
-  line-height:1.8;
-}
-
-.divider{
-  border-top:1px solid #181818;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  min-height:58px;
-  padding:0 26px;
-  border:1px solid #333;
-  border-radius:7px;
-  background:rgba(10,10,10,.64);
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-  backdrop-filter:blur(7px);
-  -webkit-backdrop-filter:blur(7px);
-  transition:.25s ease;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btn-white{
-  background:rgba(244,244,244,.93);
+::selection{
+  background:#ddd;
   color:#050505;
-  border-color:#eee;
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+.page-shell{
 
-.site-header{
+  width:
+  min(
+    1320px,
+    calc(100% - 42px)
+  );
+
+  margin:auto;
+
+}
+
+
+/* =====================================================
+   CURSOR / LINHAS DECORATIVAS
+===================================================== */
+
+.site-noise{
+
   position:fixed;
-  z-index:1000;
-  top:0;
-  left:0;
-  width:100%;
-  height:96px;
-  background:rgba(4,4,4,.73);
-  border-bottom:1px solid rgba(255,255,255,.07);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-}
 
-.header-inner{
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.header-logo{
-  width:68px;
-  height:68px;
-  object-fit:cover;
-  border-radius:50%;
-}
-
-.hamburger{
-  width:55px;
-  height:55px;
-  border:none;
-  background:transparent;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  gap:7px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:40px;
-  height:3px;
-  margin-left:auto;
-  background:#fff;
-  border-radius:10px;
-  transition:.3s;
-}
-
-.hamburger.active span:nth-child(1){
-  transform:translateY(10px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2){
-  opacity:0;
-}
-
-.hamburger.active span:nth-child(3){
-  transform:translateY(-10px) rotate(-45deg);
-}
-
-
-/* =========================================
-   MENU
-========================================= */
-
-.mobile-menu{
-  position:fixed;
-  z-index:990;
   inset:0;
-  padding:135px 30px 45px;
-  background:rgba(4,4,4,.98);
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(-20px);
-  transition:.35s ease;
-}
 
-.mobile-menu.open{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
+  pointer-events:none;
 
-.mobile-menu nav{
-  display:flex;
-  flex-direction:column;
-}
+  z-index:9999;
 
-.mobile-menu a{
-  padding:20px 0;
-  border-bottom:1px solid #1a1a1a;
-  font-size:28px;
-  font-weight:800;
-  text-transform:uppercase;
-}
-
-
-/* =========================================
-   HERO / CAPA
-========================================= */
-
-.hero{
-  min-height:100svh;
-  padding:138px 0 112px;
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-  background:#050505;
-}
-
-.hero-photo{
-  position:absolute;
-  z-index:0;
-  inset:0;
+  opacity:.026;
 
   background-image:
-  url("078F9483-88CD-418A-B09B-2FE46A269665.jpeg");
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.52'/%3E%3C/svg%3E");
 
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-position:60% center;
+}
+
+
+.vertical-rail{
+
+  position:fixed;
+
+  z-index:70;
+
+  left:22px;
+
+  top:50%;
+
+  transform:
+  translateY(-50%);
+
+  display:none;
+
+  writing-mode:vertical-rl;
+
+  font-size:9px;
+
+  letter-spacing:.34em;
+
+  color:
+  rgba(255,255,255,.28);
+
+  text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   HEADER NOVO
+===================================================== */
+
+.header{
+
+  position:fixed;
+
+  z-index:800;
+
+  left:0;
+  top:0;
+
+  width:100%;
+
+  padding:
+  max(
+    20px,
+    env(safe-area-inset-top)
+  )
+  0
+  18px;
+
+  transition:
+  background .4s ease,
+  border-color .4s ease;
+
+}
+
+
+.header.scrolled{
+
+  background:
+  rgba(5,5,5,.78);
+
+  border-bottom:
+  1px solid
+  rgba(255,255,255,.07);
+
+  backdrop-filter:
+  blur(18px);
+
+  -webkit-backdrop-filter:
+  blur(18px);
+
+}
+
+
+.header-inner{
+
+  width:
+  min(
+    1320px,
+    calc(100% - 36px)
+  );
+
+  margin:auto;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+}
+
+
+.brand{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:13px;
+
+}
+
+
+.brand img{
+
+  width:48px;
+  height:48px;
+
+  object-fit:cover;
+
+  border-radius:50%;
 
   filter:
-  brightness(.78)
-  contrast(1.03)
-  saturate(1);
+  grayscale(1)
+  contrast(1.08);
 
-  transform:scale(1.08);
-  will-change:transform;
 }
 
-.hero-overlay{
-  position:absolute;
-  z-index:1;
-  inset:0;
 
-  background:
-  linear-gradient(
-    90deg,
-    rgba(0,0,0,.25) 0%,
-    rgba(0,0,0,.08) 48%,
-    rgba(0,0,0,.18) 100%
-  ),
-  linear-gradient(
-    to bottom,
-    rgba(0,0,0,.19) 0%,
-    rgba(0,0,0,.02) 52%,
-    rgba(4,4,4,.80) 100%
-  );
-}
+.brand-copy{
 
-.hero-content{
-  position:relative;
-  z-index:3;
-  width:100%;
-  max-width:920px;
-  margin:auto;
-  text-align:center;
-}
-
-.hero-content > .kicker{
-  width:100%;
-  margin:0 auto 18px;
-  color:#e1e1e1;
-  text-align:center;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:3.3px;
-  line-height:1.6;
-  text-transform:uppercase;
-  text-shadow:0 2px 14px rgba(0,0,0,.98);
-}
-
-.hero-brand{
-  width:100%;
-  margin:0 auto 23px;
-  text-align:center;
-}
-
-.hero-name{
-  width:100%;
-  margin:0;
-  color:#fff;
-  font-weight:900;
-  line-height:.88;
-  text-align:center;
-  text-transform:uppercase;
-
-  text-shadow:
-  0 5px 28px rgba(0,0,0,.88),
-  0 0 20px rgba(255,255,255,.05);
-}
-
-.hero-name-main{
-  display:block;
-  width:100%;
-  white-space:nowrap;
-  font-size:clamp(43px,11vw,105px);
-  letter-spacing:-3px;
-  line-height:.92;
-}
-
-.hero-name-tattoo{
-  display:block;
-  margin-top:-3px;
-  font-size:clamp(27px,6vw,44px);
-  font-weight:800;
-  letter-spacing:8px;
-  line-height:1;
-}
-
-.hero-subtitle{
-  position:relative;
-  display:inline-block;
-  margin:22px auto 0;
-  padding:10px 3px 12px;
-
-  color:#fff;
-
-  font-size:clamp(21px,4.8vw,35px);
-  font-weight:900;
-  letter-spacing:4px;
-  line-height:1.28;
-  text-align:center;
-  text-transform:uppercase;
-
-  text-shadow:
-  0 4px 20px rgba(0,0,0,1),
-  0 0 15px rgba(255,255,255,.18);
-}
-
-.hero-subtitle::after{
-  content:"";
-  position:absolute;
-  left:50%;
-  bottom:0;
-  width:54%;
-  height:1px;
-  transform:translateX(-50%);
-
-  background:
-  linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.55),
-    transparent
-  );
-}
-
-.hero-description{
-  width:100%;
-  max-width:680px;
-  margin:28px auto 31px;
-  color:#d7d7d7;
-  font-size:16px;
-  line-height:1.75;
-  text-align:center;
-  text-shadow:0 2px 14px rgba(0,0,0,.98);
-}
-
-.hero-actions{
-  width:100%;
-  max-width:620px;
   display:flex;
+
   flex-direction:column;
-  gap:12px;
-  margin:auto;
+
+  gap:2px;
+
 }
 
-.hero-actions .btn{
-  width:100%;
+
+.brand-copy strong{
+
+  font-size:11px;
+
+  font-weight:600;
+
+  letter-spacing:.18em;
+
 }
 
-.scroll-indicator{
-  position:absolute;
-  z-index:5;
-  left:50%;
 
-  bottom:max(
-    14px,
-    env(safe-area-inset-bottom)
-  );
+.brand-copy span{
+
+  color:
+  rgba(255,255,255,.43);
+
+  font-size:8px;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+}
+
+
+.menu-button{
+
+  position:relative;
 
   width:52px;
   height:52px;
 
+  border:
+  1px solid
+  rgba(255,255,255,.20);
+
+  border-radius:50%;
+
+  background:
+  rgba(8,8,8,.26);
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  color:rgba(255,255,255,.70);
+  cursor:pointer;
 
-  transform:translateX(-50%);
-
-  animation:
-  scrollFloat 1.7s ease-in-out infinite,
-  scrollBlink 1.7s ease-in-out infinite;
-}
-
-.scroll-indicator .arrow{
-  font-size:42px;
-  font-weight:200;
-  line-height:1;
-}
-
-@keyframes scrollFloat{
-
-  0%,
-  100%{
-    transform:
-    translateX(-50%)
-    translateY(0);
-  }
-
-  50%{
-    transform:
-    translateX(-50%)
-    translateY(8px);
-  }
-
-}
-
-@keyframes scrollBlink{
-
-  0%,
-  100%{
-    opacity:.25;
-  }
-
-  50%{
-    opacity:.95;
-  }
+  transition:.3s ease;
 
 }
 
 
-/* =========================================
-   TRABALHOS
-========================================= */
+.menu-button-lines{
 
-.work-grid{
+  width:22px;
+
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:52px;
+
+  gap:5px;
+
 }
 
-.work-card{
-  position:relative;
-  min-height:360px;
-  overflow:hidden;
-  border:1px solid #252525;
-  border-radius:14px;
-  background:#111;
+
+.menu-button-lines span{
+
+  display:block;
+
+  height:1px;
+
+  background:#fff;
+
+  transition:
+  transform .35s ease,
+  opacity .35s ease;
+
 }
 
-.work-card img{
-  position:absolute;
+
+.menu-button.active
+.menu-button-lines
+span:nth-child(1){
+
+  transform:
+  translateY(6px)
+  rotate(45deg);
+
+}
+
+
+.menu-button.active
+.menu-button-lines
+span:nth-child(2){
+
+  opacity:0;
+
+}
+
+
+.menu-button.active
+.menu-button-lines
+span:nth-child(3){
+
+  transform:
+  translateY(-6px)
+  rotate(-45deg);
+
+}
+
+
+/* =====================================================
+   MENU FULLSCREEN
+===================================================== */
+
+.navigation{
+
+  position:fixed;
+
+  z-index:700;
+
   inset:0;
+
+  background:
+  rgba(4,4,4,.98);
+
+  display:flex;
+
+  align-items:center;
+
+  visibility:hidden;
+
+  opacity:0;
+
+  transform:
+  scale(1.02);
+
+  transition:
+  opacity .4s ease,
+  transform .45s ease,
+  visibility .4s;
+
+}
+
+
+.navigation.open{
+
+  visibility:visible;
+
+  opacity:1;
+
+  transform:
+  scale(1);
+
+}
+
+
+.navigation-inner{
+
+  width:
+  min(
+    1200px,
+    calc(100% - 48px)
+  );
+
+  margin:auto;
+
+}
+
+
+.navigation-kicker{
+
+  margin-bottom:35px;
+
+  color:#666;
+
+  font-size:9px;
+
+  letter-spacing:.34em;
+
+  text-transform:uppercase;
+
+}
+
+
+.navigation nav{
+
+  display:grid;
+
+}
+
+
+.navigation nav a{
+
+  position:relative;
+
+  padding:14px 0;
+
+  border-bottom:
+  1px solid
+  rgba(255,255,255,.08);
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    37px,
+    10vw,
+    74px
+  );
+
+  line-height:1;
+
+  transition:
+  padding-left .35s ease,
+  color .35s ease;
+
+}
+
+
+.navigation nav a:hover{
+
+  padding-left:18px;
+
+  color:#aaa;
+
+}
+
+
+.navigation-meta{
+
+  margin-top:35px;
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px 28px;
+
+  color:#666;
+
+  font-size:10px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+  position:relative;
+
+  min-height:
+  100svh;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  overflow:hidden;
+
+  background:#050505;
+
+}
+
+
+.hero-image{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:0;
+
+  background-image:
+  url("72F2EE76-9084-4E09-9D00-7A5B1444BE8C.jpeg");
+
+  background-size:cover;
+
+  background-position:
+  47% center;
+
+  filter:
+  grayscale(1)
+  contrast(1.07)
+  brightness(.68);
+
+  transform:
+  scale(1.04);
+
+  will-change:transform;
+
+}
+
+
+.hero-shade{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  background:
+
+  linear-gradient(
+    180deg,
+    rgba(0,0,0,.10) 0%,
+    rgba(0,0,0,.02) 28%,
+    rgba(0,0,0,.20) 56%,
+    rgba(0,0,0,.92) 100%
+  ),
+
+  linear-gradient(
+    90deg,
+    rgba(0,0,0,.48) 0%,
+    transparent 65%
+  );
+
+}
+
+
+.hero-content{
+
+  position:relative;
+
+  z-index:4;
+
+  width:100%;
+
+  padding:
+  160px
+  0
+  54px;
+
+}
+
+
+.hero-grid{
+
+  display:grid;
+
+  gap:38px;
+
+}
+
+
+.hero-label{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  color:
+  rgba(255,255,255,.54);
+
+  font-size:9px;
+
+  letter-spacing:.32em;
+
+  text-transform:uppercase;
+
+}
+
+
+.hero-label::before{
+
+  content:"";
+
+  width:38px;
+  height:1px;
+
+  background:
+  rgba(255,255,255,.55);
+
+}
+
+
+.hero-title{
+
+  margin-top:21px;
+
+  max-width:950px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    64px,
+    18vw,
+    150px
+  );
+
+  font-weight:500;
+
+  line-height:.73;
+
+  letter-spacing:-.055em;
+
+}
+
+
+.hero-title span{
+
+  display:block;
+
+}
+
+
+.hero-title .outline{
+
+  color:transparent;
+
+  -webkit-text-stroke:
+  1px
+  rgba(255,255,255,.65);
+
+  font-style:italic;
+
+  padding-left:12vw;
+
+}
+
+
+.hero-bottom{
+
+  display:grid;
+
+  gap:26px;
+
+}
+
+
+.hero-statement{
+
+  max-width:520px;
+
+  font-size:
+  clamp(
+    15px,
+    3.5vw,
+    18px
+  );
+
+  font-weight:300;
+
+  line-height:1.75;
+
+  color:
+  rgba(255,255,255,.67);
+
+}
+
+
+.hero-actions{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:12px;
+
+}
+
+
+.link-button{
+
+  min-height:54px;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:16px;
+
+  padding:
+  0 23px;
+
+  border:
+  1px solid
+  rgba(255,255,255,.24);
+
+  background:
+  rgba(0,0,0,.12);
+
+  font-size:9px;
+
+  font-weight:600;
+
+  letter-spacing:.20em;
+
+  text-transform:uppercase;
+
+  backdrop-filter:
+  blur(8px);
+
+  transition:
+  background .3s ease,
+  color .3s ease;
+
+}
+
+
+.link-button.primary{
+
+  background:#ededeb;
+
+  color:#080808;
+
+  border-color:#ededeb;
+
+}
+
+
+.link-button:hover{
+
+  background:#fff;
+
+  color:#050505;
+
+}
+
+
+.hero-index{
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  margin-top:42px;
+
+  padding-top:20px;
+
+  border-top:
+  1px solid
+  rgba(255,255,255,.16);
+
+}
+
+
+.hero-index-left{
+
+  font-size:9px;
+
+  color:
+  rgba(255,255,255,.40);
+
+  letter-spacing:.24em;
+
+  text-transform:uppercase;
+
+}
+
+
+.hero-index-right{
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-style:italic;
+
+  color:
+  rgba(255,255,255,.66);
+
+}
+
+
+/* =====================================================
+   MANIFESTO
+===================================================== */
+
+.manifesto{
+
+  position:relative;
+
+  padding:
+  115px
+  0
+  130px;
+
+}
+
+
+.manifesto-number{
+
+  position:absolute;
+
+  right:2vw;
+  top:30px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    140px,
+    42vw,
+    410px
+  );
+
+  line-height:1;
+
+  color:
+  rgba(255,255,255,.018);
+
+  pointer-events:none;
+
+}
+
+
+.editorial-kicker{
+
+  margin-bottom:25px;
+
+  color:#686868;
+
+  font-size:9px;
+
+  font-weight:600;
+
+  letter-spacing:.38em;
+
+  text-transform:uppercase;
+
+}
+
+
+.manifesto-copy{
+
+  position:relative;
+
+  z-index:2;
+
+  max-width:1060px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    37px,
+    8vw,
+    82px
+  );
+
+  line-height:1.06;
+
+  letter-spacing:-.03em;
+
+  color:#dedcd7;
+
+}
+
+
+.manifesto-copy em{
+
+  color:#777;
+
+  font-style:italic;
+
+}
+
+
+.manifesto-sub{
+
+  max-width:520px;
+
+  margin-top:43px;
+
+  margin-left:auto;
+
+  color:#777;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+}
+
+
+/* =====================================================
+   PORTFÓLIO EDITORIAL
+===================================================== */
+
+.portfolio{
+
+  padding:
+  60px
+  0
+  130px;
+
+}
+
+
+.portfolio-head{
+
+  margin-bottom:65px;
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  gap:40px;
+
+}
+
+
+.section-title{
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    55px,
+    12vw,
+    112px
+  );
+
+  line-height:.85;
+
+  font-weight:500;
+
+  letter-spacing:-.05em;
+
+}
+
+
+.section-title em{
+
+  color:#7a7a78;
+
+  font-weight:500;
+
+}
+
+
+.portfolio-note{
+
+  max-width:300px;
+
+  color:#717171;
+
+  font-size:12px;
+
+  line-height:1.75;
+
+}
+
+
+.portfolio-editorial{
+
+  display:grid;
+
+  gap:38px;
+
+}
+
+
+.project{
+
+  display:grid;
+
+  gap:14px;
+
+}
+
+
+.project-image{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:#0b0b0b;
+
+}
+
+
+.project-image img{
+
   width:100%;
   height:100%;
+
   object-fit:cover;
 
   filter:
-  saturate(.78)
-  brightness(.8);
+  grayscale(.08)
+  saturate(.82)
+  contrast(1.04);
 
-  transition:transform .5s ease;
+  transition:
+  transform
+  1s
+  cubic-bezier(.2,.7,.2,1);
+
 }
 
-.work-card::after{
+
+.project:hover
+.project-image img{
+
+  transform:
+  scale(1.025);
+
+}
+
+
+.project-image::after{
+
   content:"";
+
   position:absolute;
+
   inset:0;
-  background:
-  linear-gradient(
-    to top,
-    rgba(0,0,0,.96),
-    rgba(0,0,0,.04) 68%
-  );
+
+  border:
+  1px solid
+  rgba(255,255,255,.08);
+
+  pointer-events:none;
+
 }
 
-.work-info{
-  position:absolute;
-  z-index:2;
-  left:16px;
-  right:16px;
-  bottom:18px;
+
+.project-meta{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:25px;
+
+  align-items:flex-start;
+
 }
 
-.work-type{
-  margin-bottom:6px;
-  color:#ccc;
+
+.project-number{
+
+  color:#575757;
+
   font-size:9px;
-  letter-spacing:2px;
+
+  letter-spacing:.2em;
+
+}
+
+
+.project-name{
+
+  margin-left:auto;
+
+  text-align:right;
+
+}
+
+
+.project-name strong{
+
+  display:block;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:21px;
+
+  font-weight:500;
+
+}
+
+
+.project-name span{
+
+  display:block;
+
+  margin-top:5px;
+
+  color:#656565;
+
+  font-size:9px;
+
+  letter-spacing:.14em;
+
   text-transform:uppercase;
-}
 
-.work-info h3{
-  margin-bottom:6px;
-  font-size:18px;
-  text-transform:uppercase;
-}
-
-.work-info p{
-  color:#999;
-  font-size:13px;
-  line-height:1.5;
-}
-
-.work-card:hover img{
-  transform:scale(1.05);
 }
 
 
-/* =========================================
+.portrait-large
+.project-image{
+
+  height:
+  min(
+    128vw,
+    760px
+  );
+
+}
+
+
+.portrait-medium
+.project-image{
+
+  height:
+  min(
+    115vw,
+    650px
+  );
+
+}
+
+
+.landscape
+.project-image{
+
+  height:
+  min(
+    82vw,
+    560px
+  );
+
+}
+
+
+/* =====================================================
+   ESPECIALIDADE
+===================================================== */
+
+.specialty{
+
+  padding:
+  125px
+  0;
+
+  border-top:
+  1px solid
+  var(--line);
+
+  border-bottom:
+  1px solid
+  var(--line);
+
+}
+
+
+.specialty-layout{
+
+  display:grid;
+
+  gap:60px;
+
+}
+
+
+.specialty-title{
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    50px,
+    11vw,
+    100px
+  );
+
+  font-weight:500;
+
+  line-height:.90;
+
+  letter-spacing:-.045em;
+
+}
+
+
+.specialty-title span{
+
+  color:#727272;
+
+  font-style:italic;
+
+}
+
+
+.specialty-copy{
+
+  display:grid;
+
+  gap:34px;
+
+}
+
+
+.specialty-copy > p{
+
+  color:#8e8e8b;
+
+  line-height:1.9;
+
+  font-size:15px;
+
+}
+
+
+.specialty-details{
+
+  display:grid;
+
+  border-top:
+  1px solid
+  var(--line);
+
+}
+
+
+.specialty-item{
+
+  display:grid;
+
+  grid-template-columns:
+  45px 1fr;
+
+  gap:18px;
+
+  padding:
+  20px 0;
+
+  border-bottom:
+  1px solid
+  var(--line);
+
+}
+
+
+.specialty-item span{
+
+  color:#555;
+
+  font-size:9px;
+
+  letter-spacing:.18em;
+
+}
+
+
+.specialty-item strong{
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:21px;
+
+  font-weight:500;
+
+}
+
+
+/* =====================================================
    ESTÚDIO
-========================================= */
+===================================================== */
 
 .studio{
-  background:#080808;
+
+  padding:
+  130px
+  0;
+
 }
 
-.studio-layout{
+
+.studio-head{
+
   display:grid;
-  gap:40px;
-  margin-top:46px;
+
+  gap:30px;
+
+  margin-bottom:60px;
+
 }
 
-.benefits{
-  display:grid;
-  gap:18px;
-  margin:32px 0;
+
+.studio-description{
+
+  max-width:640px;
+
+  color:#838383;
+
+  font-size:15px;
+
+  line-height:1.9;
+
 }
 
-.benefit{
-  display:flex;
-  align-items:flex-start;
-  gap:14px;
-  color:#bcbcbc;
-  line-height:1.6;
-}
-
-.check{
-  flex:0 0 31px;
-  width:31px;
-  height:31px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border:1px solid #555;
-  border-radius:50%;
-  color:#ddd;
-}
 
 .studio-media{
-  display:grid;
-  gap:18px;
-}
 
-.studio-image,
-.studio-video{
-  overflow:hidden;
-  border:1px solid #292929;
-  border-radius:17px;
-  background:#090909;
-}
-
-.studio-image img{
-  height:660px;
-  object-fit:cover;
-}
-
-
-/* =========================================
-   VÍDEO
-========================================= */
-
-.studio-video{
   position:relative;
+
+  display:grid;
+
+  gap:18px;
+
 }
+
+
+.studio-photo{
+
+  position:relative;
+
+  height:
+  min(
+    135vw,
+    780px
+  );
+
+  overflow:hidden;
+
+}
+
+
+.studio-photo img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+  grayscale(.30)
+  contrast(1.04);
+
+}
+
+
+.studio-video{
+
+  position:relative;
+
+  background:#090909;
+
+  overflow:hidden;
+
+}
+
 
 .studio-video video{
-  display:block;
+
   width:100%;
+
   aspect-ratio:9 / 16;
+
   object-fit:cover;
+
   background:#000;
-  pointer-events:none;
-  -webkit-user-select:none;
-  user-select:none;
+
 }
 
-.media-caption{
-  padding:17px;
-  color:#777;
+
+.media-label{
+
+  position:absolute;
+
+  left:15px;
+  bottom:15px;
+
+  z-index:3;
+
+  padding:
+  9px 12px;
+
+  background:
+  rgba(0,0,0,.68);
+
+  border:
+  1px solid
+  rgba(255,255,255,.16);
+
+  backdrop-filter:
+  blur(7px);
+
+  font-size:8px;
+
+  letter-spacing:.22em;
+
+  text-transform:uppercase;
+
+}
+
+
+.studio-benefits{
+
+  margin-top:55px;
+
+  display:grid;
+
+  border-top:
+  1px solid
+  var(--line);
+
+}
+
+
+.studio-benefit{
+
+  display:grid;
+
+  grid-template-columns:
+  28px 1fr;
+
+  gap:16px;
+
+  padding:
+  20px 0;
+
+  border-bottom:
+  1px solid
+  var(--line);
+
+  color:#aaa;
+
   font-size:13px;
+
   line-height:1.6;
+
 }
 
 
-/* =========================================
+.studio-benefit span{
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  color:#fff;
+
+}
+
+
+/* =====================================================
    SOBRE
-========================================= */
+===================================================== */
 
-.about-title span{
-  color:#777;
+.about{
+
+  position:relative;
+
+  padding:
+  125px
+  0;
+
+  overflow:hidden;
+
 }
+
+
+.about-background-word{
+
+  position:absolute;
+
+  left:-10px;
+  top:45px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    120px,
+    42vw,
+    430px
+  );
+
+  color:
+  rgba(255,255,255,.018);
+
+  white-space:nowrap;
+
+  pointer-events:none;
+
+}
+
+
+.about-content{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
 
 .about-text{
-  max-width:780px;
-  margin-top:33px;
-  color:#a3a3a3;
-  font-size:20px;
-  line-height:1.75;
-}
 
-.quote{
-  max-width:790px;
-  margin:55px 0;
-  padding:29px 30px 29px 45px;
-  border-left:3px solid #ddd;
+  max-width:820px;
 
-  background:
-  linear-gradient(
-    90deg,
-    rgba(255,255,255,.035),
-    transparent
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    31px,
+    7vw,
+    62px
   );
 
-  color:#d1d1d1;
-  font-size:19px;
-  font-style:italic;
-  line-height:1.75;
+  line-height:1.17;
+
+  color:#d6d3cc;
+
 }
 
-.stats{
-  display:grid;
-  gap:15px;
+
+.about-text em{
+
+  color:#717171;
+
 }
+
+
+.about-quote{
+
+  max-width:620px;
+
+  margin:
+  50px
+  0
+  0
+  auto;
+
+  padding-left:24px;
+
+  border-left:
+  1px solid
+  rgba(255,255,255,.3);
+
+  color:#858585;
+
+  font-size:14px;
+
+  line-height:1.9;
+
+}
+
+
+.about-stats{
+
+  display:grid;
+
+  gap:1px;
+
+  margin-top:65px;
+
+  background:
+  rgba(255,255,255,.10);
+
+}
+
 
 .stat{
-  padding:27px;
-  border:1px solid #343434;
-  border-radius:11px;
-  background:#090909;
+
+  padding:
+  32px 24px;
+
+  background:#070707;
+
 }
+
 
 .stat strong{
+
   display:block;
-  margin-bottom:8px;
-  font-size:34px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    37px,
+    9vw,
+    64px
+  );
+
+  font-weight:500;
+
 }
 
-.stat h3{
-  margin-bottom:8px;
-  font-size:14px;
-  letter-spacing:2px;
+
+.stat small{
+
+  display:block;
+
+  margin-top:7px;
+
+  color:#656565;
+
+  font-size:8px;
+
+  letter-spacing:.23em;
+
   text-transform:uppercase;
-}
 
-.stat p{
-  color:#777;
-  line-height:1.55;
 }
 
 
-/* =========================================
+/* =====================================================
    PROCESSO
-========================================= */
+===================================================== */
 
 .process{
+
+  padding:
+  125px
+  0;
+
   background:#080808;
+
 }
 
-.center{
-  text-align:center;
+
+.process-head{
+
+  max-width:900px;
+
+  margin-bottom:65px;
+
 }
 
-.center .lead{
-  margin:auto;
+
+.process-list{
+
+  border-top:
+  1px solid
+  var(--line);
+
 }
 
-.process-grid{
+
+.process-step{
+
+  position:relative;
+
   display:grid;
-  gap:18px;
-  margin-top:60px;
+
+  grid-template-columns:
+  45px 1fr;
+
+  gap:20px;
+
+  padding:
+  27px 0;
+
+  border-bottom:
+  1px solid
+  var(--line);
+
 }
 
-.process-card{
-  min-height:245px;
-  padding:29px;
-  border:1px solid #1f1f1f;
-  border-radius:17px;
 
-  background:
-  linear-gradient(
-    145deg,
-    #111,
-    #080808
+.process-index{
+
+  color:#535353;
+
+  font-size:9px;
+
+  letter-spacing:.15em;
+
+}
+
+
+.process-body h3{
+
+  margin-bottom:10px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    25px,
+    6vw,
+    38px
   );
-}
 
-.process-number{
-  margin-bottom:30px;
-  color:#373737;
-  font-size:58px;
-  font-weight:900;
-  line-height:1;
-}
+  font-weight:500;
 
-.process-card h3{
-  margin-bottom:14px;
-  font-size:20px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
-.process-card p{
-  color:#878787;
-  font-size:15px;
-  line-height:1.7;
 }
 
 
-/* =========================================
-   FEEDBACKS
-========================================= */
+.process-body p{
+
+  max-width:550px;
+
+  color:#777;
+
+  line-height:1.75;
+
+  font-size:13px;
+
+}
+
+
+/* =====================================================
+   MOSAICO
+===================================================== */
+
+.archive{
+
+  padding:
+  125px
+  0;
+
+}
+
+
+.archive-title{
+
+  margin-bottom:50px;
+
+}
+
+
+.archive-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(3,1fr);
+
+  gap:7px;
+
+}
+
+
+.archive-item{
+
+  position:relative;
+
+  aspect-ratio:
+  .78 / 1;
+
+  overflow:hidden;
+
+  background:#0d0d0d;
+
+}
+
+
+.archive-item img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  filter:
+  saturate(.77)
+  brightness(.86);
+
+  transition:
+  transform .6s ease,
+  filter .6s ease;
+
+}
+
+
+.archive-item:hover img{
+
+  transform:
+  scale(1.04);
+
+  filter:
+  saturate(1)
+  brightness(.92);
+
+}
+
+
+.archive-actions{
+
+  margin-top:36px;
+
+}
+
+
+/* =====================================================
+   AVALIAÇÕES
+===================================================== */
 
 .reviews{
-  overflow:hidden;
-  background:#050505;
-}
 
-.reviews-heading{
-  text-align:center;
-}
+  padding:
+  125px
+  0;
 
-.reviews-heading .title,
-.reviews-heading .lead{
-  margin-left:auto;
-  margin-right:auto;
+  border-top:
+  1px solid
+  var(--line);
+
 }
 
 
-/* CARROSSEL */
-
-.reviews-track{
-  display:flex;
-  gap:18px;
+.reviews-panel{
 
   margin-top:50px;
 
   padding:
-  0 max(
-    22px,
-    calc((100vw - 1120px) / 2)
-  )
-  16px;
+  45px 28px;
 
-  overflow-x:auto;
-
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-
-  -webkit-overflow-scrolling:touch;
-}
-
-.reviews-track::-webkit-scrollbar{
-  display:none;
-}
-
-
-/* CARD */
-
-.review-image-card{
-  flex:0 0 min(420px,86vw);
-
-  border:1px solid #222;
-  border-radius:22px;
-
-  overflow:hidden;
-
-  background:#000;
-
-  scroll-snap-align:center;
-
-  box-shadow:
-  0 20px 55px rgba(0,0,0,.38);
-}
-
-.review-image-card img{
-  width:100%;
-  height:auto;
-  display:block;
-  object-fit:contain;
-  background:#000;
-}
-
-
-/* DICA */
-
-.review-hint{
-  margin-top:20px;
-
-  color:#626262;
-
-  font-size:10px;
-  font-weight:700;
-
-  letter-spacing:2.4px;
-
-  text-align:center;
-  text-transform:uppercase;
-}
-
-
-/* PONTINHOS VISUAIS */
-
-.review-dots{
-  display:flex;
-  justify-content:center;
-  gap:8px;
-  margin-top:17px;
-}
-
-.review-dot{
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  background:#333;
-}
-
-.review-dot.active{
-  width:20px;
-  border-radius:20px;
-  background:#aaa;
-}
-
-
-/* =========================================
-   MAIS TRABALHOS
-========================================= */
-
-.more-work{
-  background:#070707;
-}
-
-.more-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin-top:42px;
-}
-
-.more-item{
-  position:relative;
-  aspect-ratio:1 / 1.25;
-  overflow:hidden;
-  border:1px solid #222;
-  border-radius:7px;
-  background:#111;
-}
-
-.more-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .4s ease;
-}
-
-.more-item:hover img{
-  transform:scale(1.05);
-}
-
-
-/* =========================================
-   CTA
-========================================= */
-
-.final-cta{
-  padding-top:80px;
-  padding-bottom:80px;
-}
-
-.cta-box{
-  position:relative;
-  overflow:hidden;
-  padding:65px 28px;
-  border:1px solid #252525;
-  border-radius:20px;
+  border:
+  1px solid
+  rgba(255,255,255,.11);
 
   background:
   linear-gradient(
     145deg,
-    #121212,
-    #070707
+    rgba(255,255,255,.025),
+    rgba(255,255,255,.004)
   );
 
-  text-align:center;
-}
-
-.cta-box h2{
-  max-width:780px;
-  margin:0 auto 20px;
-  font-size:clamp(38px,9vw,70px);
-  line-height:.95;
-  letter-spacing:-3px;
-  text-transform:uppercase;
-}
-
-.cta-box p{
-  max-width:620px;
-  margin:0 auto 30px;
-  color:#8e8e8e;
-  font-size:16px;
-  line-height:1.75;
 }
 
 
-/* =========================================
-   FOOTER
-========================================= */
+.reviews-panel strong{
 
-.footer{
-  padding:75px 0 40px;
-  border-top:1px solid #181818;
-  background:#050505;
+  display:block;
+
+  margin-bottom:14px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:27px;
+
+  font-weight:500;
+
 }
 
-.footer-logo{
-  width:115px;
-  margin-bottom:32px;
-  border-radius:50%;
-}
 
-.footer-tagline{
-  max-width:550px;
-  margin-bottom:45px;
-  color:#959595;
-  font-size:18px;
-  line-height:1.7;
-}
+.reviews-panel p{
 
-.footer-grid{
-  display:grid;
-  gap:43px;
-}
+  max-width:580px;
 
-.footer h3{
-  margin-bottom:19px;
-  font-size:12px;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-}
+  color:#757575;
 
-.footer p,
-.footer a{
-  color:#8b8b8b;
-  font-size:14px;
   line-height:1.8;
-}
 
-.footer a:hover{
-  color:#fff;
-}
+  font-size:13px;
 
-.footer-bottom{
-  margin-top:55px;
-  padding-top:34px;
-  border-top:1px solid #181818;
-  color:#555;
-  font-size:12px;
-  line-height:1.7;
 }
 
 
-/* =========================================
-   WHATSAPP
-========================================= */
+/* =====================================================
+   CTA FINAL
+===================================================== */
 
-.whatsapp-float{
-  position:fixed;
-  z-index:1500;
+.final{
 
-  right:21px;
+  position:relative;
 
-  bottom:
-  calc(
-    22px +
-    env(safe-area-inset-bottom)
-  );
-
-  width:68px;
-  height:68px;
+  min-height:
+  80svh;
 
   display:flex;
+
+  align-items:flex-end;
+
+  padding:
+  100px
+  0
+  60px;
+
+  overflow:hidden;
+
+}
+
+
+.final-image{
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+  linear-gradient(
+    to top,
+    #050505 0%,
+    rgba(5,5,5,.74) 42%,
+    rgba(5,5,5,.26) 100%
+  ),
+
+  url("IMG_7780.jpeg")
+  center / cover
+  no-repeat;
+
+  filter:
+  grayscale(.80)
+  brightness(.62);
+
+}
+
+
+.final-content{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+.final-title{
+
+  max-width:900px;
+
+  font-family:
+  "Playfair Display",
+  serif;
+
+  font-size:
+  clamp(
+    55px,
+    13vw,
+    120px
+  );
+
+  font-weight:500;
+
+  line-height:.87;
+
+  letter-spacing:-.055em;
+
+}
+
+
+.final-title em{
+
+  color:#999;
+
+}
+
+
+.final-copy{
+
+  max-width:520px;
+
+  margin-top:30px;
+
+  color:
+  rgba(255,255,255,.60);
+
+  line-height:1.8;
+
+  font-size:14px;
+
+}
+
+
+.final-actions{
+
+  margin-top:30px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer{
+
+  padding:
+  75px
+  0
+  120px;
+
+  border-top:
+  1px solid
+  var(--line);
+
+}
+
+
+.footer-top{
+
+  display:grid;
+
+  gap:45px;
+
+}
+
+
+.footer-brand img{
+
+  width:82px;
+  height:82px;
+
+  object-fit:cover;
+
+  border-radius:50%;
+
+  filter:grayscale(1);
+
+}
+
+
+.footer-brand p{
+
+  max-width:440px;
+
+  margin-top:25px;
+
+  color:#666;
+
+  line-height:1.8;
+
+  font-size:13px;
+
+}
+
+
+.footer-columns{
+
+  display:grid;
+
+  gap:35px;
+
+}
+
+
+.footer-column h4{
+
+  margin-bottom:17px;
+
+  color:#525252;
+
+  font-size:8px;
+
+  letter-spacing:.30em;
+
+  text-transform:uppercase;
+
+}
+
+
+.footer-column a,
+.footer-column span{
+
+  display:block;
+
+  margin-bottom:9px;
+
+  color:#bababa;
+
+  font-size:13px;
+
+  line-height:1.6;
+
+}
+
+
+.footer-bottom{
+
+  margin-top:60px;
+
+  padding-top:24px;
+
+  border-top:
+  1px solid
+  rgba(255,255,255,.07);
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  justify-content:space-between;
+
+  gap:12px;
+
+  color:#3f3f3f;
+
+  font-size:9px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+}
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+.whatsapp{
+
+  position:fixed;
+
+  z-index:850;
+
+  right:18px;
+
+  bottom:
+  max(
+    18px,
+    calc(
+      env(safe-area-inset-bottom)
+      + 12px
+    )
+  );
+
+  width:62px;
+  height:62px;
+
+  display:flex;
+
   align-items:center;
   justify-content:center;
 
   border-radius:50%;
 
-  background:#25D366;
+  background:#eeeeeb;
+
+  color:#060606;
 
   box-shadow:
-  0 8px 30px
-  rgba(37,211,102,.30);
-
-  animation:
-  whatsappPulse 2s ease-in-out infinite;
-}
-
-.whatsapp-float svg{
-  width:35px;
-  height:35px;
-  fill:#fff;
-}
-
-.whatsapp-float::before{
-  content:"";
-  position:absolute;
-  inset:-12px;
-  border:2px solid rgba(37,211,102,.18);
-  border-radius:50%;
-  animation:whatsappRing 2s ease-out infinite;
-}
-
-@keyframes whatsappPulse{
-
-  0%,
-  100%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.05);
-  }
-
-}
-
-@keyframes whatsappRing{
-
-  0%{
-    transform:scale(.85);
-    opacity:.7;
-  }
-
-  100%{
-    transform:scale(1.18);
-    opacity:0;
-  }
-
-}
-
-
-/* =========================================
-   REVEAL
-========================================= */
-
-.reveal{
-  opacity:0;
-  transform:translateY(24px);
+  0 12px 35px
+  rgba(0,0,0,.45);
 
   transition:
-  opacity .8s ease,
-  transform .8s ease;
+  transform .3s ease;
+
 }
+
+
+.whatsapp:hover{
+
+  transform:
+  scale(1.06);
+
+}
+
+
+.whatsapp svg{
+
+  width:28px;
+  height:28px;
+
+  fill:#050505;
+
+}
+
+
+/* =====================================================
+   REVEAL
+===================================================== */
+
+.reveal{
+
+  opacity:0;
+
+  transform:
+  translateY(34px);
+
+  transition:
+
+  opacity
+  .9s
+  cubic-bezier(.2,.7,.2,1),
+
+  transform
+  .9s
+  cubic-bezier(.2,.7,.2,1);
+
+}
+
 
 .reveal.visible{
+
   opacity:1;
-  transform:translateY(0);
+
+  transform:
+  translateY(0);
+
 }
 
 
-/* =========================================
+/* =====================================================
    TABLET / DESKTOP
-========================================= */
+===================================================== */
 
-@media(min-width:800px){
+@media(min-width:760px){
 
-  .work-grid{
-    grid-template-columns:repeat(3,1fr);
+  .vertical-rail{
+    display:block;
   }
 
-  .work-card{
-    min-height:500px;
-  }
-
-  .studio-layout{
-    grid-template-columns:1fr 1fr;
-    align-items:start;
-  }
-
-  .studio-image img,
-  .studio-video video{
-    height:680px;
-  }
-
-  .stats{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .process-grid{
-    grid-template-columns:repeat(4,1fr);
-  }
-
-  .more-grid{
-    grid-template-columns:repeat(6,1fr);
-  }
-
-  .footer-grid{
-    grid-template-columns:1.2fr 1fr 1fr;
-  }
-
-  .review-image-card{
-    flex-basis:420px;
-  }
-
-}
-
-
-/* =========================================
-   CELULAR
-========================================= */
-
-@media(max-width:500px){
-
-  .container{
-    width:calc(100% - 36px);
-  }
-
-  .hero{
-    min-height:100svh;
-    padding-top:132px;
-    padding-bottom:104px;
-    align-items:center;
-  }
-
-  .hero-photo{
-    background-position:61% center;
-
-    filter:
-    brightness(.79)
-    contrast(1.03)
-    saturate(1);
-
-    transform:scale(1.10);
-  }
-
-  .hero-overlay{
-    background:
-
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,.20) 0%,
-      rgba(0,0,0,.04) 50%,
-      rgba(0,0,0,.14) 100%
-    ),
-
-    linear-gradient(
-      to bottom,
-      rgba(0,0,0,.18),
-      rgba(0,0,0,.02) 48%,
-      rgba(4,4,4,.80) 100%
-    );
-  }
 
   .hero-content{
-    width:100%;
-    max-width:none;
-    padding:0;
-    text-align:center;
+    padding-bottom:48px;
   }
 
-  .hero-content > .kicker{
-    margin:0 auto 17px;
-    font-size:9px;
-    letter-spacing:2.3px;
-    line-height:1.55;
+
+  .hero-grid{
+
+    grid-template-columns:
+    1.2fr .8fr;
+
+    align-items:end;
+
   }
 
-  .hero-brand{
-    margin-bottom:20px;
+
+  .hero-bottom{
+
+    padding-bottom:5px;
+
   }
 
-  .hero-name-main{
-    font-size:clamp(38px,11vw,55px);
-    letter-spacing:-2px;
-    white-space:nowrap;
+
+  .portfolio-editorial{
+
+    grid-template-columns:
+    repeat(12,1fr);
+
+    column-gap:22px;
+
+    row-gap:70px;
+
   }
 
-  .hero-name-tattoo{
-    margin-top:-4px;
-    font-size:26px;
-    letter-spacing:7px;
+
+  .project:nth-child(1){
+
+    grid-column:
+    1 / 8;
+
   }
 
-  .hero-subtitle{
-    margin-top:19px;
-    padding-bottom:11px;
-    font-size:19px;
-    font-weight:900;
-    letter-spacing:2.15px;
-    line-height:1.34;
+
+  .project:nth-child(2){
+
+    grid-column:
+    9 / 13;
+
+    margin-top:
+    140px;
+
   }
 
-  .hero-description{
-    max-width:100%;
-    margin:25px auto 27px;
-    padding:0 3px;
-    font-size:15px;
-    line-height:1.68;
+
+  .project:nth-child(3){
+
+    grid-column:
+    2 / 6;
+
   }
 
-  .hero-actions{
-    max-width:none;
-    gap:12px;
+
+  .project:nth-child(4){
+
+    grid-column:
+    7 / 13;
+
+    margin-top:
+    110px;
+
   }
 
-  .hero-actions .btn{
-    min-height:61px;
-    font-size:13px;
-    letter-spacing:2.2px;
+
+  .project:nth-child(5){
+
+    grid-column:
+    1 / 7;
+
   }
 
-  .work-card{
-    min-height:340px;
+
+  .project:nth-child(6){
+
+    grid-column:
+    8 / 12;
+
+    margin-top:
+    160px;
+
   }
 
-  .studio-image img{
-    height:610px;
+
+  .specialty-layout{
+
+    grid-template-columns:
+    .9fr 1.1fr;
+
+    align-items:start;
+
   }
 
-  .studio-video video{
-    height:auto;
-    aspect-ratio:9 / 16;
+
+  .studio-head{
+
+    grid-template-columns:
+    1fr 1fr;
+
+    align-items:end;
+
   }
 
-  .review-image-card{
-    flex-basis:87vw;
-    border-radius:18px;
+
+  .studio-media{
+
+    grid-template-columns:
+    1.2fr .8fr;
+
+    align-items:start;
+
   }
 
-  .reviews-track{
-    gap:14px;
+
+  .studio-video{
+
+    margin-top:
+    130px;
+
+  }
+
+
+  .studio-benefits{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    column-gap:40px;
+
+  }
+
+
+  .about-stats{
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+  }
+
+
+  .process-step{
+
+    grid-template-columns:
+    70px .65fr 1fr;
+
+    align-items:start;
+
+  }
+
+
+  .process-body{
+
+    display:contents;
+
+  }
+
+
+  .process-body h3{
+
+    margin-bottom:0;
+
+  }
+
+
+  .archive-grid{
+
+    grid-template-columns:
+    repeat(6,1fr);
+
+    gap:9px;
+
+  }
+
+
+  .footer-top{
+
+    grid-template-columns:
+    1fr 1.25fr;
+
+  }
+
+
+  .footer-columns{
+
+    grid-template-columns:
+    repeat(3,1fr);
+
   }
 
 }
 
 
-/* =========================================
-   REDUÇÃO DE MOVIMENTO
-========================================= */
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
 
-@media(prefers-reduced-motion:reduce){
+@media(min-width:1100px){
 
-  *{
-    scroll-behavior:auto !important;
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
+  .page-shell{
+
+    width:
+    min(
+      1280px,
+      calc(100% - 110px)
+    );
+
+  }
+
+
+  .hero-title{
+
+    font-size:
+    clamp(
+      100px,
+      10.2vw,
+      155px
+    );
+
+  }
+
+
+  .hero-title .outline{
+
+    padding-left:
+    160px;
+
+  }
+
+
+  .manifesto{
+
+    padding-top:
+    170px;
+
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:600px){
+
+  .brand-copy{
+    display:none;
+  }
+
+
+  .hero-image{
+
+    background-position:
+    47% center;
+
+  }
+
+
+  .hero-content{
+
+    padding-bottom:
+    max(
+      34px,
+      calc(
+        env(safe-area-inset-bottom)
+        + 18px
+      )
+    );
+
+  }
+
+
+  .hero-title{
+
+    font-size:
+    clamp(
+      61px,
+      19vw,
+      84px
+    );
+
+  }
+
+
+  .hero-title .outline{
+
+    padding-left:
+    7vw;
+
+  }
+
+
+  .portfolio-head{
+
+    display:block;
+
+  }
+
+
+  .portfolio-note{
+
+    margin-top:25px;
+
+  }
+
+
+  .archive-grid{
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+  }
+
+
+  .whatsapp{
+
+    width:58px;
+    height:58px;
+
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media(
+prefers-reduced-motion:
+reduce
+){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .reveal{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+
+  .hero-image{
+    transform:none !important;
   }
 
 }
@@ -1304,32 +2681,64 @@ section{
 <body>
 
 
-<!-- =========================================
-     CABEÇALHO
-========================================= -->
+<div
+class="site-noise"
+aria-hidden="true">
+</div>
 
-<header class="site-header">
 
-<div class="container header-inner">
+<div
+class="vertical-rail"
+aria-hidden="true">
+Realismo Preto & Cinza • Barueri • SP
+</div>
 
-<a href="#inicio">
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+class="header"
+id="header">
+
+<div class="header-inner">
+
+<a
+class="brand"
+href="#inicio">
 
 <img
-class="header-logo"
 src="IMG_9645.png"
 alt="Bruno Kayke Tattoo">
+
+<div class="brand-copy">
+
+<strong>
+BRUNO KAYKE
+</strong>
+
+<span>
+Tattoo • Realismo
+</span>
+
+</div>
 
 </a>
 
 
 <button
-class="hamburger"
-id="hamburger"
+class="menu-button"
+id="menuButton"
 aria-label="Abrir menu">
+
+<div class="menu-button-lines">
 
 <span></span>
 <span></span>
 <span></span>
+
+</div>
 
 </button>
 
@@ -1338,34 +2747,44 @@ aria-label="Abrir menu">
 </header>
 
 
-<!-- =========================================
+<!-- =====================================================
      MENU
-========================================= -->
+===================================================== -->
 
 <div
-class="mobile-menu"
-id="mobileMenu">
+class="navigation"
+id="navigation">
+
+<div class="navigation-inner">
+
+<div class="navigation-kicker">
+Navegação
+</div>
 
 <nav>
+
+<a href="#inicio">
+Início
+</a>
 
 <a href="#trabalhos">
 Trabalhos
 </a>
 
+<a href="#realismo">
+Realismo
+</a>
+
 <a href="#studio">
-O Estúdio
+Estúdio
 </a>
 
 <a href="#bruno">
-Bruno Kayke
+Bruno
 </a>
 
 <a href="#processo">
-Como funciona
-</a>
-
-<a href="#avaliacoes">
-Avaliações
+Processo
 </a>
 
 <a href="#contato">
@@ -1374,292 +2793,428 @@ Contato
 
 </nav>
 
+
+<div class="navigation-meta">
+
+<span>
+Barueri — SP
+</span>
+
+<span>
+@brunokayketattoo
+</span>
+
+<span>
+Atendimento com horário agendado
+</span>
+
+</div>
+
+</div>
+
 </div>
 
 
-<!-- =========================================
-     CAPA
-========================================= -->
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section
 class="hero"
 id="inicio">
 
+<div
+class="hero-image"
+id="heroImage"
+aria-hidden="true">
+</div>
 
 <div
-class="hero-photo"
-id="heroPhoto">
+class="hero-shade"
+aria-hidden="true">
 </div>
 
 
-<div class="hero-overlay"></div>
+<div class="hero-content">
+
+<div class="page-shell">
+
+<div class="hero-grid">
 
 
-<div class="container hero-content">
+<div>
 
-
-<div class="kicker reveal">
-
-Especialista em Realismo Preto e Cinza
-
+<div class="hero-label reveal">
+Realismo Preto & Cinza
 </div>
 
 
-<div class="hero-brand reveal">
+<h1 class="hero-title reveal">
 
-<h1 class="hero-name">
-
-<span class="hero-name-main">
-BRUNO KAYKE
+<span>
+BRUNO
 </span>
 
-<span class="hero-name-tattoo">
-TATTOO
+<span class="outline">
+KAYKE
 </span>
 
 </h1>
 
-
-<div class="hero-subtitle">
-
-Tatuagem de alto padrão
-
-</div>
-
 </div>
 
 
-<p class="hero-description reveal">
+<div class="hero-bottom reveal">
 
-Projetos personalizados em Realismo Preto e Cinza,
-desenvolvidos para unir técnica, composição,
-profundidade e identidade.
+<p class="hero-statement">
+
+Tatuagem de alto padrão com foco
+em realismo, profundidade,
+composição e identidade.
 
 </p>
 
 
-<div class="hero-actions reveal">
-
+<div class="hero-actions">
 
 <a
-class="btn btn-white"
+class="link-button primary"
 href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke">
 
 Solicitar orçamento
+<span>↗</span>
 
 </a>
 
 
 <a
-class="btn"
+class="link-button"
 href="#trabalhos">
 
-Ver portfólio
+Ver trabalhos
+<span>↓</span>
 
 </a>
-
 
 </div>
 
 </div>
 
+</div>
 
-<a
-class="scroll-indicator"
-href="#trabalhos"
-aria-label="Role para ver os trabalhos">
 
-<span class="arrow">
-⌄
-</span>
+<div class="hero-index reveal">
 
-</a>
+<div class="hero-index-left">
+Barueri • São Paulo
+</div>
 
+<div class="hero-index-right">
+Tatuagem de alto padrão
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =========================================
-     TRABALHOS
-========================================= -->
+<!-- =====================================================
+     MANIFESTO
+===================================================== -->
 
-<section id="trabalhos">
+<section
+class="manifesto"
+id="manifesto">
 
-<div class="container">
+<div
+class="manifesto-number"
+aria-hidden="true">
+07
+</div>
 
+<div class="page-shell">
 
-<div class="kicker reveal">
-Portfólio
+<div class="editorial-kicker reveal">
+A assinatura
 </div>
 
 
-<h2 class="title reveal">
-Trabalhos exclusivos
-</h2>
+<div class="manifesto-copy reveal">
+
+Há 7 anos transformando referências,
+ideias e histórias em projetos que
+buscam <em>presença, profundidade
+e identidade.</em>
+
+</div>
 
 
-<p class="lead reveal">
+<p class="manifesto-sub reveal">
 
-Realismo, precisão anatômica,
-profundidade e composição aplicados
-a diferentes estilos e projetos.
+Meu trabalho é focado em Realismo
+Preto e Cinza, buscando evolução
+constante em composição, contraste,
+técnica e acabamento.
 
 </p>
 
+</div>
 
-<div class="work-grid">
+</section>
 
 
-<article class="work-card reveal">
+<!-- =====================================================
+     PORTFÓLIO
+===================================================== -->
+
+<section
+class="portfolio"
+id="trabalhos">
+
+<div class="page-shell">
+
+
+<div class="portfolio-head">
+
+<div>
+
+<div class="editorial-kicker reveal">
+Selected work
+</div>
+
+<h2 class="section-title reveal">
+Trabalhos <em>selecionados.</em>
+</h2>
+
+</div>
+
+
+<p class="portfolio-note reveal">
+
+Projetos pensados para respeitar
+anatomia, leitura, movimento e
+características individuais de
+cada composição.
+
+</p>
+
+</div>
+
+
+<div class="portfolio-editorial">
+
+
+<article
+class="project portrait-large reveal">
+
+<div class="project-image">
 
 <img
 src="IMG_7780.jpeg"
-alt="Retrato realista">
+alt="Retrato realista Bruno Kayke Tattoo"
+loading="lazy">
 
-<div class="work-info">
-
-<div class="work-type">
-Retratos / Rostos
 </div>
 
-<h3>
+<div class="project-meta">
+
+<div class="project-number">
+01
+</div>
+
+<div class="project-name">
+
+<strong>
 Retrato realista
-</h3>
+</strong>
 
-<p>
-Expressões, anatomia facial,
-contraste e profundidade.
-</p>
+<span>
+Retratos / Rostos
+</span>
+
+</div>
 
 </div>
 
 </article>
 
 
-<article class="work-card reveal">
+<article
+class="project portrait-medium reveal">
 
-<img
-src="IMG_5110.jpeg"
-alt="Composição religiosa">
-
-<div class="work-info">
-
-<div class="work-type">
-Anjos / Religioso
-</div>
-
-<h3>
-Composição religiosa
-</h3>
-
-<p>
-Atmosfera, volume e dramaticidade
-em projetos de impacto.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="work-card reveal">
-
-<img
-src="IMG_6595.jpeg"
-alt="Escultura e mitologia">
-
-<div class="work-info">
-
-<div class="work-type">
-Mitologia / Escultura
-</div>
-
-<h3>
-Escultura clássica
-</h3>
-
-<p>
-Volume tridimensional,
-textura e sombreamento anatômico.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="work-card reveal">
-
-<img
-src="IMG_4037.jpeg"
-alt="Projeto autoral">
-
-<div class="work-info">
-
-<div class="work-type">
-Projeto autoral
-</div>
-
-<h3>
-Composição exclusiva
-</h3>
-
-<p>
-Projetos pensados individualmente
-para cada cliente.
-</p>
-
-</div>
-
-</article>
-
-
-<article class="work-card reveal">
+<div class="project-image">
 
 <img
 src="IMG_4781_Original.jpeg"
-alt="Black and Grey">
+alt="Composição religiosa Bruno Kayke Tattoo"
+loading="lazy">
 
-<div class="work-info">
-
-<div class="work-type">
-Black & Grey
 </div>
 
-<h3>
-Contraste e profundidade
-</h3>
+<div class="project-meta">
 
-<p>
-Pretos sólidos, sombras suaves
-e leitura tridimensional.
-</p>
+<div class="project-number">
+02
+</div>
+
+<div class="project-name">
+
+<strong>
+Composição religiosa
+</strong>
+
+<span>
+Anjos / Religioso
+</span>
+
+</div>
 
 </div>
 
 </article>
 
 
-<article class="work-card reveal">
+<article
+class="project portrait-medium reveal">
+
+<div class="project-image">
+
+<img
+src="IMG_6595.jpeg"
+alt="Escultura clássica Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="project-meta">
+
+<div class="project-number">
+03
+</div>
+
+<div class="project-name">
+
+<strong>
+Escultura clássica
+</strong>
+
+<span>
+Mitologia / Escultura
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="project landscape reveal">
+
+<div class="project-image">
+
+<img
+src="IMG_4037.jpeg"
+alt="Projeto autoral Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="project-meta">
+
+<div class="project-number">
+04
+</div>
+
+<div class="project-name">
+
+<strong>
+Composição exclusiva
+</strong>
+
+<span>
+Projeto autoral
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="project portrait-large reveal">
+
+<div class="project-image">
+
+<img
+src="IMG_5110.jpeg"
+alt="Black and Grey Bruno Kayke Tattoo"
+loading="lazy">
+
+</div>
+
+<div class="project-meta">
+
+<div class="project-number">
+05
+</div>
+
+<div class="project-name">
+
+<strong>
+Contraste e profundidade
+</strong>
+
+<span>
+Black & Grey
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+<article
+class="project portrait-medium reveal">
+
+<div class="project-image">
 
 <img
 src="IMG_9714.jpeg"
-alt="Fechamento de tatuagem">
+alt="Fechamento Bruno Kayke Tattoo"
+loading="lazy">
 
-<div class="work-info">
-
-<div class="work-type">
-Grandes projetos
 </div>
 
-<h3>
-Fechamentos
-</h3>
+<div class="project-meta">
 
-<p>
-Composições planejadas
-para acompanhar anatomia e movimento.
-</p>
+<div class="project-number">
+06
+</div>
+
+<div class="project-name">
+
+<strong>
+Grandes projetos
+</strong>
+
+<span>
+Fechamentos
+</span>
+
+</div>
 
 </div>
 
@@ -1673,62 +3228,218 @@ para acompanhar anatomia e movimento.
 </section>
 
 
-<!-- =========================================
-     ESTÚDIO
-========================================= -->
+<!-- =====================================================
+     REALISMO
+===================================================== -->
 
 <section
-class="studio divider"
-id="studio">
+class="specialty"
+id="realismo">
+
+<div class="page-shell">
+
+<div class="specialty-layout">
 
 
-<div class="container">
+<div>
 
-
-<div class="kicker reveal">
-Conheça nosso espaço
+<div class="editorial-kicker reveal">
+Especialidade
 </div>
 
 
-<h2 class="title reveal">
-Sobre o estúdio
+<h2 class="specialty-title reveal">
+
+Realismo
+<br>
+<span>Preto & Cinza.</span>
+
 </h2>
 
+</div>
 
-<p class="lead reveal">
 
-Um ambiente pensado para oferecer
-conforto, privacidade e tranquilidade
-durante todo o processo da sua tatuagem,
-localizado no Bethaville, em Barueri.
+<div class="specialty-copy reveal">
+
+<p>
+
+Projetos personalizados desenvolvidos
+para unir técnica, composição,
+profundidade e identidade.
+O objetivo é construir uma imagem
+que funcione na pele e mantenha
+boa leitura dentro da anatomia.
 
 </p>
 
 
-<div class="studio-layout">
+<div class="specialty-details">
 
+
+<div class="specialty-item">
+
+<span>
+01
+</span>
+
+<strong>
+Profundidade e volume
+</strong>
+
+</div>
+
+
+<div class="specialty-item">
+
+<span>
+02
+</span>
+
+<strong>
+Contraste controlado
+</strong>
+
+</div>
+
+
+<div class="specialty-item">
+
+<span>
+03
+</span>
+
+<strong>
+Leitura tridimensional
+</strong>
+
+</div>
+
+
+<div class="specialty-item">
+
+<span>
+04
+</span>
+
+<strong>
+Composição personalizada
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ESTÚDIO
+===================================================== -->
+
+<section
+class="studio"
+id="studio">
+
+<div class="page-shell">
+
+
+<div class="studio-head">
 
 <div>
 
+<div class="editorial-kicker reveal">
+Bethaville • Barueri
+</div>
 
-<div class="benefits">
+<h2 class="section-title reveal">
+O estúdio.
+</h2>
+
+</div>
 
 
-<div class="benefit reveal">
+<p class="studio-description reveal">
 
-<div class="check">✓</div>
+Um ambiente pensado para oferecer
+conforto, privacidade e tranquilidade
+durante todo o processo da sua tatuagem.
 
-<div>
+</p>
+
+</div>
+
+
+<div class="studio-media">
+
+
+<figure class="studio-photo reveal">
+
+<img
+src="IMG_0403.jpeg"
+alt="Atendimento no estúdio Bruno Kayke Tattoo"
+loading="lazy">
+
+<div class="media-label">
 Atendimento individual
-e com horário agendado.
+</div>
+
+</figure>
+
+
+<div class="studio-video reveal">
+
+<video
+autoplay
+muted
+loop
+playsinline
+preload="metadata">
+
+<source
+src="CD573D75-DC23-411F-8922-19A7AA12DFDE.mov">
+
+Seu navegador não suporta este vídeo.
+
+</video>
+
+<div class="media-label">
+Conheça o espaço
+</div>
+
+</div>
+
+</div>
+
+
+<div class="studio-benefits">
+
+
+<div class="studio-benefit reveal">
+
+<span>
+01
+</span>
+
+<div>
+Atendimento individual e
+com horário agendado.
 </div>
 
 </div>
 
 
-<div class="benefit reveal">
+<div class="studio-benefit reveal">
 
-<div class="check">✓</div>
+<span>
+02
+</span>
 
 <div>
 Ambiente organizado,
@@ -1738,21 +3449,25 @@ reservado e confortável.
 </div>
 
 
-<div class="benefit reveal">
+<div class="studio-benefit reveal">
 
-<div class="check">✓</div>
+<span>
+03
+</span>
 
 <div>
-Materiais descartáveis
-e rotina de biossegurança.
+Materiais descartáveis e
+rotina de biossegurança.
 </div>
 
 </div>
 
 
-<div class="benefit reveal">
+<div class="studio-benefit reveal">
 
-<div class="check">✓</div>
+<span>
+04
+</span>
 
 <div>
 Ambiente climatizado,
@@ -1762,152 +3477,92 @@ preparado para sessões longas.
 </div>
 
 
-<div class="benefit reveal">
-
-<div class="check">✓</div>
-
-<div>
-Localização no Bethaville,
-Barueri - SP.
-</div>
-
 </div>
 
 
-</div>
-
+<div
+style="
+margin-top:38px;
+"
+class="reveal">
 
 <a
-class="btn btn-white reveal"
+class="link-button"
 href="https://www.google.com/maps/search/?api=1&query=Avenida+An%C3%A1polis%2C+100%2C+Bethaville%2C+Barueri+-+SP"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener">
 
-Conhecer o estúdio no Maps →
+Ver no mapa
+<span>↗</span>
 
 </a>
 
-
 </div>
 
-
-<div class="studio-media">
-
-
-<figure class="studio-image reveal">
-
-<img
-src="IMG_0403.jpeg"
-alt="Atendimento no estúdio Bruno Kayke Tattoo"
-loading="lazy">
-
-</figure>
-
-
-<div class="studio-video reveal">
-
-
-<video
-id="studioVideo"
-autoplay
-muted
-loop
-playsinline
-webkit-playsinline
-preload="auto"
-disablepictureinpicture
-controlslist="nodownload noplaybackrate noremoteplayback">
-
-<source
-src="CD573D75-DC23-411F-8922-19A7AA12DFDE.mov">
-
-Seu navegador não suporta este vídeo.
-
-</video>
-
-
-<div class="media-caption">
-
-Conheça um pouco do espaço
-e da experiência de atendimento
-no Bruno Kayke Tattoo.
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================================
-     SOBRE
-========================================= -->
+<!-- =====================================================
+     BRUNO
+===================================================== -->
 
-<section id="bruno">
+<section
+class="about"
+id="bruno">
 
-<div class="container">
-
-
-<div class="kicker reveal">
-Conheça Bruno Kayke
+<div
+class="about-background-word"
+aria-hidden="true">
+BK
 </div>
 
 
-<h2 class="title about-title reveal">
+<div class="page-shell">
 
-Paixão.
-Dedicação.
-<span>Excelência.</span>
-
-</h2>
+<div class="about-content">
 
 
-<p class="about-text reveal">
-
-Há 7 anos transformando referências,
-ideias e histórias em projetos de tatuagem.
-
-Meu trabalho é focado no Realismo Preto e Cinza,
-buscando evolução constante em composição,
-contraste, técnica e acabamento.
-
-</p>
+<div class="editorial-kicker reveal">
+Bruno Kayke
+</div>
 
 
-<blockquote class="quote reveal">
+<div class="about-text reveal">
 
-Cada projeto é tratado de forma individual.
-A proposta não é apenas reproduzir uma imagem,
-mas desenvolver uma composição que funcione
-na pele e tenha identidade para quem vai carregá-la.
+Paixão pela técnica.
+Dedicação ao processo.
+Busca constante pela
+<em>excelência.</em>
 
-</blockquote>
+</div>
 
 
-<div class="stats">
+<div class="about-quote reveal">
+
+Cada projeto é tratado de forma
+individual. A proposta não é apenas
+reproduzir uma imagem, mas desenvolver
+uma composição que funcione na pele e
+tenha identidade para quem vai carregá-la.
+
+</div>
+
+
+<div class="about-stats">
 
 
 <div class="stat reveal">
 
 <strong>
-+7 anos
++7
 </strong>
 
-<h3>
-De experiência
-</h3>
-
-<p>
-Aperfeiçoamento constante
-e dedicação à tatuagem.
-</p>
+<small>
+Anos de experiência
+</small>
 
 </div>
 
@@ -1918,14 +3573,9 @@ e dedicação à tatuagem.
 Realismo
 </strong>
 
-<h3>
+<small>
 Preto e Cinza
-</h3>
-
-<p>
-Especialização em profundidade,
-contraste e leitura tridimensional.
-</p>
+</small>
 
 </div>
 
@@ -1936,18 +3586,14 @@ contraste e leitura tridimensional.
 Exclusivo
 </strong>
 
-<h3>
+<small>
 Projeto personalizado
-</h3>
-
-<p>
-Cada composição é pensada
-considerando ideia, anatomia
-e proposta do cliente.
-</p>
+</small>
 
 </div>
 
+
+</div>
 
 </div>
 
@@ -1956,390 +3602,130 @@ e proposta do cliente.
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      PROCESSO
-========================================= -->
+===================================================== -->
 
 <section
-class="process divider"
+class="process"
 id="processo">
 
-
-<div class="container">
-
-
-<div class="center">
+<div class="page-shell">
 
 
-<div class="kicker reveal">
-Como funciona
+<div class="process-head">
+
+<div class="editorial-kicker reveal">
+Do ideal ao real
 </div>
 
-
-<h2
-class="title reveal"
-style="margin-left:auto;margin-right:auto;">
-
-Do ideal ao real
-
+<h2 class="section-title reveal">
+Um processo <em>simples.</em>
 </h2>
 
-
-<p class="lead reveal">
-
-Um processo simples e transparente
-para transformar sua ideia
-em um projeto pensado para você.
-
-</p>
-
-
 </div>
 
 
-<div class="process-grid">
+<div class="process-list">
 
 
-<div class="process-card reveal">
+<div class="process-step reveal">
 
-<div class="process-number">
+<div class="process-index">
 01
 </div>
+
+<div class="process-body">
 
 <h3>
 Envie sua ideia
 </h3>
 
 <p>
+
 Compartilhe referências,
-local do corpo,
-tamanho aproximado
+local do corpo, tamanho aproximado
 e o conceito desejado.
+
 </p>
 
 </div>
 
+</div>
 
-<div class="process-card reveal">
 
-<div class="process-number">
+<div class="process-step reveal">
+
+<div class="process-index">
 02
 </div>
+
+<div class="process-body">
 
 <h3>
 Receba a proposta
 </h3>
 
 <p>
-Analiso sua ideia,
-a viabilidade técnica
-e envio as informações
+
+Analiso sua ideia, a viabilidade
+técnica e envio as informações
 para orçamento.
+
 </p>
 
 </div>
 
+</div>
 
-<div class="process-card reveal">
 
-<div class="process-number">
+<div class="process-step reveal">
+
+<div class="process-index">
 03
 </div>
+
+<div class="process-body">
 
 <h3>
 Reserve sua data
 </h3>
 
 <p>
-Após a aprovação,
-realizamos a reserva
-do horário e seguimos
-com o planejamento.
+
+Com o projeto alinhado,
+definimos a data e reservamos
+o horário da sua sessão.
+
 </p>
 
 </div>
 
+</div>
 
-<div class="process-card reveal">
 
-<div class="process-number">
+<div class="process-step reveal">
+
+<div class="process-index">
 04
 </div>
+
+<div class="process-body">
 
 <h3>
 Viva a experiência
 </h3>
 
 <p>
-No dia agendado,
-cada detalhe é preparado
-para oferecer conforto
-e excelência no atendimento.
-</p>
 
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================
-     FEEDBACKS NOVOS
-========================================= -->
-
-<section
-class="reviews divider"
-id="avaliacoes">
-
-
-<div class="reviews-heading container">
-
-
-<div class="kicker reveal">
-Experiência real
-</div>
-
-
-<h2 class="title reveal">
-O que meus clientes dizem
-</h2>
-
-
-<p class="lead reveal">
-
-Feedbacks reais de clientes
-que confiaram seus projetos
-ao Bruno Kayke Tattoo.
+No dia da sessão,
+finalizamos os ajustes e damos
+vida ao projeto na pele.
 
 </p>
 
-
 </div>
 
-
-<div
-class="reviews-track"
-id="reviewsTrack">
-
-
-<!-- CARD 01 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="5C1CF2A4-C264-44FE-B7DB-58E860DFEE63.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 02 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="701D07C3-DD2C-4E96-99B3-673DB2E73A99.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 03 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="5608D8AF-578F-45AB-91B5-6E04611FA659.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 04 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="483B6B47-EBC8-4439-A20B-BBDB7024F0C2.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 05 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="22EE133E-216A-422A-9A21-A553FB3C7DA0.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 06 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="699FF6EC-5A5F-44E1-88E4-26FCDC2E2FB7.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 07 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="449E86E7-EF17-4728-B21A-0C841732A977.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-<!-- CARD 08 -->
-
-<div class="review-image-card reveal">
-
-<img
-src="2B12F658-58B6-47B8-B25E-5BEF4865DD25.png"
-alt="Feedback de cliente Bruno Kayke Tattoo"
-loading="lazy">
-
-</div>
-
-
-</div>
-
-
-<div class="review-hint">
-
-← Deslize para ver mais avaliações →
-
-</div>
-
-
-<div class="review-dots">
-
-<span class="review-dot active"></span>
-<span class="review-dot"></span>
-<span class="review-dot"></span>
-<span class="review-dot"></span>
-<span class="review-dot"></span>
-<span class="review-dot"></span>
-<span class="review-dot"></span>
-<span class="review-dot"></span>
-
-</div>
-
-
-</section>
-
-
-<!-- =========================================
-     MAIS TRABALHOS
-========================================= -->
-
-<section class="more-work divider">
-
-<div class="container">
-
-
-<div class="kicker reveal">
-Portfólio
-</div>
-
-
-<h2 class="title reveal">
-Veja mais trabalhos
-</h2>
-
-
-<div class="more-grid">
-
-
-<div class="more-item reveal">
-<img
-src="IMG_4038.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_4787.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_4814.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_5835.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_7753.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_9714.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_4781_Original.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_5110.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
-</div>
-
-
-<div class="more-item reveal">
-<img
-src="IMG_6595.jpeg"
-alt="Tattoo Bruno Kayke"
-loading="lazy">
 </div>
 
 
@@ -2348,19 +3734,16 @@ loading="lazy">
 
 <div
 class="reveal"
-style="text-align:center;margin-top:35px;">
-
+style="margin-top:42px;">
 
 <a
-class="btn"
-href="https://www.instagram.com/brunokayketattoo/"
-target="_blank"
-rel="noopener noreferrer">
+class="link-button primary"
+href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke">
 
-Ver portfólio no Instagram →
+Iniciar orçamento
+<span>↗</span>
 
 </a>
-
 
 </div>
 
@@ -2369,40 +3752,244 @@ Ver portfólio no Instagram →
 </section>
 
 
-<!-- =========================================
-     CTA
-========================================= -->
+<!-- =====================================================
+     ARQUIVO / MAIS TRABALHOS
+===================================================== -->
 
-<section class="final-cta">
+<section class="archive">
 
-<div class="container">
+<div class="page-shell">
 
-<div class="cta-box reveal">
 
-<div class="kicker">
-Seu próximo projeto
+<div class="archive-title">
+
+<div class="editorial-kicker reveal">
+Arquivo
 </div>
 
-<h2>
-Pronto para eternizar sua história?
+<h2 class="section-title reveal">
+Mais <em>trabalhos.</em>
 </h2>
+
+</div>
+
+
+<div class="archive-grid">
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_4038.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_4787.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_4814.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_5835.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_7753.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_9714.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_4781_Original.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_5110.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+<div class="archive-item reveal">
+
+<img
+src="IMG_6595.jpeg"
+alt="Tattoo Bruno Kayke"
+loading="lazy">
+
+</div>
+
+
+</div>
+
+
+<div class="archive-actions reveal">
+
+<a
+class="link-button"
+href="https://www.instagram.com/brunokayketattoo/"
+target="_blank"
+rel="noopener">
+
+Ver portfólio no Instagram
+<span>↗</span>
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     AVALIAÇÕES
+===================================================== -->
+
+<section
+class="reviews"
+id="avaliacoes">
+
+<div class="page-shell">
+
+
+<div class="editorial-kicker reveal">
+Experiência
+</div>
+
+
+<h2 class="section-title reveal">
+O que meus <em>clientes dizem.</em>
+</h2>
+
+
+<div class="reviews-panel reveal">
+
+<strong>
+Avaliações reais em breve.
+</strong>
 
 <p>
 
-Entre em contato direto pelo WhatsApp,
+Este espaço está preparado para receber
+os feedbacks dos clientes do estúdio,
+com avaliações e experiências reais.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA FINAL
+===================================================== -->
+
+<section class="final">
+
+<div
+class="final-image"
+aria-hidden="true">
+</div>
+
+
+<div class="page-shell">
+
+<div class="final-content">
+
+
+<div class="editorial-kicker reveal">
+Seu próximo projeto
+</div>
+
+
+<h2 class="final-title reveal">
+
+Sua ideia.
+<br>
+Sua história.
+<br>
+<em>Sua tattoo.</em>
+
+</h2>
+
+
+<p class="final-copy reveal">
+
+Entre em contato pelo WhatsApp,
 envie sua ideia e suas referências
 para receber as informações
 sobre o seu projeto.
 
 </p>
 
+
+<div class="final-actions reveal">
+
 <a
-class="btn btn-white"
+class="link-button primary"
 href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke">
 
-Solicitar orçamento via WhatsApp
+Solicitar orçamento
+<span>↗</span>
 
 </a>
+
+</div>
+
 
 </div>
 
@@ -2411,24 +3998,30 @@ Solicitar orçamento via WhatsApp
 </section>
 
 
-<!-- =========================================
+</main>
+
+
+<!-- =====================================================
      FOOTER
-========================================= -->
+===================================================== -->
 
 <footer
 class="footer"
 id="contato">
 
-<div class="container">
+<div class="page-shell">
 
+
+<div class="footer-top">
+
+
+<div class="footer-brand">
 
 <img
-class="footer-logo"
 src="IMG_9645.png"
 alt="Bruno Kayke Tattoo">
 
-
-<p class="footer-tagline">
+<p>
 
 Tatuagem de alto padrão.
 Especialista em Realismo Preto e Cinza
@@ -2436,41 +4029,35 @@ em Barueri e Alphaville.
 
 </p>
 
+</div>
 
-<div class="footer-grid">
+
+<div class="footer-columns">
 
 
-<div>
+<div class="footer-column">
 
-<h3>
+<h4>
 Contato
-</h3>
-
-<p>
-WhatsApp:
-</p>
+</h4>
 
 <a
 href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke">
 
+WhatsApp
+<br>
 (11) 97482-4443
 
 </a>
 
-</div>
-
-
-<div>
-
-<h3>
-Instagram
-</h3>
 
 <a
 href="https://www.instagram.com/brunokayketattoo/"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener">
 
+Instagram
+<br>
 @brunokayketattoo
 
 </a>
@@ -2478,26 +4065,47 @@ rel="noopener noreferrer">
 </div>
 
 
-<div>
+<div class="footer-column">
 
-<h3>
-Estúdio
-</h3>
-
-<p>
-
-Avenida Anápolis, 100<br>
-Bethaville<br>
-Barueri - SP
-
-</p>
+<h4>
+Localização
+</h4>
 
 <a
 href="https://www.google.com/maps/search/?api=1&query=Avenida+An%C3%A1polis%2C+100%2C+Bethaville%2C+Barueri+-+SP"
 target="_blank"
-rel="noopener noreferrer">
+rel="noopener">
 
-Abrir no Google Maps →
+Avenida Anápolis, 100
+<br>
+Bethaville
+<br>
+Barueri - SP
+
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>
+Atendimento
+</h4>
+
+<span>
+
+Atendimento somente
+com horário agendado.
+
+</span>
+
+<a
+href="https://www.google.com/maps/search/?api=1&query=Avenida+An%C3%A1polis%2C+100%2C+Bethaville%2C+Barueri+-+SP"
+target="_blank"
+rel="noopener">
+
+Abrir no mapa ↗
 
 </a>
 
@@ -2506,11 +4114,18 @@ Abrir no Google Maps →
 
 </div>
 
+</div>
+
 
 <div class="footer-bottom">
 
-© 2026 Bruno Kayke Tattoo.<br>
-Todos os direitos reservados.
+<span>
+© 2026 Bruno Kayke Tattoo
+</span>
+
+<span>
+Todos os direitos reservados
+</span>
 
 </div>
 
@@ -2520,12 +4135,12 @@ Todos os direitos reservados.
 </footer>
 
 
-<!-- =========================================
+<!-- =====================================================
      WHATSAPP
-========================================= -->
+===================================================== -->
 
 <a
-class="whatsapp-float"
+class="whatsapp"
 href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke"
 aria-label="Falar com Bruno Kayke pelo WhatsApp">
 
@@ -2533,7 +4148,13 @@ aria-label="Falar com Bruno Kayke pelo WhatsApp">
 viewBox="0 0 32 32"
 aria-hidden="true">
 
-<path d="M19.11 17.21c-.28-.14-1.65-.81-1.91-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.08-.16.19-.33.21-.61.07-.28-.14-1.18-.43-2.24-1.38-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.49.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.49-.07-.14-.64-1.54-.87-2.11-.23-.56-.47-.48-.64-.49h-.54c-.19 0-.49.07-.75.35-.26.28-.99.97-.99 2.36s1.01 2.74 1.15 2.93c.14.19 1.99 3.04 4.82 4.27.67.29 1.2.46 1.61.59.68.21 1.29.18 1.78.11.54-.08 1.65-.68 1.89-1.33.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33zm-3.05 7.52h-.01a9.72 9.72 0 0 1-4.95-1.35l-.36-.22-3.68.97.98-3.59-.23-.37a9.69 9.69 0 1 1 8.25 4.56zm8.26-17.98A11.62 11.62 0 0 0 16.04 3.3C9.63 3.3 4.41 8.52 4.41 14.94c0 2.05.54 4.06 1.56 5.82L4.31 26.8l6.18-1.62a11.62 11.62 0 0 0 5.55 1.41h.01c6.41 0 11.63-5.22 11.63-11.64 0-3.11-1.2-6.03-3.36-8.2z"/>
+<path
+d="M19.11 17.42c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.93-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.69.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.11-.24-.17-.5-.3z">
+</path>
+
+<path
+d="M16.03 3.2c-7.04 0-12.76 5.72-12.76 12.76 0 2.25.59 4.45 1.71 6.38L3.16 28.8l6.61-1.74a12.7 12.7 0 0 0 6.26 1.6h.01c7.04 0 12.76-5.72 12.76-12.76S23.07 3.2 16.03 3.2zm0 23.31h-.01a10.55 10.55 0 0 1-5.37-1.47l-.38-.23-3.92 1.03 1.05-3.82-.25-.39a10.5 10.5 0 0 1-1.62-5.67c0-5.79 4.71-10.5 10.5-10.5s10.5 4.71 10.5 10.5-4.71 10.55-10.5 10.55z">
+</path>
 
 </svg>
 
@@ -2542,462 +4163,287 @@ aria-hidden="true">
 
 <script>
 
-/* =========================================
+/* =====================================================
    MENU
-========================================= */
+===================================================== */
 
-const hamburger =
-document.getElementById("hamburger");
+const menuButton =
+document.getElementById(
+  "menuButton"
+);
 
-const mobileMenu =
-document.getElementById("mobileMenu");
+const navigation =
+document.getElementById(
+  "navigation"
+);
 
 
-if(hamburger && mobileMenu){
+function toggleMenu(){
 
-  hamburger.addEventListener(
-    "click",
-    function(){
-
-      hamburger.classList.toggle("active");
-
-      mobileMenu.classList.toggle("open");
-
-      document.body.classList.toggle("menu-open");
-
-    }
+  const open =
+  navigation.classList.toggle(
+    "open"
   );
 
+  menuButton.classList.toggle(
+    "active",
+    open
+  );
 
-  mobileMenu
-  .querySelectorAll("a")
-  .forEach(function(link){
-
-    link.addEventListener(
-      "click",
-      function(){
-
-        hamburger.classList.remove("active");
-
-        mobileMenu.classList.remove("open");
-
-        document.body.classList.remove("menu-open");
-
-      }
-    );
-
-  });
+  document.body.classList.toggle(
+    "menu-open",
+    open
+  );
 
 }
 
 
-/* =========================================
-   REVEAL
-========================================= */
+function closeMenu(){
 
-const revealItems =
-document.querySelectorAll(".reveal");
+  navigation.classList.remove(
+    "open"
+  );
+
+  menuButton.classList.remove(
+    "active"
+  );
+
+  document.body.classList.remove(
+    "menu-open"
+  );
+
+}
 
 
-const revealObserver =
-new IntersectionObserver(
-  function(entries){
-
-    entries.forEach(
-      function(entry){
-
-        if(entry.isIntersecting){
-
-          entry.target
-          .classList
-          .add("visible");
-
-          revealObserver
-          .unobserve(entry.target);
-
-        }
-
-      }
-    );
-
-  },
-  {
-    threshold:.08
-  }
+menuButton.addEventListener(
+  "click",
+  toggleMenu
 );
 
 
-revealItems.forEach(
-  function(item){
+document
+.querySelectorAll(
+  ".navigation a"
+)
+.forEach(link=>{
 
-    revealObserver.observe(item);
+  link.addEventListener(
+    "click",
+    closeMenu
+  );
 
-  }
+});
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+const header =
+document.getElementById(
+  "header"
 );
 
 
-/* =========================================
-   PARALLAX DA CAPA
-========================================= */
+function updateHeader(){
 
-const heroPhoto =
-document.getElementById("heroPhoto");
-
-
-function updateHeroParallax(){
-
-  if(!heroPhoto){
-    return;
-  }
-
-  const scrollY =
-  window.scrollY || 0;
-
-  const mobile =
-  window.innerWidth <= 500;
-
-  const scale =
-  mobile ? 1.10 : 1.08;
-
-  heroPhoto.style.transform =
-  "scale(" +
-  scale +
-  ") translateY(" +
-  (scrollY * .015) +
-  "px)";
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 40
+  );
 
 }
 
 
 window.addEventListener(
   "scroll",
-  updateHeroParallax,
+  updateHeader,
   {
     passive:true
   }
 );
 
 
-/* =========================================
-   VÍDEO
-   AUTOPLAY + COMEÇA EM 0:00
-========================================= */
+updateHeader();
+
+
+/* =====================================================
+   ENTRADA DOS ELEMENTOS
+===================================================== */
+
+const revealItems =
+document.querySelectorAll(
+  ".reveal"
+);
+
+
+const revealObserver =
+new IntersectionObserver(
+
+entries=>{
+
+  entries.forEach(entry=>{
+
+    if(
+      entry.isIntersecting
+    ){
+
+      entry.target.classList.add(
+        "visible"
+      );
+
+      revealObserver.unobserve(
+        entry.target
+      );
+
+    }
+
+  });
+
+},
+
+{
+  threshold:.10,
+  rootMargin:
+  "0px 0px -30px 0px"
+}
+
+);
+
+
+revealItems.forEach(
+  item=>{
+    revealObserver.observe(item);
+  }
+);
+
+
+/* =====================================================
+   CAPA / MOVIMENTO CINEMATOGRÁFICO
+===================================================== */
+
+const heroImage =
+document.getElementById(
+  "heroImage"
+);
+
+
+let currentHeroY = 0;
+let targetHeroY = 0;
+
+
+function calculateHeroMovement(){
+
+  const scrollY =
+  window.scrollY;
+
+
+  targetHeroY =
+  Math.min(
+    scrollY * .065,
+    65
+  );
+
+}
+
+
+function animateHero(){
+
+  currentHeroY +=
+  (
+    targetHeroY -
+    currentHeroY
+  )
+  *
+  .075;
+
+
+  heroImage.style.transform =
+  `
+  translate3d(
+    0,
+    ${currentHeroY}px,
+    0
+  )
+  scale(1.04)
+  `;
+
+
+  requestAnimationFrame(
+    animateHero
+  );
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  calculateHeroMovement,
+  {
+    passive:true
+  }
+);
+
+
+calculateHeroMovement();
+
+requestAnimationFrame(
+  animateHero
+);
+
+
+/* =====================================================
+   AUTOPLAY DO VÍDEO
+===================================================== */
 
 const studioVideo =
-document.getElementById("studioVideo");
+document.querySelector(
+  ".studio-video video"
+);
 
 
 if(studioVideo){
 
-  studioVideo.muted = true;
-  studioVideo.defaultMuted = true;
-  studioVideo.volume = 0;
-
-  studioVideo.autoplay = true;
-  studioVideo.loop = true;
-  studioVideo.playsInline = true;
-
-  studioVideo.removeAttribute("controls");
-
-
-  let metadataCarregada = false;
-  let videoVisivel = false;
-
-
-  function zerarVideo(){
-
-    try{
-
-      studioVideo.pause();
-      studioVideo.currentTime = 0;
-
-    }catch(e){}
-
-  }
-
-
-  function tocarVideoDoZero(){
-
-    if(!metadataCarregada){
-
-      return;
-
-    }
-
-
-    try{
-
-      studioVideo.pause();
-      studioVideo.currentTime = 0;
-
-    }catch(e){}
-
-
-    requestAnimationFrame(
-      function(){
-
-        const promessa =
-        studioVideo.play();
-
-        if(promessa !== undefined){
-
-          promessa.catch(
-            function(){}
-          );
-
-        }
-
-      }
-    );
-
-  }
-
-
-  /*
-  O autoplay continua no HTML,
-  mas impedimos que o vídeo fique
-  avançando escondido na página.
-  */
-
-  try{
-
-    studioVideo.pause();
-
-  }catch(e){}
-
-
-  studioVideo.addEventListener(
-    "loadedmetadata",
-    function(){
-
-      metadataCarregada = true;
-
-      zerarVideo();
-
-      if(videoVisivel){
-
-        tocarVideoDoZero();
-
-      }
-
-    }
-  );
-
-
-  /*
-  Só começa quando o vídeo chega
-  na área visível da tela.
-  Sempre começa no segundo zero.
-  */
-
   const videoObserver =
   new IntersectionObserver(
-    function(entries){
 
-      entries.forEach(
-        function(entry){
+    entries=>{
 
-          if(entry.isIntersecting){
+      entries.forEach(entry=>{
 
-            if(!videoVisivel){
+        if(
+          entry.isIntersecting
+        ){
 
-              videoVisivel = true;
-
-              tocarVideoDoZero();
-
-            }
-
-          }else{
-
-            videoVisivel = false;
-
-            zerarVideo();
-
-          }
-
-        }
-      );
-
-    },
-    {
-      threshold:.18
-    }
-  );
-
-
-  videoObserver.observe(studioVideo);
-
-
-  /*
-  Caso o navegador já tenha
-  carregado os metadados.
-  */
-
-  if(studioVideo.readyState >= 1){
-
-    metadataCarregada = true;
-
-    zerarVideo();
-
-  }
-
-
-  /*
-  iPhone / Safari:
-  ao voltar para a página,
-  reinicia em 0 se estiver visível.
-  */
-
-  document.addEventListener(
-    "visibilitychange",
-    function(){
-
-      if(
-        document.visibilityState
-        ===
-        "visible"
-      ){
-
-        if(videoVisivel){
-
-          tocarVideoDoZero();
+          studioVideo
+          .play()
+          .catch(()=>{});
 
         }else{
 
-          zerarVideo();
+          studioVideo.pause();
 
         }
 
-      }
+      });
 
-    }
-  );
+    },
 
-
-  window.addEventListener(
-    "pageshow",
-    function(){
-
-      if(videoVisivel){
-
-        tocarVideoDoZero();
-
-      }else{
-
-        zerarVideo();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================
-   PONTINHOS DOS FEEDBACKS
-========================================= */
-
-const reviewsTrack =
-document.getElementById("reviewsTrack");
-
-const reviewCards =
-document.querySelectorAll(
-  ".review-image-card"
-);
-
-const reviewDots =
-document.querySelectorAll(
-  ".review-dot"
-);
-
-
-if(
-  reviewsTrack &&
-  reviewCards.length &&
-  reviewDots.length
-){
-
-  function atualizarPontos(){
-
-    const trackRect =
-    reviewsTrack.getBoundingClientRect();
-
-    const centroTrack =
-    trackRect.left +
-    trackRect.width / 2;
-
-    let indiceMaisProximo = 0;
-
-    let menorDistancia =
-    Infinity;
-
-
-    reviewCards.forEach(
-      function(card,index){
-
-        const rect =
-        card.getBoundingClientRect();
-
-        const centroCard =
-        rect.left +
-        rect.width / 2;
-
-        const distancia =
-        Math.abs(
-          centroCard -
-          centroTrack
-        );
-
-
-        if(distancia < menorDistancia){
-
-          menorDistancia =
-          distancia;
-
-          indiceMaisProximo =
-          index;
-
-        }
-
-      }
-    );
-
-
-    reviewDots.forEach(
-      function(dot,index){
-
-        dot.classList.toggle(
-          "active",
-          index === indiceMaisProximo
-        );
-
-      }
-    );
-
-  }
-
-
-  reviewsTrack.addEventListener(
-    "scroll",
-    atualizarPontos,
     {
-      passive:true
+      threshold:.20
     }
+
   );
 
 
-  window.addEventListener(
-    "resize",
-    atualizarPontos
+  videoObserver.observe(
+    studioVideo
   );
-
-
-  atualizarPontos();
 
 }
 
 </script>
+
 
 </body>
 
