@@ -36,7 +36,6 @@ rel="stylesheet">
 :root{
   --black:#050505;
   --black-soft:#0a0a0a;
-  --black-card:#0f0f0f;
   --white:#f2f0eb;
   --gray:#85827d;
   --line:rgba(255,255,255,.11);
@@ -117,7 +116,10 @@ button{
 
 .header.scrolled{
   background:rgba(5,5,5,.82);
-  border-bottom:1px solid rgba(255,255,255,.07);
+
+  border-bottom:
+  1px solid
+  rgba(255,255,255,.07);
 
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
@@ -135,8 +137,11 @@ button{
 .brand img{
   width:51px;
   height:51px;
+
   object-fit:cover;
+
   border-radius:50%;
+
   filter:grayscale(1);
 }
 
@@ -174,7 +179,9 @@ button{
 
 .menu-button.active
 .menu-lines span:nth-child(1){
-  transform:translateY(7px) rotate(45deg);
+  transform:
+  translateY(7px)
+  rotate(45deg);
 }
 
 .menu-button.active
@@ -184,7 +191,9 @@ button{
 
 .menu-button.active
 .menu-lines span:nth-child(3){
-  transform:translateY(-7px) rotate(-45deg);
+  transform:
+  translateY(-7px)
+  rotate(-45deg);
 }
 
 
@@ -223,8 +232,11 @@ button{
   margin-bottom:30px;
 
   color:#666;
+
   font-size:9px;
+
   letter-spacing:.32em;
+
   text-transform:uppercase;
 }
 
@@ -239,7 +251,9 @@ button{
   1px solid
   rgba(255,255,255,.08);
 
-  font-family:"Playfair Display",serif;
+  font-family:
+  "Playfair Display",
+  serif;
 
   font-size:
   clamp(38px,10vw,74px);
@@ -309,6 +323,7 @@ button{
 .hero-content{
   position:relative;
   z-index:5;
+
   width:100%;
 
   padding:
@@ -320,6 +335,7 @@ button{
 .hero-label{
   display:flex;
   align-items:center;
+
   gap:15px;
 
   margin-bottom:23px;
@@ -345,7 +361,9 @@ button{
 }
 
 .hero-title{
-  font-family:"Playfair Display",serif;
+  font-family:
+  "Playfair Display",
+  serif;
 
   font-size:
   clamp(62px,18vw,150px);
@@ -450,7 +468,9 @@ button{
 }
 
 .hero-index-right{
-  font-family:"Playfair Display",serif;
+  font-family:
+  "Playfair Display",
+  serif;
 
   font-style:italic;
 
@@ -508,6 +528,7 @@ button{
 
 .manifesto-copy{
   position:relative;
+
   z-index:2;
 
   max-width:1000px;
@@ -534,7 +555,6 @@ button{
   max-width:520px;
 
   margin-top:45px;
-
   margin-left:auto;
 
   color:#777;
@@ -568,7 +588,6 @@ button{
   display:flex;
 
   align-items:flex-end;
-
   justify-content:space-between;
 
   gap:30px;
@@ -611,9 +630,7 @@ button{
   20px;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
 
   color:#575757;
@@ -650,15 +667,22 @@ button{
   overflow-x:auto;
   overflow-y:hidden;
 
-  scroll-snap-type:x mandatory;
+  scroll-snap-type:
+  x mandatory;
 
   scrollbar-width:none;
 
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling:
+  touch;
 
   padding:
   0
-  max(19px,calc((100vw - 1280px) / 2))
+  max(
+    19px,
+    calc(
+      (100vw - 1280px) / 2
+    )
+  )
   30px;
 
   cursor:grab;
@@ -733,7 +757,6 @@ button{
   display:flex;
 
   align-items:flex-start;
-
   justify-content:space-between;
 
   gap:20px;
@@ -786,7 +809,6 @@ button{
   17px auto 0;
 
   display:flex;
-
   align-items:center;
 
   gap:18px;
@@ -817,6 +839,7 @@ button{
 
 .progress-fill{
   width:7%;
+
   height:100%;
 
   background:#a9a9a4;
@@ -848,6 +871,7 @@ button{
 
 .specialty-layout{
   display:grid;
+
   gap:60px;
 }
 
@@ -868,11 +892,13 @@ button{
 
 .specialty-title span{
   color:#707070;
+
   font-style:italic;
 }
 
 .specialty-copy{
   display:grid;
+
   gap:35px;
 }
 
@@ -928,7 +954,7 @@ button{
 
 
 /* =====================================================
-   ESTÚDIO
+   ESTÚDIO - SOMENTE FOTO E VÍDEO
 ===================================================== */
 
 .studio{
@@ -957,6 +983,7 @@ button{
 
 .studio-media{
   display:grid;
+
   gap:18px;
 }
 
@@ -1019,241 +1046,6 @@ button{
   text-transform:uppercase;
 }
 
-.studio-benefits{
-  display:grid;
-
-  margin-top:55px;
-
-  border-top:
-  1px solid
-  var(--line);
-}
-
-.studio-benefit{
-  display:grid;
-
-  grid-template-columns:
-  30px 1fr;
-
-  gap:15px;
-
-  padding:
-  20px 0;
-
-  border-bottom:
-  1px solid
-  var(--line);
-
-  color:#999;
-
-  font-size:13px;
-
-  line-height:1.6;
-}
-
-.studio-benefit span{
-  color:#fff;
-
-  font-family:
-  "Playfair Display",
-  serif;
-}
-
-
-/* =====================================================
-   SOBRE
-===================================================== */
-
-.about{
-  position:relative;
-
-  padding:
-  125px
-  0;
-
-  overflow:hidden;
-}
-
-.about-bg{
-  position:absolute;
-
-  left:0;
-  top:50px;
-
-  font-family:
-  "Playfair Display",
-  serif;
-
-  font-size:
-  clamp(150px,45vw,430px);
-
-  color:
-  rgba(255,255,255,.018);
-
-  line-height:.8;
-}
-
-.about-content{
-  position:relative;
-  z-index:2;
-}
-
-.about-text{
-  max-width:820px;
-
-  font-family:
-  "Playfair Display",
-  serif;
-
-  font-size:
-  clamp(31px,7vw,61px);
-
-  line-height:1.17;
-}
-
-.about-text em{
-  color:#6d6d6d;
-}
-
-.about-quote{
-  max-width:610px;
-
-  margin:
-  50px
-  0
-  0
-  auto;
-
-  padding-left:24px;
-
-  border-left:
-  1px solid
-  rgba(255,255,255,.25);
-
-  color:#818181;
-
-  line-height:1.9;
-
-  font-size:14px;
-}
-
-.about-stats{
-  display:grid;
-
-  gap:1px;
-
-  margin-top:65px;
-
-  background:
-  rgba(255,255,255,.09);
-}
-
-.stat{
-  padding:
-  31px 23px;
-
-  background:#070707;
-}
-
-.stat strong{
-  display:block;
-
-  font-family:
-  "Playfair Display",
-  serif;
-
-  font-size:
-  clamp(37px,9vw,64px);
-
-  font-weight:500;
-}
-
-.stat small{
-  display:block;
-
-  margin-top:7px;
-
-  color:#616161;
-
-  font-size:8px;
-
-  letter-spacing:.22em;
-
-  text-transform:uppercase;
-}
-
-
-/* =====================================================
-   PROCESSO
-===================================================== */
-
-.process{
-  padding:
-  125px
-  0;
-
-  background:#080808;
-}
-
-.process-head{
-  max-width:900px;
-
-  margin-bottom:65px;
-}
-
-.process-list{
-  border-top:
-  1px solid
-  var(--line);
-}
-
-.process-step{
-  display:grid;
-
-  grid-template-columns:
-  45px 1fr;
-
-  gap:20px;
-
-  padding:
-  30px 0;
-
-  border-bottom:
-  1px solid
-  var(--line);
-}
-
-.process-index{
-  color:#4c4c4c;
-
-  font-size:9px;
-
-  letter-spacing:.16em;
-}
-
-.process-body h3{
-  margin-bottom:11px;
-
-  font-family:
-  "Playfair Display",
-  serif;
-
-  font-size:
-  clamp(26px,6vw,38px);
-
-  font-weight:500;
-}
-
-.process-body p{
-  max-width:560px;
-
-  color:#797979;
-
-  line-height:1.8;
-
-  font-size:13px;
-}
-
 
 /* =====================================================
    FEEDBACKS
@@ -1287,6 +1079,7 @@ button{
 
 .feedback-frame img{
   width:100%;
+
   height:auto;
 
   display:block;
@@ -1316,6 +1109,7 @@ button{
 
 .final-image{
   position:absolute;
+
   inset:0;
 
   background:
@@ -1338,6 +1132,7 @@ button{
 
 .final-content{
   position:relative;
+
   z-index:3;
 }
 
@@ -1397,6 +1192,7 @@ button{
 
 .footer-top{
   display:grid;
+
   gap:45px;
 }
 
@@ -1497,7 +1293,6 @@ button{
   height:62px;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
@@ -1535,6 +1330,7 @@ button{
 
 .reveal.visible{
   opacity:1;
+
   transform:none;
 }
 
@@ -1559,19 +1355,29 @@ button{
   }
 
   .portfolio-head{
-    width:min(1280px,calc(100% - 90px));
+    width:
+    min(
+      1280px,
+      calc(100% - 90px)
+    );
   }
 
   .slider-hint,
   .portfolio-progress{
-    width:min(1280px,calc(100% - 90px));
+    width:
+    min(
+      1280px,
+      calc(100% - 90px)
+    );
   }
 
   .portfolio-track{
     padding-left:
     max(
       45px,
-      calc((100vw - 1280px)/2)
+      calc(
+        (100vw - 1280px) / 2
+      )
     );
 
     padding-right:45px;
@@ -1608,33 +1414,6 @@ button{
     margin-top:120px;
   }
 
-  .studio-benefits{
-    grid-template-columns:
-    repeat(2,1fr);
-
-    column-gap:40px;
-  }
-
-  .about-stats{
-    grid-template-columns:
-    repeat(3,1fr);
-  }
-
-  .process-step{
-    grid-template-columns:
-    70px .7fr 1fr;
-
-    align-items:start;
-  }
-
-  .process-body{
-    display:contents;
-  }
-
-  .process-body h3{
-    margin-bottom:0;
-  }
-
   .footer-top{
     grid-template-columns:
     1fr 1.25fr;
@@ -1667,7 +1446,11 @@ button{
 
   .hero-title{
     font-size:
-    clamp(62px,19vw,84px);
+    clamp(
+      62px,
+      19vw,
+      84px
+    );
   }
 
   .hero-description{
@@ -1689,6 +1472,8 @@ button{
 
   .feedback-frame{
     overflow-x:auto;
+
+    -webkit-overflow-scrolling:touch;
   }
 
   .feedback-frame img{
@@ -1800,14 +1585,6 @@ Realismo
 Estúdio
 </a>
 
-<a href="#bruno">
-Bruno
-</a>
-
-<a href="#processo">
-Processo
-</a>
-
 <a href="#avaliacoes">
 Avaliações
 </a>
@@ -1825,6 +1602,10 @@ Contato
 
 <main>
 
+
+<!-- =====================================================
+     CAPA
+===================================================== -->
 
 <section
 class="hero"
@@ -1904,6 +1685,10 @@ Tatuagem de alto padrão
 </section>
 
 
+<!-- =====================================================
+     APRESENTAÇÃO
+===================================================== -->
+
 <section class="manifesto">
 
 <div class="manifesto-number">
@@ -1942,7 +1727,7 @@ técnica e acabamento.
 
 
 <!-- =====================================================
-     PORTFÓLIO EM UMA LINHA
+     TRABALHOS
 ===================================================== -->
 
 <section
@@ -2374,7 +2159,9 @@ Portfólio
 <div
 class="progress-counter"
 id="portfolioCounter">
+
 01 / 11
+
 </div>
 
 <div class="progress-line">
@@ -2390,6 +2177,10 @@ id="progressFill">
 
 </section>
 
+
+<!-- =====================================================
+     REALISMO
+===================================================== -->
 
 <section
 class="specialty"
@@ -2498,6 +2289,10 @@ Projeto pensado para sua anatomia
 </section>
 
 
+<!-- =====================================================
+     ESTÚDIO
+===================================================== -->
+
 <section
 class="studio"
 id="studio">
@@ -2524,7 +2319,7 @@ O estúdio.
 
 Um ambiente pensado para oferecer
 conforto, privacidade e tranquilidade
-durante todo o processo da sua tatuagem.
+durante sua sessão.
 
 </p>
 
@@ -2538,11 +2333,11 @@ durante todo o processo da sua tatuagem.
 
 <img
 src="IMG_0403.jpeg"
-alt="Atendimento no estúdio Bruno Kayke Tattoo"
+alt="Estúdio Bruno Kayke Tattoo"
 loading="lazy">
 
 <div class="media-label">
-Atendimento individual
+O espaço
 </div>
 
 </figure>
@@ -2571,330 +2366,13 @@ Conheça o espaço
 
 </div>
 
-
-<div class="studio-benefits">
-
-
-<div class="studio-benefit reveal">
-
-<span>01</span>
-
-<div>
-Atendimento individual
-e com horário agendado.
-</div>
-
-</div>
-
-
-<div class="studio-benefit reveal">
-
-<span>02</span>
-
-<div>
-Ambiente organizado,
-reservado e confortável.
-</div>
-
-</div>
-
-
-<div class="studio-benefit reveal">
-
-<span>03</span>
-
-<div>
-Materiais descartáveis
-e rotina de biossegurança.
-</div>
-
-</div>
-
-
-<div class="studio-benefit reveal">
-
-<span>04</span>
-
-<div>
-Ambiente climatizado,
-preparado para sessões longas.
-</div>
-
-</div>
-
-
-</div>
-
-
-<div
-class="reveal"
-style="margin-top:38px;">
-
-<a
-class="link-button"
-href="https://www.google.com/maps/search/?api=1&query=Avenida+An%C3%A1polis%2C+100%2C+Bethaville%2C+Barueri+-+SP"
-target="_blank">
-
-Ver no mapa ↗
-
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<section
-class="about"
-id="bruno">
-
-<div class="about-bg">
-BK
-</div>
-
-
-<div class="page-shell">
-
-<div class="about-content">
-
-
-<div class="editorial-kicker reveal">
-Bruno Kayke
-</div>
-
-
-<div class="about-text reveal">
-
-Paixão pela técnica.
-Dedicação ao processo.
-Busca constante pela
-<em>excelência.</em>
-
-</div>
-
-
-<div class="about-quote reveal">
-
-Cada projeto é tratado de forma individual.
-A proposta é desenvolver uma composição
-que funcione na pele e tenha identidade
-para quem vai carregá-la.
-
-</div>
-
-
-<div class="about-stats">
-
-
-<div class="stat reveal">
-
-<strong>
-+7
-</strong>
-
-<small>
-Anos de experiência
-</small>
-
-</div>
-
-
-<div class="stat reveal">
-
-<strong>
-Realismo
-</strong>
-
-<small>
-Preto e Cinza
-</small>
-
-</div>
-
-
-<div class="stat reveal">
-
-<strong>
-Exclusivo
-</strong>
-
-<small>
-Projeto personalizado
-</small>
-
-</div>
-
-
-</div>
-
-</div>
-
 </div>
 
 </section>
 
 
 <!-- =====================================================
-     PROCESSO COM TEXTOS NOVOS
-===================================================== -->
-
-<section
-class="process"
-id="processo">
-
-<div class="page-shell">
-
-
-<div class="process-head">
-
-<div class="editorial-kicker reveal">
-Como funciona
-</div>
-
-<h2 class="section-title reveal">
-Da ideia <em>à sessão.</em>
-</h2>
-
-</div>
-
-
-<div class="process-list">
-
-
-<div class="process-step reveal">
-
-<div class="process-index">
-01
-</div>
-
-<div class="process-body">
-
-<h3>
-Conte sua ideia
-</h3>
-
-<p>
-
-Me envie suas referências,
-a região do corpo e uma noção
-do tamanho que você imagina.
-A partir disso começo a entender
-a direção do projeto.
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="process-step reveal">
-
-<div class="process-index">
-02
-</div>
-
-<div class="process-body">
-
-<h3>
-Alinhamos o projeto
-</h3>
-
-<p>
-
-Analiso composição, encaixe,
-complexidade e proposta visual
-para definir a melhor direção
-e passar as informações do orçamento.
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="process-step reveal">
-
-<div class="process-index">
-03
-</div>
-
-<div class="process-body">
-
-<h3>
-Escolhemos a data
-</h3>
-
-<p>
-
-Depois de tudo alinhado,
-escolhemos o melhor dia
-e o período necessário
-para realizar sua sessão.
-
-</p>
-
-</div>
-
-</div>
-
-
-<div class="process-step reveal">
-
-<div class="process-index">
-04
-</div>
-
-<div class="process-body">
-
-<h3>
-Dia da tattoo
-</h3>
-
-<p>
-
-Na sessão, fazemos os últimos
-ajustes, posicionamos o projeto
-na pele e iniciamos a execução
-com tudo definido.
-
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-
-<div
-class="reveal"
-style="margin-top:42px;">
-
-<a
-class="link-button primary"
-href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke">
-
-Iniciar orçamento
-<span>↗</span>
-
-</a>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FEEDBACKS ORIGINAIS
+     FEEDBACKS
 ===================================================== -->
 
 <section
@@ -2931,6 +2409,10 @@ loading="lazy">
 
 </section>
 
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
 
 <section class="final">
 
@@ -2991,6 +2473,10 @@ Solicitar orçamento
 
 </main>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer
 class="footer"
@@ -3105,6 +2591,10 @@ Todos os direitos reservados.
 
 </footer>
 
+
+<!-- =====================================================
+     WHATSAPP
+===================================================== -->
 
 <a
 class="whatsapp"
@@ -3233,7 +2723,7 @@ updateHeader();
 
 
 /* =====================================================
-   REVEAL
+   ENTRADAS
 ===================================================== */
 
 const revealItems =
@@ -3269,6 +2759,7 @@ entries=>{
 
 {
   threshold:.10,
+
   rootMargin:
   "0px 0px -30px 0px"
 }
@@ -3278,13 +2769,17 @@ entries=>{
 
 revealItems.forEach(
   item=>{
-    revealObserver.observe(item);
+
+    revealObserver.observe(
+      item
+    );
+
   }
 );
 
 
 /* =====================================================
-   PARALLAX CAPA
+   CAPA
 ===================================================== */
 
 const heroImage =
@@ -3405,13 +2900,14 @@ if(studioVideo){
 
 
 /* =====================================================
-   SLIDER DO PORTFÓLIO
+   PORTFÓLIO
 ===================================================== */
 
 const portfolioTrack =
 document.getElementById(
   "portfolioTrack"
 );
+
 
 const slides =
 Array.from(
@@ -3420,10 +2916,12 @@ Array.from(
   )
 );
 
+
 const portfolioCounter =
 document.getElementById(
   "portfolioCounter"
 );
+
 
 const progressFill =
 document.getElementById(
@@ -3444,6 +2942,7 @@ function updatePortfolio(){
 
   let closestIndex =
   0;
+
 
   let closestDistance =
   Infinity;
@@ -3509,9 +3008,11 @@ function updatePortfolio(){
 portfolioTrack.addEventListener(
   "scroll",
   ()=>{
+
     requestAnimationFrame(
       updatePortfolio
     );
+
   },
   {
     passive:true
@@ -3523,7 +3024,7 @@ updatePortfolio();
 
 
 /* =====================================================
-   ARRASTE NO COMPUTADOR
+   ARRASTE NO DESKTOP
 ===================================================== */
 
 let dragging =
@@ -3543,12 +3044,15 @@ portfolioTrack.addEventListener(
     dragging =
     true;
 
+
     portfolioTrack.classList.add(
       "dragging"
     );
 
+
     startX =
     event.pageX;
+
 
     startScroll =
     portfolioTrack.scrollLeft;
@@ -3563,6 +3067,7 @@ window.addEventListener(
 
     dragging =
     false;
+
 
     portfolioTrack.classList.remove(
       "dragging"
@@ -3601,7 +3106,6 @@ portfolioTrack.addEventListener(
 
   }
 );
-
 
 </script>
 
