@@ -30,15 +30,13 @@ crossorigin>
 href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
 rel="stylesheet">
 
-
 <style>
 
 :root{
   --black:#050505;
-  --black-soft:#0a0a0a;
   --white:#f2f0eb;
-  --gray:#85827d;
-  --line:rgba(255,255,255,.11);
+  --gray:#7d7d79;
+  --line:rgba(255,255,255,.10);
 }
 
 *{
@@ -88,10 +86,10 @@ button{
   inset:0;
   z-index:9999;
   pointer-events:none;
-  opacity:.022;
+  opacity:.02;
 
   background-image:
-  url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.52'/%3E%3C/svg%3E");
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.50'/%3E%3C/svg%3E");
 }
 
 
@@ -111,11 +109,13 @@ button{
   0
   18px;
 
-  transition:.35s ease;
+  transition:
+  background .35s ease,
+  border-color .35s ease;
 }
 
 .header.scrolled{
-  background:rgba(5,5,5,.82);
+  background:rgba(5,5,5,.84);
 
   border-bottom:
   1px solid
@@ -149,32 +149,41 @@ button{
   width:56px;
   height:56px;
 
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   border-radius:50%;
 
   border:
   1px solid
-  rgba(255,255,255,.22);
+  rgba(255,255,255,.20);
 
   background:
   rgba(0,0,0,.28);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
 
   cursor:pointer;
 }
 
 .menu-lines{
   width:24px;
+
   display:grid;
+
   gap:6px;
 }
 
 .menu-lines span{
+  display:block;
+
+  width:100%;
   height:1px;
+
   background:#fff;
-  transition:.35s ease;
+
+  transition:
+  transform .35s ease,
+  opacity .35s ease;
 }
 
 .menu-button.active
@@ -215,7 +224,9 @@ button{
   opacity:0;
   visibility:hidden;
 
-  transition:.4s ease;
+  transition:
+  opacity .4s ease,
+  visibility .4s ease;
 }
 
 .navigation.open{
@@ -307,16 +318,16 @@ button{
 
   linear-gradient(
     to bottom,
-    rgba(0,0,0,.10),
+    rgba(0,0,0,.08) 0%,
     rgba(0,0,0,.04) 30%,
-    rgba(0,0,0,.32) 65%,
+    rgba(0,0,0,.32) 66%,
     #050505 100%
   ),
 
   linear-gradient(
     90deg,
     rgba(0,0,0,.43),
-    transparent 65%
+    transparent 68%
   );
 }
 
@@ -436,7 +447,9 @@ button{
 
 .link-button.primary{
   background:#efefed;
+
   color:#060606;
+
   border-color:#efefed;
 }
 
@@ -480,7 +493,7 @@ button{
 
 
 /* =====================================================
-   MANIFESTO
+   APRESENTAÇÃO
 ===================================================== */
 
 .manifesto{
@@ -504,18 +517,18 @@ button{
   font-size:
   clamp(170px,42vw,420px);
 
+  line-height:.8;
+
   color:
   rgba(255,255,255,.018);
-
-  line-height:.8;
 
   pointer-events:none;
 }
 
 .editorial-kicker{
-  color:#626262;
-
   margin-bottom:25px;
+
+  color:#626262;
 
   font-size:9px;
 
@@ -528,7 +541,6 @@ button{
 
 .manifesto-copy{
   position:relative;
-
   z-index:2;
 
   max-width:1000px;
@@ -566,7 +578,7 @@ button{
 
 
 /* =====================================================
-   PORTFÓLIO HORIZONTAL
+   PORTFÓLIO
 ===================================================== */
 
 .portfolio{
@@ -809,13 +821,14 @@ button{
   17px auto 0;
 
   display:flex;
+
   align-items:center;
 
   gap:18px;
 }
 
 .progress-counter{
-  min-width:54px;
+  min-width:58px;
 
   font-family:
   "Playfair Display",
@@ -843,8 +856,6 @@ button{
   height:100%;
 
   background:#a9a9a4;
-
-  transform-origin:left;
 
   transition:
   width .25s ease;
@@ -954,7 +965,7 @@ button{
 
 
 /* =====================================================
-   ESTÚDIO - SOMENTE FOTO E VÍDEO
+   ESTÚDIO
 ===================================================== */
 
 .studio{
@@ -1018,7 +1029,7 @@ button{
 .studio-video video{
   width:100%;
 
-  aspect-ratio:9/16;
+  aspect-ratio:9 / 16;
 
   object-fit:cover;
 }
@@ -1070,19 +1081,17 @@ button{
 
   overflow:hidden;
 
+  background:#080808;
+
   border:
   1px solid
   rgba(255,255,255,.09);
-
-  background:#080808;
 }
 
 .feedback-frame img{
   width:100%;
 
   height:auto;
-
-  display:block;
 }
 
 
@@ -1122,7 +1131,7 @@ button{
   ),
 
   url("IMG_7780.jpeg")
-  center/cover
+  center / cover
   no-repeat;
 
   filter:
@@ -1293,6 +1302,7 @@ button{
   height:62px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
@@ -1314,7 +1324,7 @@ button{
 
 
 /* =====================================================
-   REVEAL
+   ANIMAÇÃO
 ===================================================== */
 
 .reveal{
@@ -1354,14 +1364,7 @@ button{
     padding-left:150px;
   }
 
-  .portfolio-head{
-    width:
-    min(
-      1280px,
-      calc(100% - 90px)
-    );
-  }
-
+  .portfolio-head,
   .slider-hint,
   .portfolio-progress{
     width:
@@ -1459,6 +1462,7 @@ button{
 
   .link-button.primary{
     width:100%;
+
     max-width:345px;
   }
 
@@ -1478,6 +1482,7 @@ button{
 
   .feedback-frame img{
     width:920px;
+
     max-width:none;
   }
 
@@ -1520,6 +1525,10 @@ aria-hidden="true">
 </div>
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
 <header
 class="header"
 id="header">
@@ -1556,6 +1565,10 @@ aria-label="Abrir menu">
 
 </header>
 
+
+<!-- =====================================================
+     MENU
+===================================================== -->
 
 <div
 class="navigation"
@@ -2164,6 +2177,7 @@ id="portfolioCounter">
 
 </div>
 
+
 <div class="progress-line">
 
 <div
@@ -2197,11 +2211,15 @@ id="realismo">
 Especialidade
 </div>
 
+
 <h2 class="specialty-title reveal">
 
 Realismo
 <br>
-<span>Preto & Cinza.</span>
+
+<span>
+Preto & Cinza.
+</span>
 
 </h2>
 
@@ -2215,6 +2233,7 @@ Realismo
 Cada projeto é desenvolvido para
 valorizar profundidade, leitura
 e encaixe na anatomia.
+
 A construção das sombras e dos
 contrastes é pensada para dar
 presença à imagem sem perder
@@ -2308,6 +2327,7 @@ id="studio">
 Bethaville • Barueri
 </div>
 
+
 <h2 class="section-title reveal">
 O estúdio.
 </h2>
@@ -2336,6 +2356,7 @@ src="IMG_0403.jpeg"
 alt="Estúdio Bruno Kayke Tattoo"
 loading="lazy">
 
+
 <div class="media-label">
 O espaço
 </div>
@@ -2356,6 +2377,7 @@ preload="metadata">
 src="CD573D75-DC23-411F-8922-19A7AA12DFDE.mov">
 
 </video>
+
 
 <div class="media-label">
 Conheça o espaço
@@ -2388,8 +2410,12 @@ id="avaliacoes">
 Feedbacks reais
 </div>
 
+
 <h2 class="section-title reveal">
-O que meus <em>clientes dizem.</em>
+
+O que meus
+<em>clientes dizem.</em>
+
 </h2>
 
 </div>
@@ -2433,9 +2459,13 @@ Seu próximo projeto
 
 Sua ideia.
 <br>
+
 Sua história.
 <br>
-<em>Sua tattoo.</em>
+
+<em>
+Sua tattoo.
+</em>
 
 </h2>
 
@@ -2475,7 +2505,7 @@ Solicitar orçamento
 
 
 <!-- =====================================================
-     FOOTER
+     RODAPÉ
 ===================================================== -->
 
 <footer
@@ -2493,6 +2523,7 @@ id="contato">
 <img
 src="IMG_9645.png"
 alt="Bruno Kayke Tattoo">
+
 
 <p>
 
@@ -2514,11 +2545,13 @@ em Barueri e Alphaville.
 Contato
 </h4>
 
+
 <a
 href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke">
 
 WhatsApp
 <br>
+
 (11) 97482-4443
 
 </a>
@@ -2526,10 +2559,12 @@ WhatsApp
 
 <a
 href="https://www.instagram.com/brunokayketattoo/"
-target="_blank">
+target="_blank"
+rel="noopener">
 
 Instagram
 <br>
+
 @brunokayketattoo
 
 </a>
@@ -2543,14 +2578,18 @@ Instagram
 Localização
 </h4>
 
+
 <a
 href="https://www.google.com/maps/search/?api=1&query=Avenida+An%C3%A1polis%2C+100%2C+Bethaville%2C+Barueri+-+SP"
-target="_blank">
+target="_blank"
+rel="noopener">
 
 Avenida Anápolis, 100
 <br>
+
 Bethaville
 <br>
+
 Barueri - SP
 
 </a>
@@ -2563,6 +2602,7 @@ Barueri - SP
 <h4>
 Atendimento
 </h4>
+
 
 <span>
 
@@ -2599,9 +2639,11 @@ Todos os direitos reservados.
 <a
 class="whatsapp"
 href="https://wa.me/5511974824443?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20com%20o%20Bruno%20Kayke"
-aria-label="Falar pelo WhatsApp">
+aria-label="Falar com Bruno Kayke pelo WhatsApp">
 
-<svg viewBox="0 0 32 32">
+<svg
+viewBox="0 0 32 32"
+aria-hidden="true">
 
 <path
 d="M19.11 17.42c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.1-.41-2.1-1.3-.78-.69-1.3-1.54-1.45-1.8-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.46.13-.15.17-.26.26-.43.09-.17.04-.33-.02-.46-.07-.13-.59-1.41-.8-1.93-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.46.07-.7.33-.24.26-.91.89-.91 2.17 0 1.28.93 2.52 1.06 2.69.13.17 1.83 2.8 4.44 3.93.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.07-.11-.24-.17-.5-.3z">
@@ -2635,19 +2677,19 @@ document.getElementById(
 
 function toggleMenu(){
 
-  const isOpen =
+  const open =
   navigation.classList.toggle(
     "open"
   );
 
   menuButton.classList.toggle(
     "active",
-    isOpen
+    open
   );
 
   document.body.classList.toggle(
     "menu-open",
-    isOpen
+    open
   );
 
 }
@@ -2723,7 +2765,7 @@ updateHeader();
 
 
 /* =====================================================
-   ENTRADAS
+   REVEAL
 ===================================================== */
 
 const revealItems =
@@ -2788,8 +2830,11 @@ document.getElementById(
 );
 
 
-let heroCurrent = 0;
-let heroTarget = 0;
+let heroCurrent =
+0;
+
+let heroTarget =
+0;
 
 
 function updateHeroTarget(){
@@ -2842,6 +2887,7 @@ window.addEventListener(
 
 
 updateHeroTarget();
+
 
 requestAnimationFrame(
   animateHero
@@ -2990,7 +3036,7 @@ function updatePortfolio(){
   `${String(current).padStart(2,"0")} / ${String(slides.length).padStart(2,"0")}`;
 
 
-  const progress =
+  const percentage =
   (
     current /
     slides.length
@@ -3000,7 +3046,7 @@ function updatePortfolio(){
 
 
   progressFill.style.width =
-  `${progress}%`;
+  `${percentage}%`;
 
 }
 
@@ -3024,7 +3070,7 @@ updatePortfolio();
 
 
 /* =====================================================
-   ARRASTE NO DESKTOP
+   ARRASTE NO COMPUTADOR
 ===================================================== */
 
 let dragging =
@@ -3091,7 +3137,7 @@ portfolioTrack.addEventListener(
     event.preventDefault();
 
 
-    const distance =
+    const movement =
     (
       event.pageX -
       startX
@@ -3102,7 +3148,7 @@ portfolioTrack.addEventListener(
 
     portfolioTrack.scrollLeft =
     startScroll -
-    distance;
+    movement;
 
   }
 );
